@@ -1,8 +1,6 @@
 'use client'
 
-import {CaretDownIcon} from '@phosphor-icons/react'
-import Image from 'next/image'
-import {Starry} from '../starry'
+import {Anchor, Avatar, ShieldBadge, Starry} from '@/components'
 
 export function HomePage() {
   return (
@@ -10,23 +8,20 @@ export function HomePage() {
       <div className="w-full h-full fixed -z-10 bg-[#030014]">
         <Starry />
       </div>
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 relative">
-        <Image
-          width={128}
-          height={128}
-          quality={100}
-          loading="eager"
-          className="rounded-full"
-          src="https://avatars.githubusercontent.com/u/12224398"
-          alt="John's Profile Picture"
-        />
-        <h1 className="font-heading font-bold text-[48pt]">John Yorke</h1>
-        <p>Software & Data Engineer | Halifax, NS, Canada</p>
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
-          <CaretDownIcon size={32} className="animate-bounce" />
+      <div className="min-h-screen flex flex-col items-center justify-center gap-2 sm:gap-4">
+        <Avatar />
+        <h1 className="font-heading font-bold text-[36pt] sm:text-[48pt]">John Yorke</h1>
+        <p className="text-xs sm:text-base">Software & Data Engineer | Halifax, NS, Canada</p>
+
+        <div className="flex gap-2">
+          <Anchor href="https://www.linkedin.com/in/yorkejohn/">
+            <ShieldBadge options={{text: 'LinkedIn', color: '0077B5'}} />
+          </Anchor>
+          <Anchor href="https://discord.com/users/128378400803913728">
+            <ShieldBadge options={{text: 'Discord', color: '5865F2', logo: 'discord', logoColor: 'white'}} />
+          </Anchor>
         </div>
       </div>
-      <div className="h-screen" />
     </main>
   )
 }

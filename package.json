@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
+    "check": "biome check",
     "format": "biome format --write",
-    "fix": "biome format --write && biome check --fix"
+    "fix": "biome format --write && biome check --fix",
+    "fix:unsafe": "biome format --write && biome check --fix --unsafe"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
