@@ -14,6 +14,9 @@ export function HomePage() {
         <p className="text-xs sm:text-base">Software & Data Engineer | Halifax, NS, Canada</p>
 
         <div className="flex gap-2">
+          <Anchor href="https://github.com/yorkeJohn/">
+            <ShieldBadge options={{text: 'GitHub', color: '8534F3', logo: 'github', logoColor: 'white'}} />
+          </Anchor>
           <Anchor href="https://www.linkedin.com/in/yorkejohn/">
             <ShieldBadge options={{text: 'LinkedIn', color: '0077B5'}} />
           </Anchor>

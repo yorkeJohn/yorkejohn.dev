@@ -1,5 +1,5 @@
 export * from './anchor'
 export * from './avatar'
-export * from './nav'
+export * from './nav/nav'
 export * from './shield-badge'
 export * from './starry'
