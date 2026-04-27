@@ -1,6 +1,9 @@
 'use client'
 
-import {Anchor, Avatar, ShieldBadge, Starry} from '@/components'
+import dynamic from 'next/dynamic'
+import {Anchor, Avatar, ShieldBadge} from '@/components'
+
+const Starry = dynamic(() => import('@/components/starry').then(mod => mod.Starry), {ssr: false})
 
 export function HomePage() {
   return (
@@ -8,7 +11,7 @@ export function HomePage() {
       <div className="w-full h-full fixed -z-10 bg-[#030014]">
         <Starry />
       </div>
-      <div className="min-h-screen flex flex-col items-center justify-center gap-2 sm:gap-4">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <Avatar />
         <h1 className="font-heading font-bold text-[36pt] sm:text-[48pt]">John Yorke</h1>
         <p className="text-xs sm:text-base">Software & Data Engineer | Halifax, NS, Canada</p>

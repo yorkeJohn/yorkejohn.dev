@@ -1,28 +1,59 @@
 'use client'
 
+import {BracketsCurlyIcon, type Icon, PaletteIcon, TextTIcon} from '@phosphor-icons/react'
 import {DesktopNav} from './desktop-nav'
 import {MobileNav} from './mobile-nav'
 
-type NavLinkProps = {type: 'link'; label: string; href: string}
+type NavLink = {type: 'link'; label: string; href: string}
 
-type NavDropdownProps = {
-  type: 'dropdown'
+type DropdownData = {
   label: string
-  content: React.ReactNode
+  href: string
+  description: string
+  Icon?: Icon
 }
 
-type NavItem = NavLinkProps | NavDropdownProps
+type NavDropdown = {
+  type: 'dropdown'
+  label: string
+  href: string
+  cta: string
+  data: Array<DropdownData>
+}
 
-export type NavProps = {data: Array<NavItem>}
+type NavData = Array<NavLink | NavDropdown>
+
+export type NavProps = {data: NavData}
 
 // navigation definition - shared between desktop and mobile nav components
-const data: Array<NavItem> = [
+const data: NavData = [
   {type: 'link', label: 'Homepage', href: '/'},
   {type: 'link', label: 'Projects', href: '/projects'},
   {
     type: 'dropdown',
     label: 'Developer Tools',
-    content: <div className="w-96">All of my dev tools here!</div>
+    href: '/devtools',
+    cta: 'View all developer tools',
+    data: [
+      {
+        label: 'JSON Formatter',
+        href: '/devtools/json-formatter',
+        description: 'Format and visualize JSON data',
+        Icon: BracketsCurlyIcon
+      },
+      {
+        label: 'Regex Tester',
+        href: '/devtools/regex-tester',
+        description: 'Test and debug regular expressions',
+        Icon: TextTIcon
+      },
+      {
+        label: 'Color Picker',
+        href: '/devtools/color-picker',
+        description: 'Pick and convert colors in various formats',
+        Icon: PaletteIcon
+      }
+    ]
   }
 ]
 

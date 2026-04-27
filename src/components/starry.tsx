@@ -4,25 +4,40 @@ import {PointMaterial, Points, type PointsInstancesProps} from '@react-three/dre
 import {Canvas, useFrame} from '@react-three/fiber'
 import * as random from 'maath/random'
 import {Suspense, useRef, useState} from 'react'
-import type {Points as PointsType} from 'three'
+import type {PointsMaterial as PointsMaterialType, Points as PointsType} from 'three'
 
 const COUNT = 2000
 
 function StarryScene(props: PointsInstancesProps) {
-  const ref = useRef<PointsType | null>(null)
+  const pointsRef = useRef<PointsType | null>(null)
+  const materialRef = useRef<PointsMaterialType | null>(null)
+
   const [sphere] = useState(() => random.inSphere(new Float32Array(COUNT * 3), {radius: 1.2}))
 
-  useFrame((_state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10
-      ref.current.rotation.y -= delta / 15
+  useFrame((_, delta) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.x -= delta / 10
+      pointsRef.current.rotation.y -= delta / 15
+    }
+
+    // fade in
+    if (materialRef.current && materialRef.current.opacity < 1) {
+      materialRef.current.opacity += delta / 3
     }
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} stride={3} positions={new Float32Array(sphere)} frustumCulled {...props}>
-        <PointMaterial transparent color="#fff" size={0.002} sizeAttenuation depthWrite={false} />
+      <Points ref={pointsRef} stride={3} positions={sphere as Float32Array} frustumCulled {...props}>
+        <PointMaterial
+          ref={materialRef}
+          transparent
+          color="#fff"
+          opacity={0}
+          size={0.002}
+          sizeAttenuation
+          depthWrite={false}
+        />
       </Points>
     </group>
   )
@@ -30,10 +45,10 @@ function StarryScene(props: PointsInstancesProps) {
 
 export function Starry() {
   return (
-    <Canvas camera={{position: [0, 0, 1]}}>
-      <Suspense fallback={null}>
+    <Suspense fallback={null}>
+      <Canvas camera={{position: [0, 0, 1]}}>
         <StarryScene />
-      </Suspense>
-    </Canvas>
+      </Canvas>
+    </Suspense>
   )
 }
