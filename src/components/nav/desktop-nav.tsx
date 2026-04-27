@@ -65,10 +65,13 @@ export function DesktopNav({data}: NavProps) {
   })
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-card border z-10">
-      <NavigationMenu>
-        <NavigationMenuList>{items}</NavigationMenuList>
-      </NavigationMenu>
-    </nav>
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <div className="px-4 text-sm font-bold text-muted-foreground">yorkejohn.dev</div>
+        </NavigationMenuItem>
+        {items}
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }

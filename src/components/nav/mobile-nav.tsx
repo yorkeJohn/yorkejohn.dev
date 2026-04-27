@@ -65,9 +65,10 @@ export function MobileNav({data}: NavProps) {
   })
 
   return (
-    <nav>
+    <div className="flex justify-between h-9 px-4 items-center">
+      <span className="text-sm text-muted-foreground font-bold">yorkejohn.dev</span>
       <Drawer direction="right">
-        <DrawerTrigger className="fixed top-4 right-4 bg-card border z-10 w-8 h-8 flex items-center justify-center cursor-pointer">
+        <DrawerTrigger className=" cursor-pointer">
           <DotsThreeIcon size={24} />
         </DrawerTrigger>
         <DrawerContent className="p-8">
@@ -84,6 +85,6 @@ export function MobileNav({data}: NavProps) {
           <div className="flex flex-col gap-4">{items}</div>
         </DrawerContent>
       </Drawer>
-    </nav>
+    </div>
   )
 }

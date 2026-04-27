@@ -28,6 +28,7 @@ export type NavProps = {data: NavData}
 // navigation definition - shared between desktop and mobile nav components
 const data: NavData = [
   {type: 'link', label: 'Homepage', href: '/'},
+  {type: 'link', label: 'About Me', href: '/about'},
   {type: 'link', label: 'Projects', href: '/projects'},
   {
     type: 'dropdown',
@@ -59,13 +60,13 @@ const data: NavData = [
 
 export function Nav() {
   return (
-    <header>
+    <nav>
       <div className="sm:hidden">
         <MobileNav data={data} />
       </div>
       <div className="hidden sm:block">
         <DesktopNav data={data} />
       </div>
-    </header>
+    </nav>
   )
 }
