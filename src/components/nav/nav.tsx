@@ -27,7 +27,6 @@ export type NavProps = {data: NavData}
 
 // navigation definition - shared between desktop and mobile nav components
 const data: NavData = [
-  {type: 'link', label: 'Homepage', href: '/'},
   {type: 'link', label: 'About Me', href: '/about'},
   {type: 'link', label: 'Projects', href: '/projects'},
   {

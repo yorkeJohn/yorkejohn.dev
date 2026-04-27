@@ -66,7 +66,9 @@ export function MobileNav({data}: NavProps) {
 
   return (
     <div className="flex justify-between h-9 px-4 items-center">
-      <span className="text-sm text-muted-foreground font-bold">yorkejohn.dev</span>
+      <Link href="/" className="text-sm text-muted-foreground font-bold cursor-pointer">
+        yorkejohn.dev
+      </Link>
       <Drawer direction="right">
         <DrawerTrigger className=" cursor-pointer">
           <DotsThreeIcon size={24} />
@@ -77,7 +79,9 @@ export function MobileNav({data}: NavProps) {
             <DrawerDescription>Mobile navigation menu</DrawerDescription>
           </div>
           <div className="flex justify-between mb-8">
-            <div className="text-muted-foreground font-bold">yorkejohn.dev</div>
+            <Link href="/" className="text-muted-foreground font-bold cursor-pointer">
+              yorkejohn.dev
+            </Link>
             <DrawerClose className="cursor-pointer">
               <XIcon size={24} />
             </DrawerClose>

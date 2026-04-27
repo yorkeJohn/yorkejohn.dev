@@ -68,7 +68,11 @@ export function DesktopNav({data}: NavProps) {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <div className="px-4 text-sm font-bold text-muted-foreground">yorkejohn.dev</div>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/">
+              <div className="font-bold text-muted-foreground">yorkejohn.dev</div>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         {items}
       </NavigationMenuList>
