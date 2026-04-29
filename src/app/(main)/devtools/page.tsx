@@ -1,0 +1,5 @@
+import {DevToolsPage} from '@/components/pages/devtools'
+
+export default function Page() {
+  return <DevToolsPage />
+}

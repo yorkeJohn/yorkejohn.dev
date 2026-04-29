@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# yorkejohn.dev
+
+A modern personal portfolio and developer tools website built with [Next.js](https://nextjs.org), featuring an interactive 3D starry background, developer utilities, and project showcase.
+
+## Features
+
+- **Home Page** - Hero landing page with interactive 3D starry background animation
+- **About** - Personal information and background
+- **Projects** - Showcase of projects and work
+- **DevTools** - Utility collection including:
+  - JSON Formatter - Format and validate JSON with syntax highlighting
+- **Responsive Design** - Mobile-first responsive layout
+- **Dark Theme** - Modern dark theme with custom styling
+- **Interactive Components** - Built with Radix UI and Tailwind CSS
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com) with [@tailwindcss/typography](https://tailwindcss.com/docs/plugins#typography)
+- **3D Graphics**: [Three.js](https://threejs.org) with [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
+- **UI Components**: [Radix UI](https://www.radix-ui.com) + [shadcn](https://shadcn.dev)
+- **Icons**: [@phosphor-icons/react](https://phosphoricons.com)
+- **Code Highlighting**: [highlight.js](https://highlightjs.org)
+- **Linting & Formatting**: [Biome](https://biomejs.dev)
+- **Runtime**: [React 19](https://react.dev)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- [bun](https://bun.sh)
+
+### Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page will automatically update as you edit files.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build & Production
 
-## Learn More
+```bash
+bun run build
+bun start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun start` - Start production server
+- `bun run check` - Run Biome linter
+- `bun run format` - Format code with Biome
+- `bun run fix` - Format and fix issues with Biome
+- `bun run fix:unsafe` - Format and fix with unsafe transformations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── (main)/            # Main route group
+│       ├── about/         # About page
+│       ├── projects/      # Projects page
+│       └── devtools/      # Developer tools
+│           └── json-formatter/  # JSON formatter tool
+├── components/            # React components
+│   ├── pages/            # Page-level components
+│   ├── ui/               # Reusable UI components
+│   └── nav/              # Navigation components
+└── lib/                  # Utilities and helpers
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Colors & Styling
+
+Edit tailwind.config.ts to customize colors, fonts, and theme.
+
+### Components
+
+Reusable UI components are located in src/components/ui/.
+
+### Fonts
+
+Configure fonts in src/lib/fonts.ts.
+
+## Development Tools
+
+This project uses [Biome](https://biomejs.dev) for linting and formatting. Configuration is in biome.json.
+
+## Deployment
+
+Deploy easily on [Vercel](https://vercel.com):
+
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Vercel automatically detects Next.js and deploys
+
+See [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more options.
