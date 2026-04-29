@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import {Button} from '@/components/ui'
-import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert'
+import {Alert, AlertDescription, AlertTitle, Button} from '@/components/ui'
 
 export default function NotFound() {
   return (
