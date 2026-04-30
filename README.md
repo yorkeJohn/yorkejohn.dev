@@ -1,6 +1,6 @@
 # yorkejohn.dev
 
-A modern personal portfolio and developer tools website built with [Next.js](https://nextjs.org). Additionally featuring a 3D starry background and developer utilities.
+A modern personal portfolio and developer tools website.
 
 https://yorkejohn.dev
 
