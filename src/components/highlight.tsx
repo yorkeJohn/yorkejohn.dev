@@ -1,6 +1,6 @@
 import hljs from 'highlight.js'
 
-import 'highlight.js/styles/atom-one-dark.min.css'
+import 'highlight.js/styles/base16/gruvbox-dark-hard.css'
 
 import javascript from 'highlight.js/lib/languages/javascript'
 import json from 'highlight.js/lib/languages/json'

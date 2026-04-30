@@ -1,6 +1,7 @@
 'use client'
 
-import {BracketsCurlyIcon, type Icon, PaletteIcon, TextTIcon} from '@phosphor-icons/react'
+import type {Icon} from '@phosphor-icons/react'
+import {devtools} from '../pages/devtools'
 import {DesktopNav} from './desktop-nav'
 import {MobileNav} from './mobile-nav'
 
@@ -25,6 +26,11 @@ type NavData = Array<NavLink | NavDropdown>
 
 export type NavProps = {data: NavData}
 
+export const devtoolsData: Array<DropdownData> = devtools.slice(0, 9).map(dt => {
+  const {label, description, slug, Icon} = dt
+  return {label, description, href: `/devtools/${slug}`, Icon}
+})
+
 // navigation definition - shared between desktop and mobile nav components
 const data: NavData = [
   {type: 'link', label: 'About Me', href: '/about'},
@@ -34,26 +40,7 @@ const data: NavData = [
     label: 'Developer Tools',
     href: '/devtools',
     cta: 'View all developer tools',
-    data: [
-      {
-        label: 'JSON Formatter',
-        href: '/devtools/json-formatter',
-        description: 'Format and visualize JSON data',
-        Icon: BracketsCurlyIcon
-      },
-      {
-        label: 'Regex Tester',
-        href: '/devtools/regex-tester',
-        description: 'Test and debug regular expressions',
-        Icon: TextTIcon
-      },
-      {
-        label: 'Color Picker',
-        href: '/devtools/color-picker',
-        description: 'Pick and convert colors in various formats',
-        Icon: PaletteIcon
-      }
-    ]
+    data: devtoolsData
   }
 ]
 

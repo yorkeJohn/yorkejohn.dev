@@ -1,5 +1,6 @@
 export * from './anchor'
 export * from './avatar'
+export * from './copy-field'
 export * from './highlight'
 export * from './nav/nav'
 export * from './shield-badge'

@@ -1,5 +1,5 @@
-import {DevToolsPage} from '@/components/pages/devtools'
+import {DevtoolsPage} from '@/components/pages/devtools'
 
 export default function Page() {
-  return <DevToolsPage />
+  return <DevtoolsPage />
 }
