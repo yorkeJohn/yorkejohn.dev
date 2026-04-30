@@ -1,9 +1,10 @@
 'use client'
 
-import {BinaryIcon, BracketsCurlyIcon, type Icon} from '@phosphor-icons/react'
+import {BinaryIcon, BracketsCurlyIcon, type Icon, LockIcon} from '@phosphor-icons/react'
 import {notFound} from 'next/navigation'
 import type React from 'react'
 import {JsonFormatter} from './json-formatter'
+import {JwtDecoder} from './jwt-decoder'
 import {UuidGenerator} from './uuid-generator'
 
 type DevtoolDef = {
@@ -28,6 +29,13 @@ export const devtools: Array<DevtoolDef> = [
     slug: 'uuid-generator',
     Icon: BinaryIcon,
     Component: UuidGenerator
+  },
+  {
+    label: 'JWT Decoder',
+    description: 'Decode encoded JSON web tokens',
+    slug: 'jwt-decode',
+    Icon: LockIcon,
+    Component: JwtDecoder
   }
 ]
 

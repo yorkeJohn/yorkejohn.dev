@@ -1,6 +1,7 @@
 'use client'
 
 import {CopyIcon} from '@phosphor-icons/react'
+import {jwtDecode} from 'jwt-decode'
 import {useState} from 'react'
 import {toast} from 'sonner'
 import {Highlight} from '@/components'
@@ -17,17 +18,16 @@ import {
   Textarea
 } from '@/components/ui'
 
-export function JsonFormatter() {
+export function JwtDecoder() {
   const [input, setInput] = useState<string>('')
   const [output, setOutput] = useState<string>('')
   const [error, setError] = useState<boolean>(false)
 
-  const onFormat = () => {
+  const onDecode = () => {
     setError(false)
     try {
-      const parsed = JSON.parse(input)
-      const formatted = JSON.stringify(parsed, null, 2)
-      setOutput(formatted)
+      const payload = jwtDecode(input)
+      setOutput(JSON.stringify(payload, null, 2))
     } catch {
       setError(true)
     }
@@ -42,7 +42,7 @@ export function JsonFormatter() {
     <div className="flex lg:flex-row flex-col gap-4">
       <Card className="flex-1">
         <CardHeader>
-          <CardTitle>Input</CardTitle>
+          <CardTitle>Encoded JWT</CardTitle>
         </CardHeader>
         <CardContent className="flex-1">
           <Field className="h-full">
@@ -51,18 +51,18 @@ export function JsonFormatter() {
               className="h-full font-mono"
               value={input}
               onChange={e => setInput(e.currentTarget.value)}
-              placeholder="Your unformatted JSON data..."
+              placeholder="Your encoded JWT..."
             />
-            <FieldError>{error && 'Invalid JSON data'}</FieldError>
+            <FieldError>{error && 'Invalid JWT'}</FieldError>
           </Field>
         </CardContent>
         <CardFooter className="justify-end">
-          <Button onClick={onFormat}>Format</Button>
+          <Button onClick={onDecode}>Decode</Button>
         </CardFooter>
       </Card>
       <Card className="flex-1">
         <CardHeader>
-          <CardTitle>Output</CardTitle>
+          <CardTitle>Decoded JWT</CardTitle>
         </CardHeader>
         <CardContent>
           <ScrollArea className="sm:h-96 h-72">
