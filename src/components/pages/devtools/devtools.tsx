@@ -45,7 +45,7 @@ export function Devtool({slug}: {slug: string}) {
   const {label, description, Component} = def
 
   return (
-    <main className="p-4 container mx-auto">
+    <main className="px-4 container mx-auto">
       <h1 className="font-heading text-xl mb-2">{label}</h1>
       <p className="text-sm text-muted-foreground mb-8">{description}</p>
       <Component />
