@@ -1,0 +1,8 @@
+.hueSlider {
+  & [data-slot="slider-track"] {
+    background: linear-gradient(to right, red, yellow, lime, cyan, blue, magenta, red);
+  }
+  & [data-slot="slider-range"] {
+    background: transparent;
+  }
+}

@@ -49,8 +49,8 @@ export function DesktopNav({data}: NavProps) {
         <NavigationMenuItem key={index}>
           <NavigationMenuTrigger>{label}</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="w-96">
-              <ul className="grid grid-cols-2 gap-2">{items}</ul>
+            <div className="w-150">
+              <ul className="grid grid-cols-3 gap-2">{items}</ul>
               <div className="flex justify-end mt-4 p-2">
                 <Link href={href} className="text-sm text-blue-500">
                   {cta} &rarr;
