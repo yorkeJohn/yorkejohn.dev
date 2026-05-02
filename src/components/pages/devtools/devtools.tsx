@@ -3,7 +3,7 @@
 import {BinaryIcon, BracketsCurlyIcon, type Icon, LockIcon, PaletteIcon} from '@phosphor-icons/react'
 import {notFound} from 'next/navigation'
 import type React from 'react'
-import ColorPicker from './color-picker'
+import {ColorPicker} from './color-picker/color-picker'
 import {JsonFormatter} from './json-formatter'
 import {JwtDecoder} from './jwt-decoder'
 import {UuidGenerator} from './uuid-generator'
