@@ -51,10 +51,12 @@ export function DesktopNav({data}: NavProps) {
           <NavigationMenuContent>
             <div className="w-150">
               <ul className="grid grid-cols-3 gap-2">{items}</ul>
-              <div className="flex justify-end mt-4 p-2">
-                <Link href={href} className="text-sm text-blue-500">
-                  {cta} &rarr;
-                </Link>
+              <div className="flex justify-end">
+                <NavigationMenuLink asChild className="hover:bg-transparent active:bg-transparent">
+                  <Link href={href} className="text-sm text-blue-200">
+                    {cta} &rarr;
+                  </Link>
+                </NavigationMenuLink>
               </div>
             </div>
           </NavigationMenuContent>

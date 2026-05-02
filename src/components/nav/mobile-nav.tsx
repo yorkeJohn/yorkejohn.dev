@@ -21,9 +21,9 @@ export function MobileNav({data}: NavProps) {
     if (item.type === 'link') {
       const {href, label} = item
       return (
-        <Link key={index} href={href}>
-          {label}
-        </Link>
+        <DrawerClose asChild key={index}>
+          <Link href={href}>{label}</Link>
+        </DrawerClose>
       )
     }
 
@@ -33,13 +33,15 @@ export function MobileNav({data}: NavProps) {
       const items = data.map((item, index) => {
         const {href, label, Icon} = item
         return (
-          <Link key={index} href={href} className="flex flex-col items-start">
-            <div className="flex gap-2 items-center">
-              {Icon && <Icon size={12} />}
-              <span>{label}</span>
-            </div>
-            <p className="text-xs text-muted-foreground">{item.description}</p>
-          </Link>
+          <DrawerClose asChild key={index}>
+            <Link href={href} className="flex flex-col items-start">
+              <div className="flex gap-2 items-center">
+                {Icon && <Icon size={12} />}
+                <span>{label}</span>
+              </div>
+              <p className="text-xs text-muted-foreground">{item.description}</p>
+            </Link>
+          </DrawerClose>
         )
       })
 
@@ -52,9 +54,11 @@ export function MobileNav({data}: NavProps) {
           <CollapsibleContent className="mt-4">
             <div className="flex flex-col gap-2">
               {items}
-              <Link href={href} className="text-sm text-blue-500">
-                {cta} &rarr;
-              </Link>
+              <DrawerClose asChild>
+                <Link href={href} className="text-sm text-blue-200">
+                  {cta} &rarr;
+                </Link>
+              </DrawerClose>
             </div>
           </CollapsibleContent>
         </Collapsible>
