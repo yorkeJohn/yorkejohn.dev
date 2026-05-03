@@ -3,7 +3,7 @@
 import {CopyIcon} from '@phosphor-icons/react'
 import {useState} from 'react'
 import {toast} from 'sonner'
-import {Highlight} from '@/components'
+import {CodeBlock} from '@/components'
 import {
   Button,
   Card,
@@ -13,7 +13,6 @@ import {
   CardTitle,
   Field,
   FieldError,
-  ScrollArea,
   Textarea
 } from '@/components/ui'
 
@@ -65,9 +64,9 @@ export function JsonFormatter() {
           <CardTitle>Output</CardTitle>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="sm:h-96 h-72">
-            <Highlight language="json">{output}</Highlight>
-          </ScrollArea>
+          <CodeBlock language="json" className="sm:h-96 h-72">
+            {output}
+          </CodeBlock>
         </CardContent>
         <CardFooter className="justify-end">
           <Button onClick={onCopy}>
