@@ -64,7 +64,7 @@ export function JsonFormatter() {
           <CardTitle>Output</CardTitle>
         </CardHeader>
         <CardContent>
-          <CodeBlock language="json" className="sm:h-96 h-72">
+          <CodeBlock lang="json" className="sm:h-96 h-72">
             {output}
           </CodeBlock>
         </CardContent>

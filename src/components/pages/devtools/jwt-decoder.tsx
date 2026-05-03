@@ -64,7 +64,7 @@ export function JwtDecoder() {
           <CardTitle>Decoded JWT</CardTitle>
         </CardHeader>
         <CardContent>
-          <CodeBlock language="json" className="sm:h-96 h-72">
+          <CodeBlock lang="json" className="sm:h-96 h-72">
             {output}
           </CodeBlock>
         </CardContent>
