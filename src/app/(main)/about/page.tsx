@@ -1,5 +1,9 @@
-import {AboutPage} from '@/components/pages'
+import About from '@/content/about.mdx'
 
 export default function Page() {
-  return <AboutPage />
+  return (
+    <div className="typography mx-auto px-4">
+      <About />
+    </div>
+  )
 }

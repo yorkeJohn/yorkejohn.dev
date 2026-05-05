@@ -4,6 +4,7 @@ import type {LayoutProps} from '@/lib/types'
 import {cn} from '@/lib/utils'
 
 import './globals.css'
+import './typography.css'
 
 export const metadata: Metadata = {
   title: {

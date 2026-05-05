@@ -1,11 +1,32 @@
 'use client'
 
+import {CaretDownIcon} from '@phosphor-icons/react'
 import dynamic from 'next/dynamic'
+import {useEffect, useRef, useState} from 'react'
 import {Anchor, Avatar, ShieldBadge} from '@/components'
+import About from '@/content/about.mdx'
 
 const Starry = dynamic(() => import('@/components/starry').then(mod => mod.Starry), {ssr: false})
 
 export function HomePage() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      const [entry] = entries
+      setVisible(!entry.isIntersecting)
+    })
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  const scroll = () => {
+    if (ref.current) {
+      ref.current.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+
   return (
     <main className="relative z-0">
       <div className="w-full h-full fixed -z-10 bg-[#030014]">
@@ -27,6 +48,14 @@ export function HomePage() {
             <ShieldBadge options={{text: 'Discord', color: '5865F2', logo: 'discord', logoColor: 'white'}} />
           </Anchor>
         </div>
+        {visible && (
+          <button type="button" onClick={scroll} className="fixed bottom-0 left-1/2 -translate-1/2">
+            <CaretDownIcon size={32} className="animate-bounce" />
+          </button>
+        )}
+      </div>
+      <div className="typography mx-auto pb-32 mt-2 px-4" ref={ref}>
+        <About />
       </div>
     </main>
   )

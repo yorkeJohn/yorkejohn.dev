@@ -1,0 +1,169 @@
+# Markdown Rendering Test Suite
+
+This file is designed to test **all Markdown rendering capabilities**.
+
+---
+
+# H1 Heading
+
+## H2 Heading
+
+### H3 Heading
+
+#### H4 Heading
+
+##### H5 Heading
+
+###### H6 Heading
+
+---
+
+## Paragraphs & Typography
+
+This is a normal paragraph with **bold text**, *italic text*, and
+***bold italic text***.
+
+You can also include `inline code` inside a sentence.
+
+---
+
+## Links
+
+-   External link: https://github.com
+-   Inline link: [Next.js](https://nextjs.org)
+
+---
+
+## Lists
+
+### Unordered list
+
+-   Item 1
+-   Item 2
+    -   Nested item 2.1
+    -   Nested item 2.2
+        -   Deep nested item
+-   Item 3
+
+### Ordered list
+
+1.  First
+2.  Second
+    1.  Nested ordered
+    2.  Nested ordered again
+3.  Third
+
+---
+
+## Blockquote
+
+> This is a blockquote.
+>
+> It can span multiple paragraphs.
+>
+> > Nested blockquote inside blockquote.
+
+---
+
+## Inline Code
+
+This is `inline code`, and this is another `console.log('hello'){:js}`.
+
+---
+
+## Code Blocks
+
+```
+Plain text code block
+No syntax highlighting
+Just raw text
+```
+
+``` ts
+// TypeScript
+function hello(name) {
+  return `Hello ${name}`
+}
+```
+
+---
+
+## Tables
+
+| Pokemon    | Generation | Type  |
+|------------|------------|-------|
+| Bulbasaur  | 1          | Grass |
+| Charmander | 1          | Fire  |
+| Squirtle   | 1          | Water |
+| Chikorita  | 2          | Grass |
+| Cyndaquil  | 2          | Fire  |
+| Totodile   | 2          | Water |
+
+---
+
+## Horizontal Rule
+
+---
+
+## Images
+
+![Alt text](https://placehold.co/600x300)
+
+---
+
+## Raw HTML
+
+<div style={{padding: 12, border: '1px solid red', borderRadius: 8}}>
+  This is a raw HTML block.
+</div>
+
+Raw image tag
+
+<img src="https://placehold.co/400x200" />
+
+---
+
+## Mixed content stress test
+
+Here is a paragraph with:
+
+- a list
+- a `code snippet`
+- a link to [GitHub](https://github.com)
+
+And a block:
+
+```ts
+const a = 1
+const b = 2
+const sum = a + b
+
+export default sum
+```
+
+Followed by more text.
+
+---
+
+## Escaping edge cases
+
+\*This should NOT be a list\*
+
+\`This should NOT become inline code\`
+
+\# This should NOT become a heading
+
+---
+
+## Deep nesting stress test
+
+> Quote level 1
+>
+> > Quote level 2
+> >
+> > -   List inside quote
+> >     -   Nested item
+> >
+> > `const nested = true{:ts}`
+>
+> Back to quote level 1
