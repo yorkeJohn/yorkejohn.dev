@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [100],
     remotePatterns: [{hostname: 'avatars.githubusercontent.com'}]
+  },
+  env: {
+    VERSION: process.env.VERSION ?? 'development'
   }
 }
 

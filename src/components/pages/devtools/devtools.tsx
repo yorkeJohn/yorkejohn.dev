@@ -75,7 +75,7 @@ export function DevtoolsPage() {
   })
 
   return (
-    <main className="px-4 container mx-auto">
+    <div>
       <h1 className="font-heading text-xl mb-2">Developer Tools</h1>
       <p className="text-sm text-muted-foreground mb-8">A curated collection of useful developer tools</p>
       <Input
@@ -85,7 +85,7 @@ export function DevtoolsPage() {
         onChange={e => setQuery(e.currentTarget.value)}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">{cards}</div>
-    </main>
+    </div>
   )
 }
 
@@ -98,7 +98,7 @@ export function Devtool({slug}: {slug: string}) {
   const {label, description, Component} = def
 
   return (
-    <main className="px-4 container mx-auto">
+    <div>
       <Link href="/devtools" className="text-sm text-blue-200">
         &larr; Back to developer tools list
       </Link>
@@ -107,6 +107,6 @@ export function Devtool({slug}: {slug: string}) {
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
       <Component />
-    </main>
+    </div>
   )
 }
