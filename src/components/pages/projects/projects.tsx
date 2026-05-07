@@ -1,6 +1,9 @@
 import Image, {type StaticImageData} from 'next/image'
 import {Anchor} from '@/components'
 import {Badge, Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui'
+import {cn} from '@/lib/utils'
+
+/* Image imports */
 import espressoChat from './images/espresso-chat.png'
 import frenchVillage from './images/french-village.png'
 import mantine from './images/mantine.png'
@@ -16,6 +19,17 @@ type ProjectLink = {
   url: string
 }
 
+type ProjectType = 'Professional' | 'Contributor' | 'Personal' | 'Freelance' | 'Volunteer' | 'Academic'
+
+const Colors = {
+  Professional: 'bg-green-700',
+  Contributor: 'bg-orange-700',
+  Personal: 'bg-blue-700',
+  Freelance: 'bg-purple-700',
+  Volunteer: 'bg-yellow-700',
+  Academic: 'bg-teal-700'
+} as const satisfies Record<ProjectType, string>
+
 type ProjectDef = {
   title: string
   description: string
@@ -23,7 +37,7 @@ type ProjectDef = {
   links?: ProjectLink[]
   startYear: number
   badges?: string[]
-  contributor?: boolean
+  type: ProjectType
 }
 
 const projects: ProjectDef[] = [
@@ -36,15 +50,17 @@ const projects: ProjectDef[] = [
       {label: 'CurseForge', url: 'https://www.curseforge.com/minecraft/mc-mods/tainted-magic'}
     ],
     badges: ['First Project', 'Minecraft Mod', 'Java', 'Open Source'],
-    startYear: 2015
+    startYear: 2015,
+    type: 'Personal'
   },
   {
     title: 'Metro Thrift Website',
     description: "Website + CMS for Halifax's mobile thrift store.",
     image: metroThrift,
     links: [{label: 'Visit Site', url: 'https://metrothrift.com'}],
-    badges: ['Freelance', 'Next.js', 'KeystoneJS'],
-    startYear: 2023
+    badges: ['Next.js', 'KeystoneJS'],
+    startYear: 2023,
+    type: 'Freelance'
   },
   {
     title: 'TFC Better Blast Furnace',
@@ -56,23 +72,26 @@ const projects: ProjectDef[] = [
       {label: 'Modrinth', url: 'https://modrinth.com/mod/tfc-better-blast-furnace'}
     ],
     badges: ['Minecraft Mod', 'Java', 'Open Source'],
-    startYear: 2024
+    startYear: 2024,
+    type: 'Personal'
   },
   {
     title: 'Personal Website',
     description: 'This website - yorkejohn.dev! Includes a portfolio and useful developer tools.',
     image: website,
     links: [{label: 'GitHub', url: 'https://github.com/yorkeJohn/yorkejohn.dev'}],
+    badges: ['Personal Website', 'Next.js', 'Three.js'],
     startYear: 2026,
-    badges: ['Personal Website', 'Next.js', 'Three.js']
+    type: 'Personal'
   },
   {
     title: 'French Village Conservation Website',
     description: "Website and CMS for a woodland conservation in St. Margaret's Bay, Nova Scotia.",
     image: frenchVillage,
     links: [{label: 'GitHub', url: 'https://github.com/larixsw/conservation-site'}],
-    badges: ['Volunteer', 'React', 'KeystoneJS'],
-    startYear: 2023
+    badges: ['React', 'KeystoneJS'],
+    startYear: 2023,
+    type: 'Volunteer'
   },
   {
     title: 'Espresso Chat',
@@ -80,7 +99,8 @@ const projects: ProjectDef[] = [
     image: espressoChat,
     links: [{label: 'GitHub', url: 'https://github.com/larixsw/espresso-chat'}],
     badges: ['Java', 'Network Engineering'],
-    startYear: 2023
+    startYear: 2023,
+    type: 'Academic'
   },
   {
     title: 'Pixel SkyQuest',
@@ -88,7 +108,8 @@ const projects: ProjectDef[] = [
     image: pixelSkyQuest,
     links: [{label: 'GitHub', url: 'https://github.com/larixsw/pixel-skyquest'}],
     badges: ['Game Development', 'Unity', 'C#'],
-    startYear: 2024
+    startYear: 2024,
+    type: 'Academic'
   },
   {
     title: 'Navigator Cloud',
@@ -97,7 +118,7 @@ const projects: ProjectDef[] = [
     links: [{label: 'Homepage', url: 'https://posteritygroup.ca/navigator'}],
     badges: ['Full-stack', 'Product Engineering', 'React', 'Node.js', 'Rust'],
     startYear: 2024,
-    contributor: true
+    type: 'Professional'
   },
   {
     title: 'Mantine',
@@ -109,15 +130,15 @@ const projects: ProjectDef[] = [
     ],
     badges: ['Open Source', 'Component Library', 'React', 'TypeScript'],
     startYear: 2024,
-    contributor: true
+    type: 'Contributor'
   }
 ]
 
-const sortByYearAsc = (a: ProjectDef, b: ProjectDef) => a.startYear - b.startYear
+const sortByYearDesc = (a: ProjectDef, b: ProjectDef) => b.startYear - a.startYear
 
 export function ProjectsPage() {
-  const cards = projects.sort(sortByYearAsc).map((project, index) => {
-    const {title, description, image, links = [], badges = [], startYear, contributor} = project
+  const cards = projects.sort(sortByYearDesc).map((project, index) => {
+    const {title, description, image, links = [], badges = [], startYear, type} = project
 
     const linkElements = links.map(link => (
       <Anchor key={link.url} href={link.url} className="text-blue-200 hover:underline">
@@ -135,8 +156,8 @@ export function ProjectsPage() {
         </CardHeader>
         <CardContent>
           <div className="flex gap-2 flex-wrap mb-4">
-            <Badge className="bg-blue-700 px-2">{startYear}</Badge>
-            {contributor && <Badge className="bg-orange-700 px-2">Contributor</Badge>}
+            <Badge className="bg-stone-700 px-2">{startYear}</Badge>
+            <Badge className={cn(Colors[type], 'px-2')}>{type}</Badge>
             {badgeElements}
           </div>
           <p className="text-muted-foreground">{description}</p>
@@ -150,7 +171,13 @@ export function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="font-heading text-xl mb-8">Projects & Selected Works</h1>
+      <div className="my-8">
+        <h1 className="font-heading text-xl mb-2">Projects & Selected Works</h1>
+        <p className="text-sm text-muted-foreground">
+          Comprehensive overview of my projects and notable work. Many of these projects are still being maintainted to
+          present day.
+        </p>
+      </div>
       <div className="columns-xs gap-4">{cards}</div>
     </div>
   )
