@@ -1,6 +1,6 @@
 @layer typography {
   .typography {
-    max-width: 90ch;
+    max-width: 65ch;
     color: var(--color-foreground);
   }
   .typography h1:not(.not-typography h1) {
