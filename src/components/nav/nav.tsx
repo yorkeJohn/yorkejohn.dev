@@ -33,7 +33,7 @@ export const devtoolsData: Array<DropdownData> = devtools.slice(0, 9).map(dt => 
 
 // navigation definition - shared between desktop and mobile nav components
 const data: NavData = [
-  {type: 'link', label: 'Projects', href: '/projects'},
+  {type: 'link', label: 'Projects & Work', href: '/projects'},
   {
     type: 'dropdown',
     label: 'Developer Tools',

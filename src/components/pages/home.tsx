@@ -33,7 +33,7 @@ export function HomePage() {
         <Nav />
       </header>
       <main className="relative z-0">
-        <div className="w-full h-full fixed -z-10 bg-[#030014]">
+        <div className="w-full h-full fixed -z-10 bg-[#000a14]">
           <Starry />
         </div>
         <div className="min-h-screen flex flex-col items-center justify-center gap-4">
@@ -59,7 +59,7 @@ export function HomePage() {
           )}
         </div>
         <div className="min-h-[calc(100vh-4.5rem)] mt-1 scroll-mt-18 px-4 flex flex-col" ref={ref}>
-          <article className="typography mx-auto mb-4 flex-1">
+          <article className="typography mx-auto mb-8 flex-1">
             <About />
           </article>
           <Footer />
