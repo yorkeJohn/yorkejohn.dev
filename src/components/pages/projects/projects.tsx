@@ -105,9 +105,12 @@ const projects: ProjectDef[] = [
   },
   {
     title: 'French Village Conservation Website',
-    description: "Website and CMS for a woodland conservation in St. Margaret's Bay, Nova Scotia.",
+    description: "Website + CMS for a woodland conservation in St. Margaret's Bay, Nova Scotia.",
     image: frenchVillage,
-    links: [{label: 'GitHub', url: 'https://github.com/larixsw/conservation-site'}],
+    links: [
+      {label: 'GitHub', url: 'https://github.com/larixsw/conservation-site'},
+      {label: 'Demo', url: 'https://conservation.larix.dev'}
+    ],
     badges: ['React', 'KeystoneJS'],
     startYear: 2023,
     type: 'Volunteer'
