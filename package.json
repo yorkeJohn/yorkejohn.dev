@@ -9,7 +9,8 @@
     "check": "biome check",
     "format": "biome format --write",
     "fix": "biome format --write && biome check --fix",
-    "fix:unsafe": "biome format --write && biome check --fix --unsafe"
+    "fix:unsafe": "biome format --write && biome check --fix --unsafe",
+    "preview": "serve ./out"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -45,6 +46,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   },
