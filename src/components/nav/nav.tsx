@@ -1,7 +1,7 @@
 'use client'
 
 import type {Icon} from '@phosphor-icons/react'
-import {devtools} from '../pages/devtools'
+import {devtools} from '../pages'
 import {DesktopNav} from './desktop-nav'
 import {MobileNav} from './mobile-nav'
 
@@ -33,7 +33,7 @@ export const devtoolsData: Array<DropdownData> = devtools.slice(0, 9).map(dt => 
 
 // navigation definition - shared between desktop and mobile nav components
 const data: NavData = [
-  {type: 'link', label: 'Projects & Work', href: '/projects'},
+  {type: 'link', label: 'Projects & Works', href: '/projects'},
   {
     type: 'dropdown',
     label: 'Developer Tools',

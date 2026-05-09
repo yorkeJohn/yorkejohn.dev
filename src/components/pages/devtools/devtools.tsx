@@ -1,55 +1,11 @@
 'use client'
 
-import {BinaryIcon, BracketsCurlyIcon, type Icon, LockIcon, PaletteIcon} from '@phosphor-icons/react'
 import Fuse from 'fuse.js'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
-import type React from 'react'
 import {useState} from 'react'
 import {Card, CardDescription, CardHeader, CardTitle, Input} from '@/components/ui'
-import {ColorPicker} from './color-picker/color-picker'
-import {JsonFormatter} from './json-formatter'
-import {JwtDecoder} from './jwt-decoder'
-import {UuidGenerator} from './uuid-generator'
-
-type DevtoolDef = {
-  label: string
-  description: string
-  slug: string
-  Icon: Icon
-  Component: React.FC
-}
-
-export const devtools: Array<DevtoolDef> = [
-  {
-    label: 'JSON Formatter',
-    description: 'Format and view JSON data',
-    slug: 'json-formatter',
-    Icon: BracketsCurlyIcon,
-    Component: JsonFormatter
-  },
-  {
-    label: 'UUID Generator',
-    description: 'Generate random UUIDs',
-    slug: 'uuid-generator',
-    Icon: BinaryIcon,
-    Component: UuidGenerator
-  },
-  {
-    label: 'JWT Decoder',
-    description: 'Decode encoded JSON web tokens',
-    slug: 'jwt-decoder',
-    Icon: LockIcon,
-    Component: JwtDecoder
-  },
-  {
-    label: 'Color Picker',
-    description: 'Pick and convert colors',
-    slug: 'color-picker',
-    Icon: PaletteIcon,
-    Component: ColorPicker
-  }
-]
+import {devtools, getDevtoolBySlug} from './registry'
 
 export function DevtoolsPage() {
   const [query, setQuery] = useState<string>('')
@@ -89,10 +45,8 @@ export function DevtoolsPage() {
   )
 }
 
-const devtoolsMap: Map<string, DevtoolDef> = new Map(devtools.map(dt => [dt.slug, dt]))
-
-export function Devtool({slug}: {slug: string}) {
-  const def = devtoolsMap.get(slug)
+export function DevtoolPage({slug}: {slug: string}) {
+  const def = getDevtoolBySlug(slug)
   if (!def) notFound()
 
   const {label, description, Component} = def
