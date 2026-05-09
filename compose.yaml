@@ -1,0 +1,8 @@
+services:
+  website:
+    image: ghcr.io/yorkejohn/yorkejohn.dev:latest
+  cf:
+    image: cloudflare/cloudflared:latest
+    environment:
+      TUNNEL_TOKEN: token
+    command: tunnel --no-autoupdate run
