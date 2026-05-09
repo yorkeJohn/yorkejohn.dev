@@ -1,5 +1,4 @@
 export * from './anchor'
-export * from './avatar'
 export * from './code-block'
 export * from './copy-field'
 export * from './footer'

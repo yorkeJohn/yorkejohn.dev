@@ -1,5 +1,5 @@
 import {Footer, Nav} from '@/components'
-import {Toaster} from '@/components/ui/sonner'
+import {Toaster} from '@/components/ui'
 import type {LayoutProps} from '@/lib/types'
 
 export default function Layout({children}: LayoutProps) {

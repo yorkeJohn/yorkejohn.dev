@@ -38,7 +38,7 @@ export const devtools: Array<DevtoolDef> = [
   {
     label: 'JWT Decoder',
     description: 'Decode encoded JSON web tokens',
-    slug: 'jwt-decode',
+    slug: 'jwt-decoder',
     Icon: LockIcon,
     Component: JwtDecoder
   },

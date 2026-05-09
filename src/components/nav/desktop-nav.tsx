@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle
-} from '@/components/ui/navigation-menu'
+} from '@/components/ui'
 import type {NavProps} from './nav'
 
 export function DesktopNav({data}: NavProps) {

@@ -2,15 +2,10 @@ import createMDX from '@next/mdx'
 import type {NextConfig} from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-  images: {
-    qualities: [100],
-    remotePatterns: [{hostname: 'avatars.githubusercontent.com'}]
-  },
-  env: {
-    VERSION: process.env.VERSION ?? 'development'
-  }
+  images: {unoptimized: true},
+  env: {VERSION: process.env.VERSION ?? 'development'},
+  output: 'export'
 }
 
 const withMDX = createMDX({
