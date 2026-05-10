@@ -2,6 +2,8 @@ import type {MetadataRoute} from 'next'
 import {devtools} from '@/components/pages'
 import {SITE_URL} from '@/lib/constants'
 
+export const dynamic = 'force-static'
+
 const toSitemapEntry = (path: string): MetadataRoute.Sitemap[number] => ({
   url: `${SITE_URL}${path}`,
   lastModified: new Date()
