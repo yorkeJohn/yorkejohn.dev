@@ -184,13 +184,11 @@ export function ProjectsPage() {
 
   return (
     <div>
-      <div className="my-8">
-        <h1 className="font-heading text-xl mb-2">Projects & Selected Works</h1>
-        <p className="text-sm text-muted-foreground">
-          Comprehensive overview of my projects and notable work. Many of these projects are still being maintainted to
-          present day.
-        </p>
-      </div>
+      <h1 className="font-heading text-xl mb-2">Projects & Selected Works</h1>
+      <p className="text-sm text-muted-foreground mb-8">
+        Comprehensive overview of my projects and notable work. Many of these projects are still being maintainted to
+        present day.
+      </p>
       <div className="columns-xs gap-4">{cards}</div>
     </div>
   )
