@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {unoptimized: true},
   env: {VERSION: process.env.VERSION ?? 'development'},
-  output: 'export'
+  output: 'export',
+  trailingSlash: true
 }
 
 const withMDX = createMDX({
