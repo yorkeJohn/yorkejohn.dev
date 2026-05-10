@@ -51,8 +51,8 @@ export function MobileNav({data}: NavProps) {
             <span>{label}</span>
             <CaretUpDownIcon size={16} />
           </CollapsibleTrigger>
-          <CollapsibleContent className="mt-4">
-            <div className="flex flex-col gap-2">
+          <CollapsibleContent className="mt-4 ps-4 overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up ease-in-out">
+            <div className="flex flex-col gap-6">
               {items}
               <DrawerClose asChild>
                 <Link href={href} className="text-sm text-blue-200">
@@ -82,7 +82,7 @@ export function MobileNav({data}: NavProps) {
             <DrawerTitle>Navigation</DrawerTitle>
             <DrawerDescription>Mobile navigation menu</DrawerDescription>
           </div>
-          <div className="flex justify-between mb-8">
+          <div className="flex justify-between mb-12">
             <Link href="/" className="text-muted-foreground font-bold cursor-pointer">
               yorkejohn.dev
             </Link>
@@ -90,7 +90,7 @@ export function MobileNav({data}: NavProps) {
               <XIcon size={24} />
             </DrawerClose>
           </div>
-          <div className="flex flex-col gap-4">{items}</div>
+          <div className="flex flex-col gap-8">{items}</div>
         </DrawerContent>
       </Drawer>
     </div>

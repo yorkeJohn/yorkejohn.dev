@@ -38,7 +38,14 @@ export function HomePage() {
           <Starry />
         </div>
         <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-          <Image width={128} height={128} className="rounded-full" src="/avatar.jpg" alt="John's Avatar" />
+          <Image
+            width={128}
+            height={128}
+            loading="eager"
+            className="rounded-full"
+            src="/avatar.jpg"
+            alt="John's Avatar"
+          />
           <h1 className="font-heading font-bold text-[36pt] sm:text-[48pt]">John Yorke</h1>
           <p className="text-xs sm:text-base">Software & Data Engineer | Halifax, NS, Canada</p>
 
