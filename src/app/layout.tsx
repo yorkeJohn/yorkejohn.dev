@@ -5,18 +5,19 @@ import {cn} from '@/lib/utils'
 
 import './globals.css'
 import './typography.css'
+import {SITE_NAME, SITE_URL} from '@/lib/constants'
 
 export const metadata: Metadata = {
-  metadataBase: 'https://yorkejohn.dev',
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: '%s :: yorkejohn.dev',
-    default: "yorkejohn.dev :: John's Personal Website"
+    template: `%s :: ${SITE_NAME}`,
+    default: `${SITE_NAME} :: John's Personal Website`
   },
   description: 'Portfolio and developer tools website.',
   openGraph: {
     type: 'website',
-    siteName: 'yorkejohn.dev',
-    url: 'https://yorkejohn.dev',
+    siteName: SITE_NAME,
+    url: SITE_URL,
     images: [{url: '/avatar.jpg', alt: 'OG Image'}]
   }
 }
