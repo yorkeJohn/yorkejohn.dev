@@ -6,7 +6,6 @@ import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
 import {Anchor, Footer, Nav, ShieldBadge} from '@/components'
 import About from '@/content/about.mdx'
-import avatar from './avatar.jpg'
 
 const Starry = dynamic(() => import('@/components/starry').then(mod => mod.Starry), {ssr: false})
 
@@ -39,7 +38,7 @@ export function HomePage() {
           <Starry />
         </div>
         <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-          <Image width={128} height={128} className="rounded-full" src={avatar} alt="John's Avatar" />
+          <Image width={128} height={128} className="rounded-full" src="/avatar.jpg" alt="John's Avatar" />
           <h1 className="font-heading font-bold text-[36pt] sm:text-[48pt]">John Yorke</h1>
           <p className="text-xs sm:text-base">Software & Data Engineer | Halifax, NS, Canada</p>
 
