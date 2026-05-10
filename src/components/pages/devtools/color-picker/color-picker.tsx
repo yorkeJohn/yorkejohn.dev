@@ -137,7 +137,7 @@ function GradientBox({value, onChange}: GradientBoxProps) {
     <div
       role="application"
       aria-label="color picker"
-      className="w-full h-40 cursor-crosshair relative mb-2"
+      className="w-full h-40 cursor-crosshair relative mb-2 touch-none select-none"
       style={{background}}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
