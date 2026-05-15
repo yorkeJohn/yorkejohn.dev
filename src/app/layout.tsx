@@ -1,11 +1,13 @@
 import type {Metadata} from 'next'
+import {Footer, Header} from '@/components/layout'
+import {Toaster} from '@/components/ui'
+import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
 import type {LayoutProps} from '@/lib/types'
 import {cn} from '@/lib/utils'
 
 import './globals.css'
 import './typography.css'
-import {SITE_NAME, SITE_URL} from '@/lib/constants'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,7 +29,14 @@ const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts, 'dark')
 export default function RootLayout({children}: LayoutProps) {
   return (
     <html lang="en" className={htmlClasses}>
-      {children}
+      <body className="min-h-screen flex flex-col">
+        <Toaster />
+        <div className="flex-1 px-4 container mx-auto">
+          <Header />
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   )
 }
