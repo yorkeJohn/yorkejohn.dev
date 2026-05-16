@@ -1,40 +1,21 @@
 'use client'
 
-import {ArrowRightIcon} from '@phosphor-icons/react'
+import {ArrowRightIcon, ArrowUpRightIcon} from '@phosphor-icons/react'
+import {formatDistanceToNow} from 'date-fns'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import type React from 'react'
-import {Marquee} from '../marquee'
-import {Badge, Button} from '../ui'
-import taintedMagic from './projects/images/tainted-magic.png'
+import {use} from 'react'
+import {Anchor, Marquee, PageSection} from '@/components'
+import {Badge, Button} from '@/components/ui'
+import {activity} from '@/lib/activity'
+import {ProjectCard} from './projects/project-card'
+import {projects} from './projects/registry'
 
 const Starry = dynamic(() => import('@/components/starry').then(mod => mod.Starry), {ssr: false})
 
-type Stat = {
-  label: React.ReactNode
-  stat: React.ReactNode
-}
-
-const stats: Stat[] = [
-  {label: 'Building things since', stat: '2015'},
-  {label: '3 languages', stat: 'English - Français (French) - 日本語 (Japanese)'},
-  {label: 'Minecraft mod downloads', stat: '2.5M+'},
-  {label: 'Hobbies', stat: 'Gaming - Bodybuilding - Hiking - Food'},
-  {label: 'Listening to', stat: 'Green Day'},
-  {label: 'Unfinished side projects', stat: 'Infinite'}
-]
-
 export function HomePage() {
-  const marqueeItems = stats.map((item, index) => {
-    const {label, stat} = item
-    return (
-      <Badge key={index} variant="outline" className="mx-1 font-mono">
-        {label}:<span className="ms-1 text-lime-300">{stat}</span>
-      </Badge>
-    )
-  })
-
   return (
     <main className="z-0">
       <div className="w-full h-full fixed left-0 top-0 -z-10 bg-[#000a14]">
@@ -58,55 +39,76 @@ export function HomePage() {
           <p>This is my personal corner of the internet where I share my projects and what I'm learning.</p>
         </div>
       </div>
-      <div className="my-8">
-        <div className="font-mono text-lime-600 mb-1">/ STATS</div>
-        <hr className="border-lime-600" />
-        <Marquee items={marqueeItems} className="py-2" />
-      </div>
-      <div className="my-8">
-        <div className="font-mono text-lime-600 mb-1">/ FEATURED PROJECT</div>
-        <hr className="border-lime-600 mb-4" />
 
-        <div className="flex gap-4">
-          <div className="bg-muted-foreground text-black w-fit px-1 pb-1">
-            <div className="font-mono text-center text-[8pt] uppercase">[ taintedmagic.png ]</div>
-            <Image src={taintedMagic} alt="" height={300} className="border" />
-          </div>
-          <div className="flex flex-col justify-between flex-1 group cursor-pointer">
-            <div className="flex items-start gap-2">
-              <div className="font-heading tracking-tight text-4xl font-semibold group-hover:bg-lime-300 group-hover:text-black">
-                Tainted Magic
-              </div>
-              <span className="text-amber-200">(2015)</span>
-            </div>
-            <div>
-              <div className="flex gap-1 mb-2">
-                <Badge variant="outline" className="group-hover:bg-lime-300 group-hover:text-black transition-none">
-                  Personal
-                </Badge>
-                <Badge variant="outline">Java</Badge>
-                <Badge variant="outline">Minecraft Mod</Badge>
-              </div>
-              <div className="text-xl text-muted-foreground mb-4 max-w-[60ch] group-hover:bg-lime-300 group-hover:text-black">
-                Tainted Magic is a Minecraft mod and addon to Thaumcraft 4, with over 1.5 million downloads. The mod
-                adds useful items and gear for both early and endgame Thaumaturges.
-              </div>
-              {/* <Badge asChild variant="ghost">
-                      <Anchor>
-                        GitHub
-                        <ArrowUpRightIcon data-icon="inline-end" />
-                      </Anchor>
-                    </Badge> */}
-              <Button asChild variant="default" className="w-full">
-                <Link href="/projects">
-                  All Projects
-                  <ArrowRightIcon data-icon="inline-end" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageSection label="Stats" className="my-8">
+        <StatsMarquee />
+      </PageSection>
+
+      <PageSection label="Featured Project" className="my-8">
+        <ProjectCard project={projects[9]} className="pt-4">
+          <Button asChild variant="default" className="w-full mt-2">
+            <Link href="/projects">
+              All Projects
+              <ArrowRightIcon data-icon="inline-end" />
+            </Link>
+          </Button>
+        </ProjectCard>
+      </PageSection>
+
+      <PageSection label="Recent Activity" className="my-8">
+        <ActivityFeed />
+      </PageSection>
     </main>
   )
+}
+
+type Stat = {
+  label: React.ReactNode
+  stat: React.ReactNode
+}
+
+const stats: Stat[] = [
+  {label: 'Building things since', stat: '2015'},
+  {label: '3 languages', stat: 'English - Français (French) - 日本語 (Japanese)'},
+  {label: 'Minecraft mod downloads', stat: '2.5M+'},
+  {label: 'Hobbies', stat: 'Gaming - Bodybuilding - Hiking - Food'},
+  {label: 'Listening to', stat: 'Green Day'},
+  {label: 'Unfinished side projects', stat: 'Infinite'}
+]
+
+function StatsMarquee() {
+  const items = stats.map((item, index) => {
+    const {label, stat} = item
+    return (
+      <Badge key={index} variant="outline" className="mx-1 font-mono">
+        {label}:<span className="ms-1 text-lime-300">{stat}</span>
+      </Badge>
+    )
+  })
+  return <Marquee items={items} className="pt-2" />
+}
+
+function ActivityFeed() {
+  const items = use(activity).map((item, index) => {
+    const {repo, branch, compareUrl, pushedAt} = item
+
+    return (
+      <Anchor href={compareUrl} key={index} className="group hover:bg-lime-300 flex gap-2 py-2 cursor-pointer">
+        <div className="w-40">
+          <Badge className="uppercase font-mono text-lime-300 group-hover:text-black transition-none" variant="outline">
+            {formatDistanceToNow(pushedAt, {addSuffix: true})}
+          </Badge>
+        </div>
+        <div className="group-hover:text-black">
+          Pushed to
+          <span className="text-amber-200 font-mono group-hover:text-inherit">&nbsp;{repo}&nbsp;</span>
+          on branch
+          <span className="text-amber-200 font-mono group-hover:text-inherit">&nbsp;{branch}</span>
+          <ArrowUpRightIcon className="inline" />
+        </div>
+      </Anchor>
+    )
+  })
+
+  return <div className="flex flex-col">{items}</div>
 }

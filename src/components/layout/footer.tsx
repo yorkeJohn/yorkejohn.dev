@@ -1,7 +1,9 @@
 export function Footer() {
   return (
-    <footer className="p-4 text-sm font-mono text-muted-foreground text-center z-0">
-      &copy; John Yorke / yorkejohn.dev / {process.env.VERSION}
+    <footer className="px-4 z-0 container mx-auto mt-20">
+      <div className="py-4 border-t border-lime-600 text-sm font-mono text-muted-foreground text-center">
+        &copy; John Yorke / yorkejohn.dev / {process.env.VERSION}
+      </div>
     </footer>
   )
 }
