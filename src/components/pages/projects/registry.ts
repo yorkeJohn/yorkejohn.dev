@@ -16,7 +16,8 @@ type ProjectLink = {
   url: string
 }
 
-export type ProjectType = 'Professional' | 'Contributor' | 'Personal' | 'Freelance' | 'Volunteer' | 'Academic'
+export const projectTypes = ['Professional', 'Contributor', 'Personal', 'Freelance', 'Volunteer', 'Academic'] as const
+export type ProjectType = (typeof projectTypes)[number]
 
 export type Project = {
   title: string
