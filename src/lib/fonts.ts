@@ -1,10 +1,19 @@
-import {Noto_Sans, Playfair_Display} from 'next/font/google'
+import {Noto_Sans, Source_Sans_3, Ubuntu_Mono} from 'next/font/google'
 
-const playfairDisplay = Playfair_Display({
+const heading = Source_Sans_3({
   subsets: ['latin'],
   variable: '--font-heading'
 })
 
-const notoSans = Noto_Sans({subsets: ['latin'], variable: '--font-sans'})
+const sans = Noto_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans'
+})
 
-export const fonts = [playfairDisplay.variable, notoSans.variable] as const
+const mono = Ubuntu_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: '400'
+})
+
+export const fonts = [heading.variable, sans.variable, mono.variable] as const

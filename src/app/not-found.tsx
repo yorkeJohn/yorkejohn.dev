@@ -1,20 +1,22 @@
+import {ArrowUpLeftIcon} from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
-import {Alert, AlertDescription, AlertTitle, Button} from '@/components/ui'
+import {PageSection} from '@/components'
 
 export default function NotFound() {
   return (
-    <body>
-      <main className="p-8 max-w-xl mx-auto">
-        <Alert variant="destructive" className="mb-4">
-          <AlertTitle>404: Not Found</AlertTitle>
-          <AlertDescription>
-            The page you are looking for does not exist. Please verify the URL and try again.
-          </AlertDescription>
-        </Alert>
-        <Button asChild variant="outline">
-          <Link href="/">Back to safety</Link>
-        </Button>
-      </main>
-    </body>
+    <main>
+      <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground my-8 md:my-12 lg:my-20">
+        404: Page Not Found
+      </div>
+      <PageSection label="Error">
+        <div className="py-4 text-xl text-amber-200">
+          The page that you have requested does not exist. Please verify the URL and try again.
+        </div>
+        <Link href="/" className="hover:bg-lime-300 hover:text-black">
+          <ArrowUpLeftIcon className="inline" />
+          Back to safety
+        </Link>
+      </PageSection>
+    </main>
   )
 }

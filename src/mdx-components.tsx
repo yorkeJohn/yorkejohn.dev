@@ -1,9 +1,6 @@
 import type {MDXComponents} from 'mdx/types'
-import {ShieldBadge} from './components'
 
-const components = {
-  ShieldBadge
-} satisfies MDXComponents
+const components = {} satisfies MDXComponents
 
 export function useMDXComponents(): MDXComponents {
   return components

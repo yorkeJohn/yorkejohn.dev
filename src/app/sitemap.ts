@@ -1,5 +1,4 @@
 import type {MetadataRoute} from 'next'
-import {devtools} from '@/components/pages'
 import {SITE_URL} from '@/lib/constants'
 
 export const dynamic = 'force-static'
@@ -9,9 +8,9 @@ const toSitemapEntry = (path: string): MetadataRoute.Sitemap[number] => ({
   lastModified: new Date()
 })
 
-const staticPaths = ['/', '/projects', '/devtools'] as const
+const staticPaths = ['/', '/projects'] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = [...staticPaths, ...devtools.map(dt => `/devtools/${dt.slug}`)]
+  const paths = [...staticPaths]
   return paths.map(toSitemapEntry)
 }

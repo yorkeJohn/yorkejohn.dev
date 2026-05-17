@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: ['remark-gfm'],
+    remarkPlugins: ['remark-gfm', 'remark-frontmatter', ['remark-mdx-frontmatter', {name: 'metadata'}]],
     rehypePlugins: [['rehype-pretty-code', {theme: 'gruvbox-dark-hard'}]]
   }
 })
