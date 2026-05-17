@@ -1,17 +1,14 @@
 'use client'
 
-import {CheckSquareIcon, FolderIcon, FolderOpenIcon, SquareIcon} from '@phosphor-icons/react'
-import {PageSection} from '@/components'
-import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '@/components/ui'
-import {type FilterOption, type FilterPrimitive, useFilters} from '@/hooks/use-filters'
-import {cn} from '@/lib/utils'
+import {FilterGroup, PageSection} from '@/components'
+import {useFilteredData} from '@/hooks'
 import {ProjectCard} from './project-card'
 import {projects} from './registry'
 
 export function ProjectsPage() {
-  const {filtered, options, filters, toggle} = useFilters({
+  const {filtered, options, selected, toggle} = useFilteredData({
     data: projects,
-    fields: {
+    selectors: {
       type: p => p.type,
       startYear: p => p.startYear
     }
@@ -30,21 +27,21 @@ export function ProjectsPage() {
         <span className="text-amber-200 text-2xl">({filtered.length})</span>
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex gap-4">
         <PageSection label="Filters" className="w-50 sticky top-13 self-start flex flex-col">
           <div className="flex flex-col gap-2 pt-2">
             <FilterGroup
               label="Project Type"
               field="type"
-              value={filters.type}
-              options={options.type}
+              value={selected.type}
+              data={options.type}
               onChange={toggle}
             />
             <FilterGroup
               label="Start Year"
               field="startYear"
-              value={filters.startYear}
-              options={options.startYear}
+              value={selected.startYear}
+              data={options.startYear}
               onChange={toggle}
             />
           </div>
@@ -60,47 +57,5 @@ export function ProjectsPage() {
         </PageSection>
       </div>
     </main>
-  )
-}
-
-type FilterGroupProps = {
-  label: string
-  field: string
-  value: Set<FilterPrimitive>
-  options: FilterOption[]
-  onChange: (field: string, value: FilterPrimitive) => void
-}
-
-function FilterGroup({label, field, value, options, onChange}: FilterGroupProps) {
-  const filterButtons = options.map(({value: item, count}, index) => {
-    const active = value.has(item)
-    return (
-      <button
-        type="button"
-        key={index}
-        className="text-sm text-muted-foreground hover:text-primary-foreground flex gap-1 items-center"
-        onClick={() => onChange(field, item)}
-      >
-        {active ? <CheckSquareIcon /> : <SquareIcon />}
-        <span className={cn(active && 'bg-lime-300 text-black hover:text-black')}>
-          {item} ({count})
-        </span>
-      </button>
-    )
-  })
-
-  return (
-    <Collapsible defaultOpen>
-      <CollapsibleTrigger asChild>
-        <button type="button" className="mb-2 text-amber-200 group">
-          <FolderIcon className="inline me-1 group-data-[state=open]:hidden" />
-          <FolderOpenIcon className="inline me-1 group-data-[state=closed]:hidden" />
-          {label}
-        </button>
-      </CollapsibleTrigger>
-      <CollapsibleContent>
-        <div className="flex flex-col gap-1 items-start ps-2 border-l border-dashed">{filterButtons}</div>
-      </CollapsibleContent>
-    </Collapsible>
   )
 }
