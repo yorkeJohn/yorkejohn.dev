@@ -6,6 +6,7 @@ import {useEffect, useState} from 'react'
 import {Badge} from '@/components/ui'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
 import {Nav} from './nav'
+import {MuteToggle} from './sounds'
 
 export function Header() {
   return (
@@ -19,6 +20,7 @@ export function Header() {
           </Badge>
           <LocalTime />
           <LocalWeather />
+          <MuteToggle />
         </div>
       </div>
     </div>

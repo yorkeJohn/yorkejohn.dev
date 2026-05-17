@@ -1,6 +1,7 @@
 'use client'
 
 import {CheckSquareIcon, FolderIcon, FolderOpenIcon, SquareIcon} from '@phosphor-icons/react'
+import {useState} from 'react'
 import type {FilterOption, FilterPrimitive} from '@/hooks'
 import {cn} from '@/lib/utils'
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from './ui'
@@ -22,6 +23,7 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
         key={index}
         className="text-sm text-muted-foreground hover:text-primary-foreground flex gap-1 items-center"
         onClick={() => onChange(field, item)}
+        data-snd={active ? 'toggle_on' : 'toggle_off'}
       >
         {active ? <CheckSquareIcon /> : <SquareIcon />}
         <span className={cn(active && 'bg-lime-300 text-black hover:text-black')}>
@@ -31,10 +33,16 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
     )
   })
 
+  const [open, setOpen] = useState(true)
+
   return (
-    <Collapsible defaultOpen>
+    <Collapsible open={open} onOpenChange={setOpen}>
       <CollapsibleTrigger asChild>
-        <button type="button" className="mb-2 text-amber-200 group">
+        <button
+          type="button"
+          className="mb-2 text-amber-200 group"
+          data-snd={open ? 'transition_down' : 'transition_up'}
+        >
           <FolderIcon className="inline me-1 group-data-[state=open]:hidden" />
           <FolderOpenIcon className="inline me-1 group-data-[state=closed]:hidden" />
           {label}
