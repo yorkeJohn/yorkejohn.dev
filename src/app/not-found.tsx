@@ -5,7 +5,7 @@ import {PageSection} from '@/components'
 export default function NotFound() {
   return (
     <main>
-      <div className="text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground my-20">
+      <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground my-8 md:my-12 lg:my-20">
         404: Page Not Found
       </div>
       <PageSection label="Error">

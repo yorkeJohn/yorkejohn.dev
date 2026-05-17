@@ -34,7 +34,10 @@ export function MuteToggle() {
     defaultValue: false
   })
 
-  const toggle = () => setMuted(prev => !prev)
+  const toggle = () => {
+    setMuted(prev => !prev)
+    playSound('celebration')
+  }
 
   return (
     <Badge className="text-amber-200 font-mono cursor-pointer hover:text-lime-300" variant="outline" onClick={toggle}>
