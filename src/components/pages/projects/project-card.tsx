@@ -17,7 +17,7 @@ export function ProjectCard({project, children, className, ...rest}: ProjectCard
   const imageFile = title.toLowerCase().replace(/[^a-z0-9]+/g, '')
 
   const linkElements = links.map(link => (
-    <Anchor key={link.url} href={link.url} className=" hover:bg-lime-300 hover:text-black">
+    <Anchor key={link.url} href={link.url} className="hover:bg-lime-300 hover:text-black">
       {link.label}
       <ArrowUpRightIcon className="inline" />
     </Anchor>

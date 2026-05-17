@@ -1,6 +1,5 @@
 export * from './anchor'
 export * from './code-block'
-export * from './copy-field'
 export * from './filter-group'
 export * from './highlight'
 export * from './marquee'

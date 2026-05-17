@@ -44,5 +44,12 @@ export function TopArtists() {
     )
   })
 
-  return <div className="grid grid-cols-2 pt-2">{items}</div>
+  return (
+    <div className="pt-2">
+      <div className="text-muted-foreground text-sm font-mono">
+        Via Spotify &bull; Six-month trend &bull; Updated weekly
+      </div>
+      <div className="grid grid-cols-2 ">{items}</div>
+    </div>
+  )
 }
