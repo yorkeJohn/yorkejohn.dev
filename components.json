@@ -20,8 +20,5 @@
     "hooks": "@/hooks"
   },
   "menuColor": "default-translucent",
-  "menuAccent": "subtle",
-  "registries": {
-    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json"
-  }
+  "menuAccent": "subtle"
 }

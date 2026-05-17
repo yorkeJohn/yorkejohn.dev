@@ -1,3 +1,6 @@
 declare module '*.mdx' {
-  export default function MDX(): React.ReactNode
+  import type {MDXProps} from 'mdx/types'
+  const MDXComponent: React.ComponentType<MDXProps>
+  export default MDXComponent
+  export const metadata: Record<string, unknown>
 }
