@@ -21,17 +21,24 @@ export function HomePage() {
         <Starry />
       </div>
 
-      <div className="text-[96pt] font-semibold leading-[0.8] my-20 tracking-tight font-heading">
-        <span className="text-muted-foreground">Welcome to</span>
-        <br />
-        <span className="text-lime-300">yorkejohn.dev</span>
+      <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
+        <div className="text-muted-foreground">
+          Welcome&nbsp;
+          <br className="sm:hidden" />
+          to&nbsp;
+        </div>
+        <div className="text-lime-300 text-right">
+          yorke
+          <br className="sm:hidden" />
+          john.dev
+        </div>
       </div>
 
-      <div className="flex gap-12 items-start">
+      <div className="flex sm:flex-row flex-col gap-12 items-start">
         <div className="border border-lime-600 p-1">
           <Image width={200} height={200} loading="eager" src="/avatar.jpg" alt="John's Avatar" />
         </div>
-        <div className="text-muted-foreground text-2xl tracking-tighter max-w-[45ch] -mt-1">
+        <div className="text-muted-foreground text-lg md:text-xl lg:text-2xl tracking-tighter max-w-[45ch] -mt-1">
           <p className="mb-4">
             Hey there! My name is John. I'm a software & data engineer based in Halifax, Nova Scotia, Canada.
           </p>

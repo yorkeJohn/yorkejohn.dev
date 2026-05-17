@@ -30,25 +30,25 @@ export function ProjectCard({project, children, className, ...rest}: ProjectCard
   ))
 
   return (
-    <div className={cn('flex gap-4', className)} {...rest}>
-      <div className="bg-muted-foreground text-black w-fit px-1 pb-1">
+    <div className={cn('flex gap-4 flex-col md:flex-row', className)} {...rest}>
+      <div className="bg-muted-foreground text-black w-fit px-1 pb-1 h-fit">
         <div className="font-mono text-center text-[8pt] uppercase">[ {imageFile}.png ]</div>
         <Image src={image} alt={title} width={400} className="border" />
       </div>
       <div className="flex flex-col justify-between flex-1">
-        <div>
-          <div className="flex items-start gap-2 mb-2">
-            <div className="font-heading tracking-tight text-4xl font-semibold">{title}</div>
+        <div className="mb-8">
+          <div className="flex flex-col mb-2">
             <span className="text-amber-200">({startYear})</span>
+            <div className="font-heading tracking-tight text-3xl lg:text-4xl font-semibold">{title}</div>
           </div>
           <div className="flex gap-2">{linkElements}</div>
         </div>
         <div>
-          <div className="flex gap-1 mb-2">
+          <div className="flex gap-1 mb-2 flex-wrap">
             <Badge className="text-amber-100">{type}</Badge>
             {badgeElements}
           </div>
-          <div className="text-xl text-muted-foreground max-w-[60ch]">{description}</div>
+          <div className="text-lg lg:text-xl text-muted-foreground max-w-[60ch]">{description}</div>
           {children}
         </div>
       </div>

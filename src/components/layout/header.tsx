@@ -11,7 +11,7 @@ import {MuteToggle} from './sounds'
 export function Header() {
   return (
     <div className="my-4 sticky top-4 z-10">
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row justify-between gap-4">
         <Nav />
         <div className="flex gap-1">
           <Badge variant="outline" className="font-mono text-amber-200">

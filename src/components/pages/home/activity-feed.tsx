@@ -12,15 +12,20 @@ export function ActivityFeed() {
     const {repo, branch, compareUrl, pushedAt} = item
 
     return (
-      <Anchor href={compareUrl} key={index} className="group hover:bg-lime-300 flex gap-2 py-2 cursor-pointer">
+      <Anchor
+        href={compareUrl}
+        key={index}
+        className="group hover:bg-lime-300 flex flex-col md:flex-row gap-2 py-2 cursor-pointer"
+      >
         <div className="w-40">
           <Badge className="text-lime-300 group-hover:text-black transition-none" variant="outline">
             {formatDistanceToNow(pushedAt, {addSuffix: true})}
           </Badge>
         </div>
-        <div className="group-hover:text-black">
+        <div className="group-hover:text-black text-nowrap">
           Pushed to
           <span className="text-amber-200 font-mono group-hover:text-inherit">&nbsp;{repo}&nbsp;</span>
+          <br className="sm:hidden" />
           on branch
           <span className="text-amber-200 font-mono group-hover:text-inherit">&nbsp;{branch}</span>
           <ArrowUpRightIcon className="inline" />

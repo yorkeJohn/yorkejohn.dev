@@ -20,16 +20,16 @@ export function ProjectsPage() {
 
   return (
     <main>
-      <div className="flex items-start gap-2 my-20">
-        <div className="text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground">
+      <div className="flex items-start gap-2 my-8 md:my-12 lg:my-20">
+        <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground">
           Projects
         </div>
-        <span className="text-amber-200 text-2xl">({filtered.length})</span>
+        <span className="text-amber-200 text-lg md:text-xl lg:text-2xl">({filtered.length})</span>
       </div>
 
-      <div className="flex gap-4">
-        <PageSection label="Filters" className="w-50 sticky top-13 self-start flex flex-col">
-          <div className="flex flex-col gap-2 pt-2">
+      <div className="flex flex-col lg:flex-row gap-4">
+        <PageSection label="Filters" className="lg:w-50 lg:sticky lg:top-13 lg:self-start flex flex-col">
+          <div className="flex flex-col lg:gap-2 pt-2">
             <FilterGroup
               label="Project Type"
               field="type"

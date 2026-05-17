@@ -49,7 +49,7 @@ export function TopArtists() {
       <div className="text-muted-foreground text-sm font-mono">
         Via Spotify &bull; Six-month trend &bull; Updated weekly
       </div>
-      <div className="grid grid-cols-2 ">{items}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2">{items}</div>
     </div>
   )
 }
