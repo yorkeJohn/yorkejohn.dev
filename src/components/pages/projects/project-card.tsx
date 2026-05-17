@@ -5,7 +5,7 @@ import Image from 'next/image'
 import type React from 'react'
 import {Anchor} from '@/components'
 import {Badge} from '@/components/ui'
-import {cn} from '@/lib/utils'
+import {cn} from '@/lib/cn'
 import type {Project} from './registry'
 
 type ProjectCardProps = {

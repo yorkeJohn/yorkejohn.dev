@@ -3,7 +3,7 @@
 import {CheckSquareIcon, FolderIcon, FolderOpenIcon, SquareIcon} from '@phosphor-icons/react'
 import {useState} from 'react'
 import type {FilterOption, FilterPrimitive} from '@/hooks'
-import {cn} from '@/lib/utils'
+import {cn} from '@/lib/cn'
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from './ui'
 
 type FilterGroupProps = {

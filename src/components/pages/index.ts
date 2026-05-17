@@ -1,3 +1,2 @@
-export * from './devtools'
-export * from './home'
+export * from './home/home'
 export * from './projects/projects'

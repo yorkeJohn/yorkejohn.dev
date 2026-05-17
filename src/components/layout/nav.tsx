@@ -6,13 +6,12 @@ import Link from 'next/link'
 import {usePathname, useRouter} from 'next/navigation'
 import {Anchor} from '@/components'
 import {Badge} from '@/components/ui'
-import {cn} from '@/lib/utils'
+import {cn} from '@/lib/cn'
 
 type NavItem = {label: string; href: string; keybind: string}
 
 const data: NavItem[] = [
   {label: 'Projects', href: '/projects', keybind: 'P'},
-  {label: 'Devtools', href: '/devtools', keybind: 'T'},
   {label: 'GitHub', href: 'https://github.com/yorkeJohn', keybind: 'G'},
   {label: 'LinkedIn', href: 'https://linkedin.com/in/yorkejohn/', keybind: 'L'},
   {label: 'Discord', href: 'https://discord.com/users/128378400803913728', keybind: 'D'}
