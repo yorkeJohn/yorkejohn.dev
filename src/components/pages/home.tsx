@@ -1,5 +1,6 @@
 'use client'
 
+import {useFetch} from '@mantine/hooks'
 import {ArrowRightIcon, ArrowUpRightIcon} from '@phosphor-icons/react'
 import {formatDistanceToNow} from 'date-fns'
 import dynamic from 'next/dynamic'
@@ -58,6 +59,10 @@ export function HomePage() {
       <PageSection label="Recent Activity" className="my-8">
         <ActivityFeed />
       </PageSection>
+
+      <PageSection label="Listening To" className="my-8">
+        <SpotifyFeed />
+      </PageSection>
     </main>
   )
 }
@@ -95,7 +100,7 @@ function ActivityFeed() {
     return (
       <Anchor href={compareUrl} key={index} className="group hover:bg-lime-300 flex gap-2 py-2 cursor-pointer">
         <div className="w-40">
-          <Badge className="uppercase font-mono text-lime-300 group-hover:text-black transition-none" variant="outline">
+          <Badge className="text-lime-300 group-hover:text-black transition-none" variant="outline">
             {formatDistanceToNow(pushedAt, {addSuffix: true})}
           </Badge>
         </div>
@@ -110,5 +115,45 @@ function ActivityFeed() {
     )
   })
 
-  return <div className="flex flex-col">{items}</div>
+  return <div className="flex flex-col pt-2">{items}</div>
+}
+
+type SpotifyData = {
+  items: Array<{
+    name: string
+    external_urls: {spotify: string}
+    images: Array<{url: string}>
+  }>
+}
+
+function SpotifyFeed() {
+  const {data, loading} = useFetch<SpotifyData>(
+    'https://raw.githubusercontent.com/yorkeJohn/yorkejohn.dev/refs/heads/spotify-data/data/top-artists.json'
+  )
+
+  if (loading || !data) return null
+
+  const items = data.items.map((item, index) => {
+    const name = item.name
+    const artistUrl = item.external_urls.spotify
+    const image = item.images[0].url
+    return (
+      <Anchor href={artistUrl} key={index} className="group hover:bg-lime-300 flex gap-2 py-2 cursor-pointer">
+        <div className="border border-lime-600 p-1 group-hover:border-transparent">
+          <Image src={image} width={50} height={50} alt={name} className="" />
+        </div>
+        <div>
+          <Badge variant="outline" className="text-lime-300 group-hover:text-black transition-none">
+            n&deg;{index + 1}
+          </Badge>
+          <div className="text-2xl tracking-tight group-hover:text-black">
+            {name}
+            <ArrowUpRightIcon className="inline" />
+          </div>
+        </div>
+      </Anchor>
+    )
+  })
+
+  return <div className="grid grid-cols-2 pt-2">{items}</div>
 }
