@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: SITE_NAME,
     url: SITE_URL,
-    images: [{url: '/og_image.jpg', alt: 'OG Image'}]
+    images: [{url: '/og-image.jpg', alt: 'OG Image'}]
   }
 }
 

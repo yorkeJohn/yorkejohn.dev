@@ -1,7 +1,7 @@
 /* Image imports */
 import type {StaticImageData} from 'next/image'
 import bonsaiParlour from './images/bonsai-parlour.png'
-import espressoChat from './images/espresso-chat.png'
+import espressoChat from './images/espresso-chat.jpg'
 import frenchVillage from './images/french-village.png'
 import mantine from './images/mantine.png'
 import metroThrift from './images/metro-thrift.png'
@@ -31,11 +31,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Personal Website',
-    description: 'This website - yorkejohn.dev! Includes a portfolio and useful developer tools.',
+    title: 'yorkejohn.dev',
+    description:
+      'A design-forward personal website that showcases both technical craft and individual perspective. The goal: to create a space that feels expressive and human.',
     image: website,
     links: [{label: 'GitHub', url: 'https://github.com/yorkeJohn/yorkejohn.dev'}],
-    badges: ['Personal Website', 'Next.js', 'Three.js'],
+    badges: ['Design', 'Next.js', 'Three.js'],
     startYear: 2026,
     type: 'Personal'
   },
