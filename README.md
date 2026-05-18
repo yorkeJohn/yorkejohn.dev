@@ -1,6 +1,6 @@
 # yorkejohn.dev
 
-A modern personal portfolio and developer tools website.
+A design-forward personal website that showcases both technical craft and individual perspective. The goal: to create a space that feels expressive and human.
 
 https://yorkejohn.dev
 
