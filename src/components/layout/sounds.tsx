@@ -35,8 +35,9 @@ export function MuteToggle() {
   })
 
   const toggle = () => {
-    setMuted(prev => !prev)
-    playSound('celebration')
+    const next = !muted
+    setMuted(next)
+    if (!next) playSound('celebration')
   }
 
   return (
