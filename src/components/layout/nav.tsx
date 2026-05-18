@@ -31,8 +31,8 @@ export function Nav() {
     const {href, label, keybind} = item
     const text = (
       <span>
-        <span className="hidden sm:inline">[{keybind}]</span>
-        &nbsp;{label}
+        <span className="hidden sm:inline">[{keybind}]&nbsp;</span>
+        {label}
       </span>
     )
 
