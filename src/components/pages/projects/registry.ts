@@ -1,15 +1,15 @@
 /* Image imports */
 import type {StaticImageData} from 'next/image'
-import bonsaiParlour from './images/bonsai-parlour.png'
+import website from '@/../public/og-image.jpg' // use OG Image
+import bonsaiParlour from './images/bonsai-parlour.jpg'
 import espressoChat from './images/espresso-chat.jpg'
-import frenchVillage from './images/french-village.png'
+import frenchVillage from './images/french-village.jpg'
 import mantine from './images/mantine.png'
-import metroThrift from './images/metro-thrift.png'
+import metroThrift from './images/metro-thrift.jpg'
 import navigator from './images/navigator.jpg'
-import pixelSkyQuest from './images/pixel-skyquest.png'
+import pixelSkyQuest from './images/pixel-skyquest.jpg'
 import taintedMagic from './images/tainted-magic.png'
 import tfcBetterBlastFurnace from './images/tfc-better-blast-furnace.png'
-import website from './images/website.png'
 
 type ProjectLink = {
   label: string
