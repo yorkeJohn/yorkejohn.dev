@@ -1,9 +1,8 @@
 'use client'
 
 import {ArrowUpRightIcon} from '@phosphor-icons/react'
-import Image from 'next/image'
 import type React from 'react'
-import {Anchor} from '@/components'
+import {Anchor, InteractiveImage} from '@/components'
 import {Badge} from '@/components/ui'
 import {cn} from '@/lib/cn'
 import type {Project} from './registry'
@@ -14,7 +13,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({project, children, className, ...rest}: ProjectCardProps) {
   const {title, description, image, links = [], badges = [], startYear, type} = project
-  const imageFile = title.toLowerCase().replace(/[^a-z0-9]+/g, '')
+  const imageTitle = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '')}.png`
 
   const linkElements = links.map(link => (
     <Anchor key={link.url} href={link.url} className="hover:bg-lime-300 hover:text-black">
@@ -31,10 +30,8 @@ export function ProjectCard({project, children, className, ...rest}: ProjectCard
 
   return (
     <div className={cn('flex gap-4 flex-col md:flex-row', className)} {...rest}>
-      <div className="bg-muted-foreground text-black w-fit px-1 pb-1 h-fit">
-        <div className="font-mono text-center text-[8pt] uppercase">[ {imageFile}.png ]</div>
-        <Image src={image} alt={title} width={400} className="border" />
-      </div>
+      <InteractiveImage imageProps={{src: image, alt: title, width: 400}} title={imageTitle} />
+
       <div className="flex flex-col justify-between flex-1">
         <div className="mb-8">
           <div className="flex flex-col mb-2">

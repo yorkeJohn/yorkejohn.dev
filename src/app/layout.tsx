@@ -1,5 +1,5 @@
 import type {Metadata} from 'next'
-import {Footer, Header, Sounds} from '@/components/layout'
+import {Cursor, Footer, Header, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
@@ -31,6 +31,7 @@ export default function RootLayout({children}: LayoutProps) {
     <html lang="en" className={htmlClasses}>
       <Sounds />
       <body className="min-h-screen flex flex-col">
+        <Cursor />
         <div className="flex-1 px-4 container mx-auto">
           <Header />
           {children}
