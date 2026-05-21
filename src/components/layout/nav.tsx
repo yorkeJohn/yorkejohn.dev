@@ -4,6 +4,7 @@ import {useHotkeys} from '@mantine/hooks'
 import Image from 'next/image'
 import Link from 'next/link'
 import {usePathname, useRouter} from 'next/navigation'
+import icon from '@/app/icon.svg'
 import {Anchor} from '@/components'
 import {Badge} from '@/components/ui'
 import {cn} from '@/lib/cn'
@@ -54,7 +55,7 @@ export function Nav() {
     <nav className="flex gap-1">
       <Badge asChild className="[a]:hover:bg-lime-300 cursor-pointer">
         <Link href="/">
-          <Image width={12} height={12} src="/favicon.ico" alt="Home" />
+          <Image width={12} height={12} loading="eager" src={icon} alt="Home" />
         </Link>
       </Badge>
       {navLinks}
