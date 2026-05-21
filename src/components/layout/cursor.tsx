@@ -2,8 +2,15 @@
 
 import {motion, useMotionValue, useSpring} from 'framer-motion'
 import {useEffect} from 'react'
+import {useIsPointerDevice} from '@/hooks'
 
 export function Cursor() {
+  const pd = useIsPointerDevice()
+  if (!pd) return null
+  return <CustomCursor />
+}
+
+function CustomCursor() {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const ringX = useSpring(x, {stiffness: 120, damping: 18, mass: 0.6})

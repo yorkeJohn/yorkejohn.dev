@@ -3,6 +3,7 @@
 import {DotsSixIcon, ImageIcon} from '@phosphor-icons/react'
 import {motion} from 'motion/react'
 import Image, {type ImageProps} from 'next/image'
+import {useIsPointerDevice} from '@/hooks'
 import {playSound} from '@/lib/play-sound'
 
 type InteractiveImageProps = {
@@ -11,9 +12,11 @@ type InteractiveImageProps = {
 }
 
 export function InteractiveImage({imageProps, title}: InteractiveImageProps) {
+  const pd = useIsPointerDevice()
   return (
     <motion.div
       drag
+      dragListener={pd}
       dragSnapToOrigin
       dragTransition={{bounceStiffness: 1000}}
       onDragStart={() => playSound('transition_up')}
