@@ -1,3 +1,4 @@
+export * from './bgm'
 export * from './cursor'
 export * from './footer'
 export * from './header'

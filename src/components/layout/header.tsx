@@ -5,6 +5,7 @@ import {ClockIcon, CloudIcon, MapPinIcon} from '@phosphor-icons/react'
 import {useEffect, useState} from 'react'
 import {Badge} from '@/components/ui'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
+import {Bgm} from './bgm'
 import {Nav} from './nav'
 import {MuteToggle} from './sounds'
 
@@ -21,6 +22,7 @@ export function Header() {
           <LocalTime />
           <LocalWeather />
           <MuteToggle />
+          <Bgm />
         </div>
       </div>
     </div>
