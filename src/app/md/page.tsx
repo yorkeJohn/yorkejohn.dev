@@ -1,4 +1,4 @@
-import Master, {metadata} from '@/content/master.mdx'
+import Master, {metadata} from './master.mdx'
 
 export default function Page() {
   return (

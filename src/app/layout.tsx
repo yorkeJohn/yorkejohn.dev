@@ -3,7 +3,6 @@ import {Cursor, Footer, Header, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
-import type {LayoutProps} from '@/lib/types'
 
 import './globals.css'
 import './typography.css'
@@ -25,6 +24,10 @@ export const metadata: Metadata = {
 }
 
 const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts, 'dark')
+
+type LayoutProps = Readonly<{
+  children: React.ReactNode
+}>
 
 export default function RootLayout({children}: LayoutProps) {
   return (
