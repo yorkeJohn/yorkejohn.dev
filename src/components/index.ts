@@ -1,4 +1,6 @@
 export * from './anchor'
+export * from './badge'
+export * from './button'
 export * from './filter-group'
 export * from './interactive-image'
 export * from './marquee'

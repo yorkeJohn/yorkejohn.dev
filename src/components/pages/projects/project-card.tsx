@@ -2,8 +2,7 @@
 
 import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import type React from 'react'
-import {Anchor, InteractiveImage} from '@/components'
-import {Badge} from '@/components/ui'
+import {Anchor, Badge, InteractiveImage} from '@/components'
 import {cn} from '@/lib/cn'
 import type {Project} from './registry'
 

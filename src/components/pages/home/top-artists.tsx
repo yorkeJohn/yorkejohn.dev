@@ -3,8 +3,7 @@
 import {useFetch} from '@mantine/hooks'
 import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import Image from 'next/image'
-import {Anchor} from '@/components/anchor'
-import {Badge} from '@/components/ui'
+import {Anchor, Badge} from '@/components'
 
 type SpotifyData = {
   items: Array<{

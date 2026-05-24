@@ -3,7 +3,7 @@
 import {useFetch, useInterval} from '@mantine/hooks'
 import {ClockIcon, CloudIcon, MapPinIcon} from '@phosphor-icons/react'
 import {useEffect, useState} from 'react'
-import {Badge} from '@/components/ui'
+import {Badge} from '@/components'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
 import {Bgm} from './bgm'
 import {Nav} from './nav'

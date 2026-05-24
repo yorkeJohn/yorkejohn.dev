@@ -3,8 +3,8 @@
 import {useLocalStorage} from '@mantine/hooks'
 import {SpeakerHighIcon, SpeakerSlashIcon} from '@phosphor-icons/react'
 import {useEffect} from 'react'
+import {Badge} from '@/components'
 import {playSound, type SoundKey} from '@/lib/play-sound'
-import {Badge} from '../ui'
 
 export function Sounds() {
   useEffect(() => {
@@ -12,10 +12,10 @@ export function Sounds() {
       const target = e.target as HTMLElement | null
       if (!target) return
 
-      const el = target.closest('[data-snd]') as HTMLElement | null
+      const el = target.closest('[data-sfx]') as HTMLElement | null
       if (!el) return
 
-      const sound = el.dataset.snd as SoundKey | undefined
+      const sound = el.dataset.sfx as SoundKey | undefined
       if (!sound) return
 
       playSound(sound)

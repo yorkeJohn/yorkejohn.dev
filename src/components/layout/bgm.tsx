@@ -3,8 +3,8 @@
 import {useDocumentVisibility} from '@mantine/hooks'
 import {VinylRecordIcon} from '@phosphor-icons/react'
 import {useEffect, useRef, useState} from 'react'
+import {Badge} from '@/components'
 import {cn} from '@/lib/cn'
-import {Badge} from '../ui'
 
 export function Bgm() {
   const ref = useRef<HTMLAudioElement | null>(null)

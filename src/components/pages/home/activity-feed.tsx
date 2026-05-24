@@ -3,8 +3,7 @@
 import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import {formatDistanceToNow} from 'date-fns'
 import {use} from 'react'
-import {Anchor} from '@/components/anchor'
-import {Badge} from '@/components/ui'
+import {Anchor, Badge} from '@/components'
 import {activity} from '@/lib/activity'
 
 export function ActivityFeed() {

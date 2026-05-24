@@ -5,8 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {usePathname, useRouter} from 'next/navigation'
 import icon from '@/app/icon.svg'
-import {Anchor} from '@/components'
-import {Badge} from '@/components/ui'
+import {Anchor, Badge} from '@/components'
 import {cn} from '@/lib/cn'
 
 type NavItem = {label: string; href: string; keybind: string}

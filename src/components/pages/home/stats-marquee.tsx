@@ -1,7 +1,6 @@
 'use client'
 
-import {Marquee} from '@/components'
-import {Badge} from '@/components/ui'
+import {Badge, Marquee} from '@/components'
 
 type Stat = {
   label: React.ReactNode
