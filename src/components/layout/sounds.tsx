@@ -41,7 +41,11 @@ export function MuteToggle() {
   }
 
   return (
-    <Badge className="text-amber-200 font-mono cursor-pointer hover:text-lime-300" variant="outline" onClick={toggle}>
+    <Badge
+      className="text-primary-foreground font-mono cursor-pointer hover:text-accent-foreground"
+      variant="outline"
+      onClick={toggle}
+    >
       {muted ? <SpeakerSlashIcon /> : <SpeakerHighIcon />}
     </Badge>
   )

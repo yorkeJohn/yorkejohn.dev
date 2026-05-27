@@ -21,12 +21,12 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
       <button
         type="button"
         key={index}
-        className="text-sm text-muted-foreground hover:text-primary-foreground flex gap-1 items-center text-nowrap"
+        className="text-sm text-muted hover:text-primary-foreground flex gap-1 items-center text-nowrap"
         onClick={() => onChange(field, item)}
         data-sfx={active ? 'toggle_on' : 'toggle_off'}
       >
         <span className="hidden lg:inline">{active ? <CheckSquareIcon /> : <SquareIcon />}</span>
-        <span className={cn(active && 'bg-lime-300 text-black hover:text-black')}>
+        <span className={cn(active && 'bg-accent-foreground text-background hover:text-background')}>
           {item} ({count})
         </span>
       </button>
@@ -41,7 +41,7 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
         <CollapsibleTrigger asChild>
           <button
             type="button"
-            className="mb-2 text-amber-200 group"
+            className="mb-2 text-primary-foreground group"
             data-sfx={open ? 'transition_down' : 'transition_up'}
           >
             <FolderIcon className="inline me-1 group-data-[state=open]:hidden" />
@@ -54,7 +54,7 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
         </CollapsibleContent>
       </Collapsible>
       <div className="lg:hidden flex gap-4 border-b border-dashed py-2">
-        <div className="text-amber-200 text-nowrap">
+        <div className="text-primary-foreground text-nowrap">
           <FolderOpenIcon className="inline me-1" />
           {label}
         </div>

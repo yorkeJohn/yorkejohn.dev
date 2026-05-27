@@ -22,7 +22,7 @@ export function StatsMarquee() {
     const {label, stat} = item
     return (
       <Badge key={index} variant="outline" className="mx-1">
-        {label}:<span className="ms-1 text-lime-300">{stat}</span>
+        {label}:<span className="ms-1 text-accent-foreground">{stat}</span>
       </Badge>
     )
   })

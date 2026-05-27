@@ -41,8 +41,8 @@ export function Nav() {
         key={index}
         asChild
         className={cn(
-          'text-amber-100 font-mono [a]:hover:bg-lime-300 [a]:hover:text-black',
-          pathname.startsWith(href) && 'bg-lime-300 text-black'
+          'font-mono [a]:hover:bg-accent-foreground [a]:hover:text-background',
+          pathname.startsWith(href) && 'bg-accent-foreground text-background'
         )}
       >
         {href.startsWith('http') ? <Anchor href={href}>{text}</Anchor> : <Link href={href}>{text}</Link>}
@@ -52,7 +52,7 @@ export function Nav() {
 
   return (
     <nav className="flex gap-1">
-      <Badge asChild className="[a]:hover:bg-lime-300 cursor-pointer">
+      <Badge asChild className="[a]:hover:bg-accent-foreground cursor-pointer">
         <Link href="/">
           <Image width={12} height={12} loading="eager" src={icon} alt="Home" />
         </Link>

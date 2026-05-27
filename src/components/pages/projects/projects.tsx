@@ -21,10 +21,10 @@ export function ProjectsPage() {
   return (
     <main>
       <div className="flex items-start gap-2 my-8 md:my-12 lg:my-20">
-        <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted-foreground">
+        <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted">
           Projects
         </div>
-        <span className="text-amber-200 text-lg md:text-xl lg:text-2xl">({filtered.length})</span>
+        <span className="text-primary-foreground text-lg md:text-xl lg:text-2xl">({filtered.length})</span>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4">
@@ -49,11 +49,11 @@ export function ProjectsPage() {
 
         <PageSection label="Projects & Selected Works" className="flex-1">
           {filtered.length === 0 && (
-            <div className="text-center text-amber-200 pt-16 text-sm">
+            <div className="text-center text-primary-foreground pt-16 text-sm">
               No projects found matching the selected filters
             </div>
           )}
-          <div className="pt-4 flex flex-col gap-4 divide-y divide-dashed divide-lime-600">{cards}</div>
+          <div className="pt-4 flex flex-col gap-4 divide-y divide-dashed divide-accent">{cards}</div>
         </PageSection>
       </div>
     </main>

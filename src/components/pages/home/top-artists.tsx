@@ -26,15 +26,15 @@ export function TopArtists() {
     const artistUrl = item.external_urls.spotify
     const image = item.images[0].url
     return (
-      <Anchor href={artistUrl} key={index} className="group hover:bg-lime-300 flex gap-2 py-2 cursor-pointer">
-        <div className="border border-lime-600 p-1 group-hover:border-transparent">
+      <Anchor href={artistUrl} key={index} className="group hover:bg-accent-foreground flex gap-2 py-2 cursor-pointer">
+        <div className="border border-accent p-1 group-hover:border-transparent">
           <Image src={image} width={50} height={50} alt={name} className="" />
         </div>
         <div>
-          <Badge variant="outline" className="text-lime-300 group-hover:text-black transition-none">
+          <Badge variant="outline" className="text-accent-foreground group-hover:text-background transition-none">
             n&deg;{index + 1}
           </Badge>
-          <div className="text-2xl tracking-tight group-hover:text-black">
+          <div className="text-2xl tracking-tight group-hover:text-background">
             {name}
             <ArrowUpRightIcon className="inline" />
           </div>
@@ -45,9 +45,7 @@ export function TopArtists() {
 
   return (
     <div className="pt-2">
-      <div className="text-muted-foreground text-sm font-mono">
-        Via Spotify &bull; Six-month trend &bull; Updated weekly
-      </div>
+      <div className="text-muted text-sm font-mono">Via Spotify &bull; Six-month trend &bull; Updated weekly</div>
       <div className="grid grid-cols-1 md:grid-cols-2">{items}</div>
     </div>
   )

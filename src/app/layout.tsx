@@ -1,4 +1,5 @@
 import type {Metadata} from 'next'
+import {ThemeProvider} from 'next-themes'
 import {Cursor, Footer, Header, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   other: {'google-site-verification': 'TwPlurVt4Z3Q15zY5V0ss2_kP6manPGCPycEKNGIhPA'}
 }
 
-const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts, 'dark')
+const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts)
 
 type LayoutProps = Readonly<{
   children: React.ReactNode
@@ -31,15 +32,17 @@ type LayoutProps = Readonly<{
 
 export default function RootLayout({children}: LayoutProps) {
   return (
-    <html lang="en" className={htmlClasses}>
+    <html lang="en" className={htmlClasses} suppressHydrationWarning>
       <Sounds />
       <body className="min-h-screen flex flex-col">
-        <Cursor />
-        <div className="flex-1 px-4 container mx-auto">
-          <Header />
-          {children}
-        </div>
-        <Footer />
+        <ThemeProvider defaultTheme="space" enableSystem={false}>
+          <Cursor />
+          <div className="flex-1 px-4 container mx-auto">
+            <Header />
+            {children}
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

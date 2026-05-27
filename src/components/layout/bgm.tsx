@@ -38,7 +38,11 @@ export function Bgm() {
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
       />
-      <Badge className="text-amber-200 font-mono cursor-pointer hover:text-lime-300" variant="outline" onClick={toggle}>
+      <Badge
+        className="text-primary-foreground font-mono cursor-pointer hover:text-accent-foreground"
+        variant="outline"
+        onClick={toggle}
+      >
         <VinylRecordIcon className={cn(playing && 'animate-spin')} />
       </Badge>
     </>

@@ -15,7 +15,7 @@ export function Header() {
       <div className="flex flex-col md:flex-row justify-between gap-4">
         <Nav />
         <div className="flex gap-1">
-          <Badge variant="outline" className="font-mono text-amber-200">
+          <Badge variant="outline" className="font-mono text-primary-foreground">
             <MapPinIcon data-icon="inline-start" />
             Halifax, NS
           </Badge>
@@ -44,7 +44,7 @@ function LocalTime() {
   useInterval(update, 1000, {autoInvoke: true}) // update every second
 
   return (
-    <Badge variant="outline" className="font-mono text-amber-200">
+    <Badge variant="outline" className="font-mono text-primary-foreground">
       <ClockIcon data-icon="inline-start" />
       {time} AST
     </Badge>
@@ -68,7 +68,7 @@ function LocalWeather() {
 
   if (!data || loading) {
     return (
-      <Badge variant="outline" className="font-mono text-amber-200">
+      <Badge variant="outline" className="font-mono text-primary-foreground">
         <CloudIcon data-icon="inline-start" />
         --&deg;C
       </Badge>
@@ -79,7 +79,7 @@ function LocalWeather() {
   const Icon = wmoToIcon(weathercode, windspeed, is_day)
 
   return (
-    <Badge variant="outline" className="font-mono text-amber-200">
+    <Badge variant="outline" className="font-mono text-primary-foreground">
       <Icon data-icon="inline-start" />
       {temperature}&deg;C
     </Badge>
