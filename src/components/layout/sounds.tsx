@@ -42,7 +42,7 @@ export function MuteToggle() {
 
   return (
     <Badge
-      className="text-primary-foreground font-mono cursor-pointer hover:text-accent-foreground"
+      className="text-primary-foreground hover:text-accent-foreground cursor-pointer"
       variant="outline"
       onClick={toggle}
     >

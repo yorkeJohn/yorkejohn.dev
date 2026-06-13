@@ -17,7 +17,7 @@ export function ActivityFeed() {
         className="group hover:bg-accent-foreground flex flex-col md:flex-row gap-2 py-2 cursor-pointer"
       >
         <div className="w-40">
-          <Badge className="text-accent-foreground group-hover:text-background transition-none" variant="outline">
+          <Badge className="text-accent-foreground group-hover:text-background" variant="outline">
             {formatDistanceToNow(pushedAt, {addSuffix: true})}
           </Badge>
         </div>

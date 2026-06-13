@@ -6,6 +6,7 @@ import {useEffect, useState} from 'react'
 import {Badge} from '@/components'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
 import {Bgm} from './bgm'
+import {Console} from './console'
 import {Nav} from './nav'
 import {MuteToggle} from './sounds'
 
@@ -14,7 +15,7 @@ export function Header() {
     <div className="my-4 sticky top-4 z-10">
       <div className="flex flex-col md:flex-row justify-between gap-4">
         <Nav />
-        <div className="flex gap-1">
+        <div className="inline-flex gap-1">
           <Badge variant="outline" className="font-mono text-primary-foreground">
             <MapPinIcon data-icon="inline-start" />
             Halifax, NS
@@ -23,6 +24,7 @@ export function Header() {
           <LocalWeather />
           <MuteToggle />
           <Bgm />
+          <Console />
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
 'use client'
 
-import {ArrowRightIcon, ArrowUpRightIcon} from '@phosphor-icons/react'
+import {ArrowRightIcon, ArrowUpRightIcon, ImageIcon} from '@phosphor-icons/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import type React from 'react'
-import {Anchor, Badge, Button, InteractiveImage} from '@/components'
+import {Anchor, Badge, Button, DraggableWindow} from '@/components'
 import {cn} from '@/lib/cn'
 import type {Project} from './registry'
 
@@ -31,7 +32,9 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
 
   return (
     <div className={cn('flex gap-4 flex-col md:flex-row', className)} {...rest}>
-      <InteractiveImage imageProps={{src: image, alt: title, width: 400}} title={imageTitle} />
+      <DraggableWindow type="snap" title={imageTitle} iconLeft={ImageIcon}>
+        <Image src={image} alt={title} width={400} className="pointer-events-none" />
+      </DraggableWindow>
 
       <div className="flex flex-col justify-between flex-1">
         <div className="mb-8">
