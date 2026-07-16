@@ -33,7 +33,7 @@ export function Bgm() {
       <audio
         loop
         ref={ref}
-        src="/music/lofi-loop.mp3"
+        src="/music/lofi-loop.wav"
         preload="auto"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}

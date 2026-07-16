@@ -19,33 +19,6 @@ type TerminalProps = {
   prompt: string
 } & React.ComponentPropsWithoutRef<'div'>
 
-function useTerminal() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [terminal, setTerminal] = useState<XTerminal | null>(null)
-
-  useEffect(() => {
-    const instance = new XTerminal({
-      cursorBlink: true,
-      convertEol: true,
-      fontSize: 12
-    })
-
-    if (ref.current) {
-      instance.open(ref.current)
-      instance.focus()
-    }
-
-    setTerminal(instance)
-
-    return () => {
-      instance.dispose()
-      setTerminal(null)
-    }
-  }, [])
-
-  return {ref, terminal}
-}
-
 export function Terminal({commands, motd = '', prompt, ...props}: TerminalProps) {
   const {ref, terminal} = useTerminal()
   const initializedRef = useRef(false)
@@ -73,9 +46,10 @@ export function Terminal({commands, motd = '', prompt, ...props}: TerminalProps)
       description: 'List available commands',
       handler: (): string => {
         const helpText = Object.entries(result)
-          .map(([name, def]) => `${name}\t: ${def.description}`)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([name, def]) => `\t${name}\t: ${def.description}`)
           .join('\n')
-        return `Available commands:\n${helpText}`
+        return `Available commands\n${helpText}`
       }
     }
 
@@ -145,8 +119,6 @@ export function Terminal({commands, motd = '', prompt, ...props}: TerminalProps)
             currentRef.current += data
             terminal.write(data)
             playSound('type')
-          } else {
-            playSound('disabled')
           }
         }
       }
@@ -156,4 +128,32 @@ export function Terminal({commands, motd = '', prompt, ...props}: TerminalProps)
   }, [terminal, execute, _prompt])
 
   return <div ref={ref} {...props} />
+}
+
+function useTerminal() {
+  const ref = useRef<HTMLDivElement>(null)
+  const [terminal, setTerminal] = useState<XTerminal | null>(null)
+
+  useEffect(() => {
+    const instance = new XTerminal({
+      cursorBlink: true,
+      convertEol: true,
+      fontSize: 12,
+      scrollback: 0
+    })
+
+    if (ref.current) {
+      instance.open(ref.current)
+      instance.focus()
+    }
+
+    setTerminal(instance)
+
+    return () => {
+      instance.dispose()
+      setTerminal(null)
+    }
+  }, [])
+
+  return {ref, terminal}
 }

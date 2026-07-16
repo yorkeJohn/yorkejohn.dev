@@ -12,3 +12,7 @@ https://yorkejohn.dev
 - **3D Graphics**: [Three.js](https://threejs.org) with [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
 - **UI Components**: [shadcn](https://shadcn.dev)
 - **Icons**: [@phosphor-icons/react](https://phosphoricons.com)
+
+## Music
+
+Background music was made using Garage Band.

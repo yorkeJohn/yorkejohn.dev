@@ -26,7 +26,7 @@ type DraggableWindowProps = FreeWindowProps | SnapWindowProps
 
 export function DraggableWindow({title, iconLeft, children, ...props}: DraggableWindowProps) {
   const pd = useIsPointerDevice()
-  const baseClasses = 'border bg-background w-fit px-1 pb-1 h-fit cursor-grab group'
+  const baseClasses = 'border bg-background w-fit px-1 pb-1 h-fit cursor-grab group z-10'
 
   if (props.type === 'snap') {
     return (

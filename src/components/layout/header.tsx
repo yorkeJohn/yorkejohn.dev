@@ -7,27 +7,28 @@ import {Badge} from '@/components'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
 import {Bgm} from './bgm'
 import {Console} from './console'
-import {Nav} from './nav'
 import {MuteToggle} from './sounds'
 
 export function Header() {
   return (
-    <div className="my-4 sticky top-4 z-10">
-      <div className="flex flex-col md:flex-row justify-between gap-4">
-        <Nav />
-        <div className="inline-flex gap-1">
-          <Badge variant="outline" className="font-mono text-primary-foreground">
+    <header className="my-4">
+      <div className="flex justify-between gap-4">
+        <div className="inline-flex">
+          <Badge variant="transparent" className="font-mono text-primary-foreground">
             <MapPinIcon data-icon="inline-start" />
             Halifax, NS
           </Badge>
           <LocalTime />
           <LocalWeather />
+        </div>
+        <div className="inline-flex gap-1">
           <MuteToggle />
           <Bgm />
           <Console />
         </div>
       </div>
-    </div>
+      <hr className="my-2" />
+    </header>
   )
 }
 
@@ -46,7 +47,7 @@ function LocalTime() {
   useInterval(update, 1000, {autoInvoke: true}) // update every second
 
   return (
-    <Badge variant="outline" className="font-mono text-primary-foreground">
+    <Badge variant="transparent" className="font-mono text-primary-foreground">
       <ClockIcon data-icon="inline-start" />
       {time} AST
     </Badge>
@@ -70,7 +71,7 @@ function LocalWeather() {
 
   if (!data || loading) {
     return (
-      <Badge variant="outline" className="font-mono text-primary-foreground">
+      <Badge variant="transparent" className="font-mono text-primary-foreground">
         <CloudIcon data-icon="inline-start" />
         --&deg;C
       </Badge>
@@ -81,7 +82,7 @@ function LocalWeather() {
   const Icon = wmoToIcon(weathercode, windspeed, is_day)
 
   return (
-    <Badge variant="outline" className="font-mono text-primary-foreground">
+    <Badge variant="transparent" className="font-mono text-primary-foreground">
       <Icon data-icon="inline-start" />
       {temperature}&deg;C
     </Badge>

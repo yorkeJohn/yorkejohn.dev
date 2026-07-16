@@ -33,17 +33,21 @@ export function Console() {
         setTheme(theme)
         return `Theme set to ${theme}`
       }
+    },
+    version: {
+      description: 'Display the website version',
+      handler: () => process.env.VERSION
     }
   }
 
   const [opened, {open, close}] = useDisclosure()
 
   const onOpen = () => {
-    playSound('toggle_on')
+    playSound('select')
     open()
   }
   const onClose = () => {
-    playSound('toggle_off')
+    playSound('swipe')
     close()
   }
 
