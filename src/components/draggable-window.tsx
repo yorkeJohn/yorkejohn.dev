@@ -26,7 +26,7 @@ type DraggableWindowProps = FreeWindowProps | SnapWindowProps
 
 export function DraggableWindow({title, iconLeft, children, ...props}: DraggableWindowProps) {
   const pd = useIsPointerDevice()
-  const baseClasses = 'border bg-background w-fit px-1 pb-1 h-fit cursor-grab group z-10'
+  const baseClasses = 'border bg-background w-fit px-1 pb-1 h-fit cursor-grab group'
 
   if (props.type === 'snap') {
     return (
@@ -38,6 +38,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
         onDragStart={() => playSound('transition_up')}
         onDragEnd={() => playSound('transition_down')}
         className={baseClasses}
+        whileDrag={{zIndex: 100}}
       >
         <TitleBar title={title} Icon={iconLeft}>
           <DotsSixIcon />
@@ -59,7 +60,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
             initial={{scale: 0.5, opacity: 0}}
             animate={{scale: 1, opacity: 1}}
             exit={{scale: 0.5, opacity: 0}}
-            className={cn(baseClasses, 'fixed bottom-4 right-4')}
+            className={cn(baseClasses, 'fixed bottom-4 right-4 z-100')}
           >
             <TitleBar title={title} Icon={iconLeft}>
               <XIcon className="cursor-pointer" onClick={onClose} />

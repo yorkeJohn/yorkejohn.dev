@@ -37,7 +37,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
           <Cursor />
           <div className="flex-1 px-4 container mx-auto z-0">
             <Header />
-            <div className="sticky top-4 z-20">
+            <div className="sticky top-4 z-50">
               <Nav />
             </div>
             <Background />
