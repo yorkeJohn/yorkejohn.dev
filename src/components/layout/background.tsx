@@ -17,7 +17,7 @@ export function Background() {
   if (!mounted || !Component) return null
 
   return (
-    <div className="w-full h-full fixed left-0 top-0 -z-10">
+    <div className="fixed inset-0 -z-10 pointer-events-none">
       <Component />
     </div>
   )

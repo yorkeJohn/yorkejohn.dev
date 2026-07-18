@@ -35,7 +35,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
       <body className="min-h-screen flex flex-col">
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
-          <div className="flex-1 px-4 container mx-auto z-0">
+          <div className="flex-1 px-4 container mx-auto">
             <Header />
             <div className="sticky top-4 z-50">
               <Nav />
