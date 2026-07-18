@@ -9,17 +9,45 @@ import {Badge} from '../badge'
 import {DraggableWindow} from '../draggable-window'
 import {type CommandDef, Terminal} from '../terminal'
 
-const welcome = `[${SITE_NAME}]
+const motd = `[${SITE_NAME}]
 Type 'help' to list available commands.
+`
+
+const contact = `Contact information
+Email    : yorkejohn02@gmail.com
+GitHub   : yorkeJohn
+LinkedIn : yorkejohn
+Discord  : tadashi_3
 `
 
 export function Console() {
   const {setTheme, themes} = useTheme()
+  const [opened, {open, close}] = useDisclosure()
+
+  const onOpen = () => {
+    playSound('select')
+    open()
+  }
+
+  const onClose = () => {
+    playSound('swipe')
+    close()
+  }
+
+  useHotkeys([['/', onOpen]])
 
   const commands: Record<string, CommandDef> = {
+    contact: {
+      description: 'Display contact information',
+      handler: () => contact
+    },
     echo: {
       description: 'Print text to the console',
       handler: (...args) => args.join(' ')
+    },
+    exit: {
+      description: 'Exit the console',
+      handler: onClose
     },
     themes: {
       description: 'List available themes',
@@ -40,19 +68,6 @@ export function Console() {
     }
   }
 
-  const [opened, {open, close}] = useDisclosure()
-
-  const onOpen = () => {
-    playSound('select')
-    open()
-  }
-  const onClose = () => {
-    playSound('swipe')
-    close()
-  }
-
-  useHotkeys([['/', onOpen]])
-
   return (
     <span className="hidden md:inline-flex">
       <Badge className="font-mono cursor-pointer interact:highlight" onClick={onOpen}>
@@ -65,7 +80,7 @@ export function Console() {
         opened={opened}
         onClose={onClose}
       >
-        <Terminal commands={commands} motd={welcome} prompt="user@yorkejohn.dev $" className="p-2" />
+        <Terminal commands={commands} motd={motd} prompt="user@yorkejohn.dev $" className="p-2" />
       </DraggableWindow>
     </span>
   )
