@@ -10,7 +10,7 @@ type Stat = {
 const stats: Stat[] = [
   {label: 'Building things since', stat: '2015'},
   {label: '3 languages', stat: 'English - Français (French) - 日本語 (Japanese)'},
-  {label: 'Years of professional experience', stat: '5+'},
+  {label: 'Years of professional experience', stat: `${new Date().getFullYear() - 2021}+`},
   {label: 'Minecraft mod downloads', stat: '2.5M+'},
   {label: 'Hobbies', stat: 'Gaming - Bodybuilding - Hiking - Food'},
   {label: 'Unfinished side projects', stat: 'Infinite'},
