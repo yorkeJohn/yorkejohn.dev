@@ -53,7 +53,7 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
           {withCta && (
             <Link
               href="/projects"
-              className="max-w-100 w-full mt-2 border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1"
+              className="md:max-w-100 w-full mt-2 border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1"
             >
               All Projects
               <ArrowRightIcon data-icon="inline-end" />
