@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-[data-theme="paper"] {
+[data-theme="blueprint"] {
   --background: var(--color-mist-50);
   --foreground: var(--color-mist-950);
   --muted: var(--color-mist-800);

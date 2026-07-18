@@ -1,9 +1,6 @@
 'use client'
 
-import {useMounted} from '@mantine/hooks'
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import {useTheme} from 'next-themes'
 import {PageSection} from '@/components'
 import {ProjectCard} from '@/components/pages/projects/project-card'
 import {projects} from '@/components/pages/projects/registry'
@@ -13,8 +10,7 @@ import {TopArtists} from './top-artists'
 
 export function HomePage() {
   return (
-    <main className="z-0">
-      <SpaceBackground />
+    <main>
       <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
         <div className="text-muted">
           Welcome&nbsp;
@@ -56,19 +52,5 @@ export function HomePage() {
         <TopArtists />
       </PageSection>
     </main>
-  )
-}
-
-const Starry = dynamic(() => import('./starry').then(mod => mod.Starry), {ssr: false})
-
-function SpaceBackground() {
-  const {theme} = useTheme()
-  const mounted = useMounted()
-  if (!mounted || theme !== 'space') return null
-
-  return (
-    <div className="w-full h-full fixed left-0 top-0 -z-10">
-      <Starry />
-    </div>
   )
 }

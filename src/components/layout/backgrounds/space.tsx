@@ -6,13 +6,13 @@ import * as random from 'maath/random'
 import {Suspense, useRef, useState} from 'react'
 import type {PointsMaterial as PointsMaterialType, Points as PointsType} from 'three'
 
-const COUNT = 2000
+const count = 2000
 
-function StarryScene(props: PointsInstancesProps) {
+function Scene(props: PointsInstancesProps) {
   const pointsRef = useRef<PointsType | null>(null)
   const materialRef = useRef<PointsMaterialType | null>(null)
 
-  const [sphere] = useState(() => random.inSphere(new Float32Array(COUNT * 3), {radius: 1.2}))
+  const [sphere] = useState(() => random.inSphere(new Float32Array(count * 3), {radius: 1.2}))
 
   useFrame((_, delta) => {
     if (pointsRef.current) {
@@ -43,11 +43,11 @@ function StarryScene(props: PointsInstancesProps) {
   )
 }
 
-export function Starry() {
+export default function Background() {
   return (
     <Suspense fallback={null}>
       <Canvas camera={{position: [0, 0, 1]}}>
-        <StarryScene />
+        <Scene />
       </Canvas>
     </Suspense>
   )
