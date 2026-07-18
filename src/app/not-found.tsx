@@ -12,7 +12,7 @@ export default function NotFound() {
         <div className="py-4 text-xl text-primary-foreground">
           The page that you have requested does not exist. Please verify the URL and try again.
         </div>
-        <Link href="/" className="hover:bg-accent-foreground hover:text-background">
+        <Link href="/" className="interact:highlight">
           <ArrowUpLeftIcon className="inline" />
           Back to safety
         </Link>

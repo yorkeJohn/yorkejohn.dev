@@ -29,16 +29,16 @@ export function TopArtists() {
       <Anchor
         href={artistUrl}
         key={index}
-        className="group hover:bg-accent-foreground flex gap-2 py-2 cursor-pointer items-center"
+        className="group interact:bg-accent-foreground flex gap-2 py-2 cursor-pointer items-center"
       >
-        <div className="border border-accent p-1 group-hover:border-transparent shrink-0">
+        <div className="border border-accent p-1 group-interact:border-transparent shrink-0">
           <Image src={image} width={50} height={50} alt={name} className="aspect-square object-cover" />
         </div>
         <div>
-          <Badge variant="outline" className="text-accent-foreground group-hover:text-background transition-none">
+          <Badge variant="outline" className="text-accent-foreground group-interact:text-background transition-none">
             n&deg;{index + 1}
           </Badge>
-          <div className="text-2xl tracking-tight group-hover:text-background">
+          <div className="text-2xl tracking-tight group-interact:text-background">
             {name}
             <ArrowUpRightIcon className="inline" />
           </div>

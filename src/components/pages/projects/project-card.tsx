@@ -4,7 +4,7 @@ import {ArrowRightIcon, ArrowUpRightIcon, ImageIcon} from '@phosphor-icons/react
 import Image from 'next/image'
 import Link from 'next/link'
 import type React from 'react'
-import {Anchor, Badge, Button, DraggableWindow} from '@/components'
+import {Anchor, Badge, DraggableWindow} from '@/components'
 import {cn} from '@/lib/cn'
 import type {Project} from './registry'
 
@@ -18,7 +18,7 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
   const imageTitle = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '')}.png`
 
   const linkElements = links.map(link => (
-    <Anchor key={link.url} href={link.url} className="hover:bg-accent-foreground hover:text-background">
+    <Anchor key={link.url} href={link.url} className="interact:highlight">
       {link.label}
       <ArrowUpRightIcon className="inline" />
     </Anchor>
@@ -51,12 +51,13 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
           </div>
           <div className="text-lg lg:text-xl text-muted max-w-[60ch]">{description}</div>
           {withCta && (
-            <Button asChild className="w-full mt-2">
-              <Link href="/projects">
-                All Projects
-                <ArrowRightIcon data-icon="inline-end" />
-              </Link>
-            </Button>
+            <Link
+              href="/projects"
+              className="max-w-100 w-full mt-2 border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1"
+            >
+              All Projects
+              <ArrowRightIcon data-icon="inline-end" />
+            </Link>
           )}
         </div>
       </div>

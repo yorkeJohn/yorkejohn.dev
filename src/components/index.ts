@@ -1,6 +1,5 @@
 export * from './anchor'
 export * from './badge'
-export * from './button'
 export * from './draggable-window'
 export * from './filter-group'
 export * from './marquee'

@@ -55,7 +55,7 @@ export function Console() {
 
   return (
     <span className="hidden md:inline-flex">
-      <Badge className="font-mono hover:bg-accent-foreground hover:text-background cursor-pointer" onClick={onOpen}>
+      <Badge className="font-mono cursor-pointer interact:highlight" onClick={onOpen}>
         [/]&nbsp;Console
       </Badge>
       <DraggableWindow

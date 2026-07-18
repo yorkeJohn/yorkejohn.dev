@@ -14,19 +14,19 @@ export function ActivityFeed() {
       <Anchor
         href={compareUrl}
         key={index}
-        className="group hover:bg-accent-foreground flex flex-col md:flex-row gap-2 py-2 cursor-pointer"
+        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 py-2 cursor-pointer"
       >
         <div className="w-40">
-          <Badge className="text-accent-foreground group-hover:text-background" variant="outline">
+          <Badge className="text-accent-foreground group-interact:text-background" variant="outline">
             {formatDistanceToNow(pushedAt, {addSuffix: true})}
           </Badge>
         </div>
-        <div className="group-hover:text-background text-nowrap">
+        <div className="group-interact:text-background text-nowrap">
           Pushed to
-          <span className="text-primary-foreground font-mono group-hover:text-inherit">&nbsp;{repo}&nbsp;</span>
+          <span className="text-primary-foreground font-mono group-interact:text-inherit">&nbsp;{repo}&nbsp;</span>
           <br className="sm:hidden" />
           on branch
-          <span className="text-primary-foreground font-mono group-hover:text-inherit">&nbsp;{branch}</span>
+          <span className="text-primary-foreground font-mono group-interact:text-inherit">&nbsp;{branch}</span>
           <ArrowUpRightIcon className="inline" />
         </div>
       </Anchor>
