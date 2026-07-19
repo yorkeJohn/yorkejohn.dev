@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import {PageSection} from '@/components'
+import {Background} from '@/components/layout'
 import {ProjectCard} from '@/components/pages/projects/project-card'
 import {projects} from '@/components/pages/projects/registry'
 import {ActivityFeed} from './activity-feed'
@@ -11,6 +12,7 @@ import {TopArtists} from './top-artists'
 export function HomePage() {
   return (
     <main>
+      <Background />
       <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
         <div className="text-muted">
           Welcome&nbsp;

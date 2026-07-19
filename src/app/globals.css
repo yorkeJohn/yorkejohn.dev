@@ -116,6 +116,20 @@
   ::selection {
     @apply highlight;
   }
+  /* shiki */
+  :root {
+    --shiki-foreground: var(--foreground);
+    --shiki-background: var(--background);
+    --shiki-token-constant: var(--foreground);
+    --shiki-token-string: var(--muted);
+    --shiki-token-comment: var(--muted);
+    --shiki-token-keyword: var(--accent);
+    --shiki-token-parameter: var(--accent);
+    --shiki-token-function: var(--primary-foreground);
+    --shiki-token-string-expression: var(--muted);
+    --shiki-token-punctuation: var(--foreground);
+    --shiki-token-link: var(--primary-foreground);
+  }
 }
 
 @utility no-scrollbar {

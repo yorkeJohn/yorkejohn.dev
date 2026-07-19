@@ -1,226 +1,218 @@
 @layer typography {
   .typography {
-    max-width: 65ch;
+    max-width: 100ch;
+    text-wrap: pretty;
     color: var(--color-foreground);
   }
-  .typography h1:not(.not-typography h1) {
+  .typography h1 {
     scroll-margin: calc(var(--spacing) * 20);
     font-size: var(--text-4xl);
     line-height: var(--text-4xl--line-height);
     font-weight: 800;
-    letter-spacing: var(--tracking-tight);
     font-family: var(--font-heading);
   }
-  .typography h2:not(.not-typography h2) {
+  .typography h2 {
     scroll-margin: calc(var(--spacing) * 20);
     padding-bottom: calc(var(--spacing) * 2);
     font-size: var(--text-3xl);
     line-height: var(--text-3xl--line-height);
     font-weight: 600;
-    letter-spacing: var(--tracking-tight);
     margin-top: calc(var(--spacing) * 12);
     font-family: var(--font-heading);
   }
-  .typography h2:not(.not-typography h2):first-child {
+  .typography h2:first-child {
     margin-top: 0;
   }
-  .typography h3:not(.not-typography h3) {
+  .typography h3 {
     scroll-margin: calc(var(--spacing) * 20);
     font-size: var(--text-2xl);
     line-height: var(--text-2xl--line-height);
     font-weight: 600;
-    letter-spacing: var(--tracking-tight);
     margin-top: calc(var(--spacing) * 12);
     font-family: var(--font-heading);
   }
-  .typography h3:not(.not-typography h3):first-child {
+  .typography h3:first-child {
     margin-top: 0;
   }
-  .typography h4:not(.not-typography h4) {
+  .typography h4 {
     scroll-margin: calc(var(--spacing) * 20);
     font-size: var(--text-xl);
     line-height: var(--text-xl--line-height);
     font-weight: 600;
-    letter-spacing: var(--tracking-tight);
     margin-top: calc(var(--spacing) * 12);
     font-family: var(--font-heading);
   }
-  .typography h4:not(.not-typography h4):first-child {
+  .typography h4:first-child {
     margin-top: 0;
   }
-  .typography h5:not(.not-typography h5) {
+  .typography h5 {
     scroll-margin: calc(var(--spacing) * 20);
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
     font-weight: 600;
-    letter-spacing: var(--tracking-tight);
     margin-top: calc(var(--spacing) * 12);
   }
-  .typography h5:not(.not-typography h5):first-child {
+  .typography h5:first-child {
     margin-top: 0;
   }
-  .typography h6:not(.not-typography h6) {
+  .typography h6 {
     scroll-margin: calc(var(--spacing) * 20);
     font-size: var(--text-base);
     line-height: var(--text-base--line-height);
     font-weight: 600;
-    letter-spacing: var(--tracking-tight);
     margin-top: calc(var(--spacing) * 12);
   }
-  .typography h6:not(.not-typography h6):first-child {
+  .typography h6:first-child {
     margin-top: 0;
   }
-  .typography h1:not(.not-typography h1) + p,
-  .typography h2:not(.not-typography h2) + p,
-  .typography h3:not(.not-typography h3) + p,
-  .typography h4:not(.not-typography h4) + p,
-  .typography h5:not(.not-typography h5) + p,
-  .typography h6:not(.not-typography h6) + p {
-    margin-top: 0;
-  }
-  .typography p:not(.not-typography p) {
+  .typography p {
     line-height: 1.75;
   }
-  .typography p:not(.not-typography p):not(:first-child) {
+  .typography h1 + p,
+  .typography h2 + p,
+  .typography h3 + p,
+  .typography h4 + p,
+  .typography h5 + p,
+  .typography h6 + p {
+    margin-top: 0;
+  }
+  .typography p:not(:first-child) {
     margin-top: calc(var(--spacing) * 6);
   }
-  .typography li:not(.not-typography li) {
+  .typography li {
     line-height: 1.75;
   }
-  .typography a:not(.not-typography a) {
+  .typography a {
     font-weight: 500;
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: var(--spacing);
   }
-  .typography blockquote:not(.not-typography blockquote) {
+  .typography blockquote {
     margin-top: calc(var(--spacing) * 6);
     border-left: 2px solid var(--color-border);
     padding-left: calc(var(--spacing) * 6);
     font-style: italic;
   }
-  .typography table:not(.not-typography table) {
+  .typography table {
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
     width: 100%;
     overflow-y: auto;
   }
-  .typography table:not(.not-typography table) thead tr {
+  .typography table thead tr {
     border-top: 1px solid var(--color-border);
-    background-color: var(--color-muted);
+    background-color: var(--color-primary);
     margin: 0;
     padding: 0;
   }
-  /* .typography table:not(.not-typography table) thead tr:nth-child(even) {
-    background-color: var(--color-muted);
-  } */
-  .typography table:not(.not-typography table) th {
+  .typography table th {
     border: 1px solid var(--color-border);
     padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
     text-align: left;
     font-weight: 700;
   }
-  .typography table:not(.not-typography table) th[align="center"] {
+  .typography table th[align="center"] {
     text-align: center;
   }
-  .typography table:not(.not-typography table) th[align="right"] {
+  .typography table th[align="right"] {
     text-align: right;
   }
-  .typography table:not(.not-typography table) tbody tr {
+  .typography table tbody tr {
     margin: 0;
     border-top: 1px solid var(--color-border);
     padding: 0;
   }
-  /* .typography table:not(.not-typography table) tbody tr:nth-child(even) {
-    background-color: var(--color-muted);
-  } */
-  .typography table:not(.not-typography table) td {
+  .typography table td {
     border: 1px solid var(--color-border);
     padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
     text-align: left;
   }
-  .typography table:not(.not-typography table) td[align="center"] {
+  .typography table td[align="center"] {
     text-align: center;
   }
-  .typography table:not(.not-typography table) td[align="right"] {
+  .typography table td[align="right"] {
     text-align: right;
   }
-  .typography ul:not(.not-typography ul) {
+  .typography ul {
     margin-top: calc(var(--spacing) * 6);
     margin-left: calc(var(--spacing) * 6);
     list-style: disc;
   }
-  .typography ul:not(.not-typography ul) > li {
+  .typography ul > li {
     margin-top: calc(var(--spacing) * 2);
   }
-  .typography ul:not(.not-typography ul) p {
+  .typography ul p {
     margin-top: 0;
     margin-bottom: 0;
     display: inline;
   }
-  .typography ol:not(.not-typography ol) {
+  .typography ol {
     margin-top: calc(var(--spacing) * 6);
     margin-left: calc(var(--spacing) * 6);
     list-style: decimal;
   }
-  .typography ol:not(.not-typography ol) > li {
+  .typography ol > li {
     margin-top: calc(var(--spacing) * 2);
   }
-  .typography ol:not(.not-typography ol) p {
+  .typography ol p {
     margin-top: 0;
     margin-bottom: 0;
     display: inline;
   }
-  .typography pre:not(.not-typography pre) {
-    background-color: var(--color-muted);
-    padding: calc(var(--spacing) * 4);
+  .typography pre {
+    background-color: var(--color-primary);
+    padding: calc(var(--spacing) * 2);
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
     overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 1px;
   }
-  .typography code:not(pre code):not(.not-typography code) {
+  .typography code:not(pre code) {
     position: relative;
-    background-color: var(--color-muted);
+    background-color: var(--color-primary);
     padding: calc(var(--spacing) * 0.2) calc(var(--spacing) * 0.3);
     font-family: var(--font-mono);
-    font-size: var(--text-sm);
+    border-radius: 1px;
+    font-size: 0.9em;
     line-height: var(--text-sm--line-height);
     font-weight: 600;
   }
-  .typography .lead:not(.not-typography .lead) {
+  .typography .lead {
     font-size: var(--text-xl);
     line-height: var(--text-xl--line-height);
-    color: var(--color-muted-foreground);
+    color: var(--color-muted);
   }
-  .typography .large:not(.not-typography .large) {
+  .typography .large {
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
     font-weight: 600;
   }
-  .typography .small:not(.not-typography .small) {
+  .typography .small {
     font-size: var(--text-sm);
     line-height: 1;
     font-weight: 500;
   }
-  .typography .muted:not(.not-typography .muted) {
+  .typography .muted {
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
-    color: var(--color-muted-foreground);
+    color: var(--color-muted);
   }
-  /* .typography img:not(.not-typography img),
-    .typography picture:not(.not-typography picture),
-    .typography video:not(.not-typography video) {
+  .typography img,
+  .typography picture,
+  .typography video {
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
-  } */
-  .typography picture > img:not(.not-typography picture > img) {
+  }
+  .typography picture > img {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .typography kbd:not(.not-typography kbd) {
-    background-color: var(--color-muted);
+  .typography kbd {
+    background-color: var(--color-primary);
     padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);
     font-size: var(--text-xs);
     line-height: var(--text-xs--line-height);
@@ -230,34 +222,34 @@
     margin-top: calc(var(--spacing) * 10);
     margin-bottom: calc(var(--spacing) * 10);
   }
-  .typography dl:not(.not-typography dl) {
+  .typography dl {
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
   }
-  .typography dl:not(.not-typography dl) dt {
+  .typography dl dt {
     font-weight: 600;
     margin-top: calc(var(--spacing) * 6);
     letter-spacing: var(--tracking-tight);
   }
-  .typography dl:not(.not-typography dl) dt:first-child {
+  .typography dl dt:first-child {
     margin-top: 0;
   }
-  .typography details:not(.not-typography details) {
+  .typography details {
     margin-top: calc(var(--spacing) * 6);
   }
-  .typography details:not(.not-typography details) summary {
+  .typography details summary {
     cursor: pointer;
     font-weight: 600;
     margin-top: calc(var(--spacing) * 6);
     letter-spacing: var(--tracking-tight);
   }
-  .typography details:not(.not-typography details) p:first-of-type {
+  .typography details p:first-of-type {
     margin-top: calc(var(--spacing) * 2);
   }
-  .typography mark:not(.not-typography mark) {
+  .typography mark {
     background-color: var(--color-yellow-300);
   }
-  .typography small:not(.not-typography small) {
+  .typography small {
     font-size: var(--text-xs);
     line-height: 1;
   }

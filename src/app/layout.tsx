@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 import {ThemeProvider} from 'next-themes'
-import {Background, Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
+import {Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
@@ -40,7 +40,6 @@ export default function RootLayout({children}: React.PropsWithChildren) {
             <div className="sticky top-4 z-50">
               <Nav />
             </div>
-            <Background />
             {children}
           </div>
           <Footer />

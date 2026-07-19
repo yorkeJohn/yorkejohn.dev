@@ -12,6 +12,7 @@ type NavItem = {label: string; href: string; keybind: string}
 
 const data: NavItem[] = [
   {label: 'Projects', href: '/projects', keybind: 'P'},
+  {label: 'Blog', href: '/blog', keybind: 'B'},
   {label: 'GitHub', href: 'https://github.com/yorkeJohn', keybind: 'G'},
   {label: 'LinkedIn', href: 'https://linkedin.com/in/yorkejohn/', keybind: 'L'},
   {label: 'Discord', href: 'https://discord.com/users/128378400803913728', keybind: 'D'}

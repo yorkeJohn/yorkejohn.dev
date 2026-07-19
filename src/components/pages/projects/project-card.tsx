@@ -4,7 +4,7 @@ import {ArrowRightIcon, ArrowUpRightIcon, ImageIcon} from '@phosphor-icons/react
 import Image from 'next/image'
 import Link from 'next/link'
 import type React from 'react'
-import {Anchor, Badge, DraggableWindow} from '@/components'
+import {Anchor, Badge, Cta, DraggableWindow} from '@/components'
 import {cn} from '@/lib/cn'
 import type {Project} from './registry'
 
@@ -51,13 +51,12 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
           </div>
           <div className="text-lg lg:text-xl text-muted max-w-[60ch]">{description}</div>
           {withCta && (
-            <Link
-              href="/projects"
-              className="md:max-w-100 w-full mt-2 border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1"
-            >
-              All Projects
-              <ArrowRightIcon data-icon="inline-end" />
-            </Link>
+            <Cta className="md:max-w-100 w-full mt-2" asChild>
+              <Link href="/projects">
+                All projects
+                <ArrowRightIcon />
+              </Link>
+            </Cta>
           )}
         </div>
       </div>

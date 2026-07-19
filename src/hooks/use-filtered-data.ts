@@ -3,10 +3,11 @@
 import {useState} from 'react'
 
 export type FilterPrimitive = string | number
+export type FilterValue = FilterPrimitive | FilterPrimitive[]
 
 export type UseFilteredDataProps<T> = {
   data: T[]
-  selectors: Record<string, (item: T) => FilterPrimitive>
+  selectors: Record<string, (item: T) => FilterValue>
 }
 
 export type FilterOption = {value: FilterPrimitive; count: number}
@@ -34,7 +35,9 @@ export function useFilteredData<T>({data, selectors}: UseFilteredDataProps<T>): 
     return Object.entries(selected).every(([field, activeValues]) => {
       if (activeValues.size === 0) return true
       const selector = selectors[field]
-      return activeValues.has(selector(item))
+      const value = selector(item)
+      const values = Array.isArray(value) ? value : [value]
+      return values.some(v => activeValues.has(v))
     })
   })
 
@@ -44,8 +47,10 @@ export function useFilteredData<T>({data, selectors}: UseFilteredDataProps<T>): 
     const counts = new Map<FilterPrimitive, number>()
     for (const item of data) {
       const value = selector(item)
-      const count = counts.get(value) ?? 0
-      counts.set(value, count + 1)
+      const values = Array.isArray(value) ? value : [value]
+      for (const value of values) {
+        counts.set(value, (counts.get(value) ?? 0) + 1)
+      }
     }
     const entry = Array.from(counts, ([value, count]) => ({value, count}))
     options[field] = entry.sort(sortOptions)
