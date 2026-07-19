@@ -3,7 +3,7 @@
 import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import {formatDistanceToNow} from 'date-fns'
 import {use} from 'react'
-import {Anchor, Badge} from '@/components'
+import {Anchor} from '@/components'
 import {activity} from '@/lib/activity'
 
 export function ActivityFeed() {
@@ -14,12 +14,10 @@ export function ActivityFeed() {
       <Anchor
         href={compareUrl}
         key={index}
-        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 md:gap-8 py-2 cursor-pointer"
+        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 items-center py-2 cursor-pointer"
       >
-        <div>
-          <Badge className="text-accent-foreground group-interact:text-background w-40" variant="outline">
-            {formatDistanceToNow(pushedAt, {addSuffix: true})}
-          </Badge>
+        <div className="text-accent-foreground group-interact:text-background w-[22ch] text-xs">
+          {formatDistanceToNow(pushedAt, {addSuffix: true})}
         </div>
         <div className="group-interact:text-background text-nowrap">
           Pushed to
