@@ -14,7 +14,7 @@ export function ActivityFeed() {
       <Anchor
         href={compareUrl}
         key={index}
-        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 items-center py-2 cursor-pointer"
+        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 md:items-center py-2 cursor-pointer"
       >
         <div className="text-accent-foreground group-interact:text-background w-[22ch] text-xs">
           {formatDistanceToNow(pushedAt, {addSuffix: true})}
@@ -35,5 +35,5 @@ export function ActivityFeed() {
     return <div className="pt-2 text-sm text-muted font-mono">No recent activity...</div>
   }
 
-  return <div className="flex flex-col pt-2">{items}</div>
+  return <div className="flex flex-col">{items}</div>
 }
