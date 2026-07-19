@@ -14,10 +14,10 @@ export function ActivityFeed() {
       <Anchor
         href={compareUrl}
         key={index}
-        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 py-2 cursor-pointer"
+        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 md:gap-8 py-2 cursor-pointer"
       >
-        <div className="w-40">
-          <Badge className="text-accent-foreground group-interact:text-background" variant="outline">
+        <div>
+          <Badge className="text-accent-foreground group-interact:text-background w-40" variant="outline">
             {formatDistanceToNow(pushedAt, {addSuffix: true})}
           </Badge>
         </div>
