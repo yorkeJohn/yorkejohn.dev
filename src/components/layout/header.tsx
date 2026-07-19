@@ -11,23 +11,20 @@ import {MuteToggle} from './sounds'
 
 export function Header() {
   return (
-    <header className="my-4">
-      <div className="flex justify-between gap-4">
-        <div className="inline-flex">
-          <Badge variant="transparent" className="font-mono text-primary-foreground">
-            <MapPinIcon data-icon="inline-start" />
-            Halifax, NS
-          </Badge>
-          <LocalTime />
-          <LocalWeather />
-        </div>
-        <div className="inline-flex gap-1">
-          <MuteToggle />
-          <Bgm />
-          <Console />
-        </div>
+    <header className="my-4 pb-4 border-b flex justify-between gap-4">
+      <div className="inline-flex">
+        <Badge variant="transparent" className="font-mono text-primary-foreground">
+          <MapPinIcon data-icon="inline-start" />
+          Halifax, NS
+        </Badge>
+        <LocalTime />
+        <LocalWeather />
       </div>
-      <hr className="my-2" />
+      <div className="inline-flex gap-1">
+        <MuteToggle />
+        <Bgm />
+        <Console />
+      </div>
     </header>
   )
 }

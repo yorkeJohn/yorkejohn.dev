@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts)
 
-const themes = ['space', 'blueprint']
+const themes = ['space', 'blueprint', 'fantasy', 'obsidian', 'gruvbox', 'nord', 'monokai', 'solarized']
 
 export default function RootLayout({children}: React.PropsWithChildren) {
   return (

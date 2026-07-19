@@ -20,7 +20,73 @@
   --primary-foreground: var(--color-amber-200);
   --accent: var(--color-lime-600);
   --accent-foreground: var(--color-lime-300);
-  --border: oklch(1 0 0 / 10%);
+  --border: var(--color-gray-700);
+}
+
+[data-theme="fantasy"] {
+  --background: var(--color-olive-100);
+  --foreground: var(--color-olive-950);
+  --muted: var(--color-olive-700);
+  --primary: var(--color-olive-300);
+  --primary-foreground: var(--color-olive-900);
+  --accent: var(--color-red-900);
+  --accent-foreground: var(--color-red-800);
+  --border: var(--color-olive-300);
+}
+
+[data-theme="obsidian"] {
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-mist-50);
+  --muted: var(--color-mist-400);
+  --primary: var(--color-neutral-800);
+  --primary-foreground: var(--color-neutral-200);
+  --accent: var(--color-neutral-500);
+  --accent-foreground: var(--color-neutral-300);
+  --border: var(--color-neutral-700);
+}
+
+[data-theme="gruvbox"] {
+  --background: #1d2021;
+  --foreground: #ebdbb2;
+  --muted: #a89984;
+  --primary: #d65d0e;
+  --primary-foreground: #fabd2f;
+  --accent: #98971a;
+  --accent-foreground: #b8bb26;
+  --border: #504945;
+}
+
+[data-theme="nord"] {
+  --background: #2e3440;
+  --foreground: #eceff4;
+  --muted: #a3be8c;
+  --primary: #3b4252;
+  --primary-foreground: #88c0d0;
+  --accent: #81a1c1;
+  --accent-foreground: #8fbcbb;
+  --border: #434c5e;
+}
+
+[data-theme="monokai"] {
+  --background: #272822;
+  --foreground: #f8f8f2;
+  --muted: #75715e;
+  --primary: #3e3d32;
+  --primary-foreground: #a6e22e;
+  --accent: #fd971f;
+  --accent-foreground: #fd971f;
+  --border: #49483e;
+}
+
+[data-theme="solarized"] {
+  --background: #fdf6e3;
+  --foreground: #002b36;
+  --muted: #586e75;
+  --primary: #eee8d5;
+  --primary-foreground: #859900;
+  --accent: #cb4b16;
+  --accent-foreground: #cb4b16;
+  --border: #93a1a1;
 }
 
 @theme inline {
@@ -47,9 +113,8 @@
   html {
     @apply font-sans;
   }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
+  ::selection {
+    @apply highlight;
   }
 }
 
