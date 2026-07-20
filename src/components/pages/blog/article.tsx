@@ -4,7 +4,7 @@ import {useIntersection} from '@mantine/hooks'
 import {FileMdIcon, SparkleIcon} from '@phosphor-icons/react'
 import {formatInTimeZone} from 'date-fns-tz'
 import Link from 'next/link'
-import {Badge, Cta} from '@/components'
+import {Badge, Cta, MegaHeading} from '@/components'
 import {PageSection} from '@/components/page-section'
 import type {PostMetadata} from '@/posts'
 
@@ -22,12 +22,9 @@ export function ArticlePage({post, children}: ArticlePageProps) {
 
   return (
     <main>
-      <div
-        className="my-8 md:my-12 lg:my-20 text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted"
-        ref={ref}
-      >
+      <MegaHeading margin ref={ref}>
         {title}
-      </div>
+      </MegaHeading>
 
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="lg:w-80 lg:sticky lg:top-13 lg:self-start ">

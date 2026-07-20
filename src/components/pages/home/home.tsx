@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 import {PageSection} from '@/components'
-import {Background} from '@/components/layout'
-import {ProjectCard} from '@/components/pages/projects/project-card'
+import {ProjectCard} from '@/components/pages'
 import {projects} from '@/components/pages/projects/registry'
 import {ActivityFeed} from './activity-feed'
+import {Background} from './background'
 import {StatsMarquee} from './stats-marquee'
 import {TopArtists} from './top-artists'
 

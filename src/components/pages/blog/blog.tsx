@@ -4,7 +4,7 @@ import {ArrowRightIcon, ArrowUpRightIcon, MinusIcon, PlusIcon} from '@phosphor-i
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '@radix-ui/react-collapsible'
 import {formatInTimeZone} from 'date-fns-tz'
 import Link from 'next/link'
-import {Badge, Cta, FilterGroup, PageSection} from '@/components'
+import {Badge, Cta, FilterGroup, MegaHeading, PageSection} from '@/components'
 import {useFilteredData} from '@/hooks'
 import type {PostMetadata} from '@/posts'
 
@@ -26,12 +26,9 @@ export function BlogPage({posts}: BlogPageProps) {
 
   return (
     <main>
-      <div className="flex items-start gap-2 my-8 md:my-12 lg:my-20">
-        <div className="text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted">
-          Blog
-        </div>
-        <span className="text-primary-foreground text-lg md:text-xl lg:text-2xl">({filtered.length})</span>
-      </div>
+      <MegaHeading superText={filtered.length} margin>
+        Blog
+      </MegaHeading>
 
       <div className="flex flex-col lg:flex-row gap-4">
         <PageSection label="Filters" className="lg:w-50 lg:sticky lg:top-13 lg:self-start">

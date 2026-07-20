@@ -4,7 +4,7 @@ import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import {formatDistanceToNow} from 'date-fns'
 import {use} from 'react'
 import {Anchor} from '@/components'
-import {activity} from '@/lib/activity'
+import {activity} from './activity'
 
 export function ActivityFeed() {
   const items = use(activity).map((item, index) => {
