@@ -32,7 +32,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
   return (
     <html lang="en" className={htmlClasses} suppressHydrationWarning>
       <Sounds />
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-dvh flex flex-col">
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
           <div className="flex-1 px-4 container mx-auto">
