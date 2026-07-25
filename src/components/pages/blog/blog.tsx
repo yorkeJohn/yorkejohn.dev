@@ -1,6 +1,6 @@
 'use client'
 
-import {ArrowRightIcon, ArrowUpRightIcon, MinusIcon, PlusIcon} from '@phosphor-icons/react'
+import {ArrowRightIcon, MinusIcon, PlusIcon} from '@phosphor-icons/react'
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '@radix-ui/react-collapsible'
 import {formatInTimeZone} from 'date-fns-tz'
 import Link from 'next/link'
@@ -56,23 +56,16 @@ function PostRow({post}: {post: PostMetadata}) {
   const topicBadges = topics.map(topic => <Badge key={topic}>{topic}</Badge>)
   return (
     <Collapsible key={slug}>
-      <div className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center group interact:highlight">
-        <Link href={`/blog/${slug}`} className="contents">
-          <div className="py-2 text-xs text-accent group-interact:text-inherit pe-8">
-            {formatInTimeZone(date, 'UTC', 'y.M.dd')}
-          </div>
-
-          <div className="md:flex md:items-end min-w-0 py-2 text-2xl pe-8">
-            <span className="md:truncate">{title}</span>
-            <ArrowUpRightIcon className="inline md:shrink-0" />
-          </div>
-        </Link>
-
-        <CollapsibleTrigger className="group p-2">
-          <PlusIcon className="inline me-1 group-data-[state=open]:hidden" />
-          <MinusIcon className="inline me-1 group-data-[state=closed]:hidden" />
-        </CollapsibleTrigger>
-      </div>
+      <CollapsibleTrigger className="w-full py-2 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center group interact:highlight">
+        <div className="text-xs text-accent group-interact:text-inherit pe-8">
+          {formatInTimeZone(date, 'UTC', 'y.M.dd')}
+        </div>
+        <div className="md:truncate text-2xl text-left">{title}</div>
+        <div className="px-1">
+          <PlusIcon className="group-data-[state=open]:hidden" />
+          <MinusIcon className="group-data-[state=closed]:hidden" />
+        </div>
+      </CollapsibleTrigger>
       <CollapsibleContent className="py-2">
         <div className="text-muted mb-2">{summary}</div>
         <div className="flex gap-1 flex-wrap">
