@@ -24,7 +24,7 @@ export default async function Page({params}: PageParams) {
   const post = await getPost(slug)
   if (!post) notFound()
 
-  const Content = await import(`@/../public/blog/${slug}.md`).then(mod => mod.default)
+  const Content = await import(`~/blog/${slug}.md`).then(mod => mod.default)
 
   return (
     <ArticlePage post={post}>
