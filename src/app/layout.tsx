@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 import {ThemeProvider} from 'next-themes'
-import {Background, Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
+import {Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
@@ -32,7 +32,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
   return (
     <html lang="en" className={htmlClasses} suppressHydrationWarning>
       <Sounds />
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-dvh flex flex-col">
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
           <div className="flex-1 px-4 container mx-auto">
@@ -40,7 +40,6 @@ export default function RootLayout({children}: React.PropsWithChildren) {
             <div className="sticky top-4 z-50">
               <Nav />
             </div>
-            <Background />
             {children}
           </div>
           <Footer />

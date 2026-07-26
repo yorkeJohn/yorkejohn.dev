@@ -13,14 +13,14 @@
 }
 
 [data-theme="space"] {
-  --background: var(--color-gray-900);
+  --background: var(--color-mist-900);
   --foreground: var(--color-mist-50);
   --muted: var(--color-mist-400);
   --primary: var(--color-amber-800);
   --primary-foreground: var(--color-amber-200);
   --accent: var(--color-lime-600);
   --accent-foreground: var(--color-lime-300);
-  --border: var(--color-gray-700);
+  --border: var(--color-mist-700);
 }
 
 [data-theme="fantasy"] {
@@ -116,6 +116,20 @@
   ::selection {
     @apply highlight;
   }
+  /* shiki */
+  :root {
+    --shiki-foreground: var(--foreground);
+    --shiki-background: var(--background);
+    --shiki-token-constant: var(--foreground);
+    --shiki-token-string: var(--muted);
+    --shiki-token-comment: var(--muted);
+    --shiki-token-keyword: var(--accent);
+    --shiki-token-parameter: var(--accent);
+    --shiki-token-function: var(--primary-foreground);
+    --shiki-token-string-expression: var(--muted);
+    --shiki-token-punctuation: var(--foreground);
+    --shiki-token-link: var(--primary-foreground);
+  }
 }
 
 @utility no-scrollbar {
@@ -127,8 +141,8 @@
   }
 }
 
-@custom-variant interact (&:is(:hover, :focus));
-@custom-variant group-interact (&:is(:where(.group):hover *, :where(.group):focus *, :where(.group):active *));
+@custom-variant interact (&:is(:hover, :active));
+@custom-variant group-interact (&:is(:where(.group):hover *, :where(.group):active *));
 
 @utility highlight {
   @apply bg-accent-foreground text-background;

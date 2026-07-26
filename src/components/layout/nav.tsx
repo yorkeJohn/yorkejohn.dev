@@ -1,10 +1,8 @@
 'use client'
 
 import {useHotkeys} from '@mantine/hooks'
-import Image from 'next/image'
 import Link from 'next/link'
 import {usePathname, useRouter} from 'next/navigation'
-import icon from '@/app/icon.svg'
 import {Anchor, Badge} from '@/components'
 import {cn} from '@/lib/cn'
 
@@ -12,6 +10,7 @@ type NavItem = {label: string; href: string; keybind: string}
 
 const data: NavItem[] = [
   {label: 'Projects', href: '/projects', keybind: 'P'},
+  {label: 'Blog', href: '/blog', keybind: 'B'},
   {label: 'GitHub', href: 'https://github.com/yorkeJohn', keybind: 'G'},
   {label: 'LinkedIn', href: 'https://linkedin.com/in/yorkejohn/', keybind: 'L'},
   {label: 'Discord', href: 'https://discord.com/users/128378400803913728', keybind: 'D'}
@@ -52,12 +51,21 @@ export function Nav() {
 
   return (
     <nav className="flex gap-1">
-      <Badge asChild className="[a]:interact:bg-accent-foreground cursor-pointer">
-        <Link href="/">
-          <Image width={12} height={12} loading="eager" src={icon} alt="Home" />
-        </Link>
-      </Badge>
+      <HomeLink />
       {navLinks}
     </nav>
+  )
+}
+
+function HomeLink() {
+  return (
+    <Badge asChild className="[a]:interact:bg-accent-foreground cursor-pointer group">
+      <Link href="/">
+        <svg viewBox="0 0 100 100">
+          <title>Home</title>
+          <polygon points="0,0 0,100 100,100" className="fill-foreground/90 group-hover:fill-background" />
+        </svg>
+      </Link>
+    </Badge>
   )
 }

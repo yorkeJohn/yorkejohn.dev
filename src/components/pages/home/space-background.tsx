@@ -3,7 +3,7 @@
 import {PointMaterial, Points, type PointsInstancesProps} from '@react-three/drei'
 import {Canvas, useFrame} from '@react-three/fiber'
 import * as random from 'maath/random'
-import {Suspense, useRef, useState} from 'react'
+import {useRef, useState} from 'react'
 import type {PointsMaterial as PointsMaterialType, Points as PointsType} from 'three'
 
 const count = 2000
@@ -43,12 +43,12 @@ function Scene(props: PointsInstancesProps) {
   )
 }
 
-export default function Background() {
+export default function SpaceBackground() {
   return (
-    <Suspense fallback={null}>
+    <div className="fixed inset-0 -z-10 pointer-events-none">
       <Canvas camera={{position: [0, 0, 1]}}>
         <Scene />
       </Canvas>
-    </Suspense>
+    </div>
   )
 }

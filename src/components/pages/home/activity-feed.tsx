@@ -4,7 +4,7 @@ import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import {formatDistanceToNow} from 'date-fns'
 import {use} from 'react'
 import {Anchor} from '@/components'
-import {activity} from '@/lib/activity'
+import {activity} from './activity'
 
 export function ActivityFeed() {
   const items = use(activity).map((item, index) => {
@@ -35,5 +35,5 @@ export function ActivityFeed() {
     return <div className="pt-2 text-sm text-muted font-mono">No recent activity...</div>
   }
 
-  return <div className="flex flex-col">{items}</div>
+  return <div className="flex flex-col divide-y divide-dashed divide-accent">{items}</div>
 }
