@@ -60,7 +60,7 @@ function PostRow({post}: {post: PostMetadata}) {
         <div className="text-xs text-accent group-interact:text-inherit pe-8">
           {formatInTimeZone(date, 'UTC', 'y.M.dd')}
         </div>
-        <div className="md:truncate text-2xl text-left">{title}</div>
+        <div className="md:truncate text-lg md:text-xl lg:text-2xl text-left">{title}</div>
         <div className="px-1">
           <PlusIcon className="group-data-[state=open]:hidden" />
           <MinusIcon className="group-data-[state=closed]:hidden" />

@@ -8,7 +8,7 @@ type MegaHeadingProps = React.ComponentProps<'div'> & {
 
 export function MegaHeading({children, superText, className, margin = true, ...props}: MegaHeadingProps) {
   const baseClasses =
-    'text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-[0.8] tracking-tight font-heading text-muted'
+    'text-[48pt] md:text-[60pt] lg:text-[72pt] font-semibold leading-none tracking-tight font-heading text-muted'
   const marginClasses = 'my-8 md:my-12 lg:my-20'
 
   if (superText) {
