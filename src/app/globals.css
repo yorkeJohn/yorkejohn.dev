@@ -13,14 +13,14 @@
 }
 
 [data-theme="space"] {
-  --background: var(--color-gray-900);
+  --background: var(--color-mist-900);
   --foreground: var(--color-mist-50);
   --muted: var(--color-mist-400);
   --primary: var(--color-amber-800);
   --primary-foreground: var(--color-amber-200);
   --accent: var(--color-lime-600);
   --accent-foreground: var(--color-lime-300);
-  --border: var(--color-gray-700);
+  --border: var(--color-mist-700);
 }
 
 [data-theme="fantasy"] {

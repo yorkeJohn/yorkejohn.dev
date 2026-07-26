@@ -1,18 +1,26 @@
 'use client'
 
+import {useMounted} from '@mantine/hooks'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import {useTheme} from 'next-themes'
 import {PageSection} from '@/components'
 import {ProjectCard} from '@/components/pages'
 import {projects} from '@/components/pages/projects/registry'
 import {ActivityFeed} from './activity-feed'
-import {Background} from './background'
 import {StatsMarquee} from './stats-marquee'
 import {TopArtists} from './top-artists'
 
+// background for space theme
+const SpaceBackground = dynamic(() => import('./space-background'), {ssr: false})
+
 export function HomePage() {
+  const {theme} = useTheme()
+  const mounted = useMounted()
+
   return (
     <main>
-      <Background />
+      {mounted && theme === 'space' && <SpaceBackground />}
       <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
         <div className="text-muted">
           Welcome&nbsp;
