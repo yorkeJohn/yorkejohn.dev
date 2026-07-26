@@ -33,7 +33,7 @@ export function PrivacyPage() {
           </div>
         </PageSection>
 
-        <PageSection label="Article" className="flex-1">
+        <PageSection label="Legal Information" className="flex-1">
           <div className="pt-8 typography">
             <Content />
           </div>
