@@ -141,8 +141,8 @@
   }
 }
 
-@custom-variant interact (&:is(:hover, :focus));
-@custom-variant group-interact (&:is(:where(.group):hover *, :where(.group):focus *, :where(.group):active *));
+@custom-variant interact (&:is(:hover, :active));
+@custom-variant group-interact (&:is(:where(.group):hover *, :where(.group):active *));
 
 @utility highlight {
   @apply bg-accent-foreground text-background;
