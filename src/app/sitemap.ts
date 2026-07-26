@@ -1,5 +1,6 @@
 import type {MetadataRoute} from 'next'
 import {SITE_URL} from '@/lib/constants'
+import {getPosts} from '@/posts'
 
 export const dynamic = 'force-static'
 
@@ -8,9 +9,11 @@ const toSitemapEntry = (path: string): MetadataRoute.Sitemap[number] => ({
   lastModified: new Date()
 })
 
-const staticPaths = ['/', '/projects/'] as const
+const staticPaths = ['/', '/projects/', '/privacy/', '/blog/'] as const
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = [...staticPaths]
-  return paths.map(toSitemapEntry)
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPosts()
+  const blogPaths = posts.map(post => `/blog/${post.slug}/`)
+
+  return [...staticPaths, ...blogPaths].map(toSitemapEntry)
 }
