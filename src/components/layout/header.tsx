@@ -2,6 +2,7 @@
 
 import {useFetch, useInterval} from '@mantine/hooks'
 import {ClockIcon, CloudIcon, MapPinIcon} from '@phosphor-icons/react'
+import {formatInTimeZone} from 'date-fns-tz'
 import {useEffect, useState} from 'react'
 import {Badge} from '@/components'
 import {wmoToIcon} from '@/lib/wmo-to-icon'
@@ -29,17 +30,9 @@ export function Header() {
   )
 }
 
-const formatter = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'America/Halifax',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit',
-  hour12: false
-})
-
 function LocalTime() {
   const [time, setTime] = useState<string>('--:--:--')
-  const update = () => setTime(formatter.format(new Date()))
+  const update = () => setTime(formatInTimeZone(new Date(), 'America/Halifax', 'HH:mm:ss'))
   useEffect(update, []) // update on mount
   useInterval(update, 1000, {autoInvoke: true}) // update every second
 
