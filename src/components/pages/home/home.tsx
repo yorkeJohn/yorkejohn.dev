@@ -2,7 +2,6 @@
 
 import {useMounted} from '@mantine/hooks'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import {useTheme} from 'next-themes'
 import {PageSection} from '@/components'
 import {ProjectCard} from '@/components/pages'
@@ -34,16 +33,11 @@ export function HomePage() {
         </div>
       </div>
 
-      <div className="flex sm:flex-row flex-col gap-12 items-start">
-        <div className="border border-accent p-1">
-          <Image width={200} height={200} loading="eager" src="/avatar.jpg" alt="John's Avatar" />
-        </div>
-        <div className="text-muted text-lg md:text-xl lg:text-2xl tracking-tighter max-w-[45ch] -mt-1">
-          <p className="mb-4">
-            Hey there! My name is John. I'm a software & data engineer based in Halifax, Nova Scotia, Canada.
-          </p>
-          <p>This is my personal corner of the internet where I share my projects and what I'm learning.</p>
-        </div>
+      <div className="text-muted text-lg md:text-xl lg:text-2xl tracking-tighter text-balance">
+        <p className="mb-4">
+          Hey there! My name is John. I'm a software & data engineer based in Halifax, Nova Scotia, Canada.
+        </p>
+        <p>This is my personal corner of the internet where I share my projects and what I'm learning.</p>
       </div>
 
       <PageSection label="Stats" className="my-8">
