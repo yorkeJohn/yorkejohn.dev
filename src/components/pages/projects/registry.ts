@@ -125,7 +125,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Tainted Magic',
-    description: 'Tainted Magic is a Minecraft mod and addon to Thaumcraft 4, with over 1.5 million downloads.',
+    description: 'Tainted Magic is a Minecraft mod and addon to Thaumcraft 4.',
     image: taintedMagic,
     links: [
       {label: 'GitHub', url: 'https://github.com/yorkeJohn/tainted-magic'},

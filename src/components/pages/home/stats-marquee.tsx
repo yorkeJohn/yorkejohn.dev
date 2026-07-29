@@ -11,10 +11,10 @@ const stats: Stat[] = [
   {label: 'Building things since', stat: '2015'},
   {label: '3 languages', stat: 'English - Français (French) - 日本語 (Japanese)'},
   {label: 'Years of professional experience', stat: `${new Date().getFullYear() - 2021}+`},
-  {label: 'Minecraft mod downloads', stat: '2.5M+'},
+  {label: 'Minecraft mod downloads', stat: '2.7M+'},
   {label: 'Hobbies', stat: 'Gaming - Bodybuilding - Hiking - Food'},
   {label: 'Unfinished side projects', stat: 'Infinite'},
-  {label: 'Currently focused on', stat: 'Data engineering'}
+  {label: 'Current role', stat: 'Senior Engineer @ RBCCM'}
 ]
 
 export function StatsMarquee() {
