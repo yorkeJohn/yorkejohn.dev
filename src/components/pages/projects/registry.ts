@@ -1,7 +1,7 @@
 /* Image imports */
 import type {StaticImageData} from 'next/image'
 import {REPO_URL} from '@/lib/constants'
-import website from '~/og-image.jpg' // use OG Image
+import website from '~/og-image.png' // use OG Image
 import bonsaiParlour from './images/bonsai-parlour.jpg'
 import espressoChat from './images/espresso-chat.jpg'
 import frenchVillage from './images/french-village.jpg'

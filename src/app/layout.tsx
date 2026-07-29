@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: SITE_NAME,
     url: SITE_URL,
-    images: [{url: '/og-image.jpg', alt: 'OG Image'}]
+    images: [{url: '/og-image.png', alt: 'OG Image'}]
   },
   other: {'google-site-verification': 'TwPlurVt4Z3Q15zY5V0ss2_kP6manPGCPycEKNGIhPA'}
 }
