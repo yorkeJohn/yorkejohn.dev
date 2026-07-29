@@ -27,7 +27,7 @@ function CustomCursor() {
   }, [x, y])
 
   return (
-    <div className="pointer-events-none z-10000">
+    <div className="pointer-events-none z-10000 flex">
       <motion.div className="fixed -translate-1/2 w-2 h-2 bg-primary rounded-full" style={{x, y}} />
       <motion.div className="fixed -translate-1/2 w-12 h-12 border rounded-full" style={{x: ringX, y: ringY}} />
     </div>
