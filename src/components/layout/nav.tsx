@@ -50,9 +50,11 @@ export function Nav() {
   })
 
   return (
-    <nav className="flex gap-1">
-      <HomeLink />
-      {navLinks}
+    <nav className="sticky top-4 z-50">
+      <div className="flex gap-1">
+        <HomeLink />
+        {navLinks}
+      </div>
     </nav>
   )
 }
@@ -63,7 +65,7 @@ function HomeLink() {
       <Link href="/">
         <svg viewBox="0 0 100 100">
           <title>Home</title>
-          <polygon points="0,0 0,100 100,100" className="fill-foreground/90 group-interact:fill-background" />
+          <polygon points="100,0 0,100 100,100" className="fill-foreground/90 group-interact:fill-background" />
         </svg>
       </Link>
     </Badge>

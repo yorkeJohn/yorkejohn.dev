@@ -13,7 +13,7 @@ export function PrivacyPage() {
   const {lastUpdated} = PrivacyMetadataSchema.parse(metadata)
 
   return (
-    <main>
+    <section>
       <MegaHeading margin>Privacy Policy</MegaHeading>
 
       <div className="flex flex-col lg:flex-row gap-8">
@@ -34,11 +34,11 @@ export function PrivacyPage() {
         </PageSection>
 
         <PageSection label="Legal Information" className="flex-1">
-          <div className="pt-8 typography">
+          <article className="pt-8 typography">
             <Content />
-          </div>
+          </article>
         </PageSection>
       </div>
-    </main>
+    </section>
   )
 }

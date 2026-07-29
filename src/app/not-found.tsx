@@ -4,7 +4,7 @@ import {MegaHeading, PageSection} from '@/components'
 
 export default function NotFound() {
   return (
-    <main>
+    <section>
       <MegaHeading margin>404: Page Not Found</MegaHeading>
       <PageSection label="Error">
         <div className="py-4 text-xl text-primary-foreground">
@@ -15,6 +15,6 @@ export default function NotFound() {
           Back to safety
         </Link>
       </PageSection>
-    </main>
+    </section>
   )
 }

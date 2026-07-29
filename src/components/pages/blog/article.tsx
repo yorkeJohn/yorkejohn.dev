@@ -21,7 +21,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
   const showSidebarTitle = entry !== null && !entry.isIntersecting
 
   return (
-    <main>
+    <section>
       <MegaHeading margin ref={ref}>
         {title}
       </MegaHeading>
@@ -69,9 +69,9 @@ export function ArticlePage({post, children}: ArticlePageProps) {
         </div>
 
         <PageSection label="Article" className="flex-1">
-          <div className="pt-8 typography">{children}</div>
+          <article className="pt-8 typography">{children}</article>
         </PageSection>
       </div>
-    </main>
+    </section>
   )
 }

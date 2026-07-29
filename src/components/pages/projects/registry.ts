@@ -1,5 +1,6 @@
 /* Image imports */
 import type {StaticImageData} from 'next/image'
+import {REPO_URL} from '@/lib/constants'
 import website from '~/og-image.jpg' // use OG Image
 import bonsaiParlour from './images/bonsai-parlour.jpg'
 import espressoChat from './images/espresso-chat.jpg'
@@ -35,7 +36,7 @@ export const projects: Project[] = [
     description:
       'A design-forward personal website that showcases both technical craft and individual perspective. The goal: to create a space that feels expressive and human.',
     image: website,
-    links: [{label: 'GitHub', url: 'https://github.com/yorkeJohn/yorkejohn.dev'}],
+    links: [{label: 'GitHub', url: REPO_URL}],
     badges: ['Design', 'Next.js', 'Three.js'],
     startYear: 2026,
     type: 'Personal'

@@ -4,6 +4,7 @@ import {Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
 import {fonts} from '@/lib/fonts'
+import {themes} from '@/lib/themes'
 
 import './globals.css'
 import './typography.css'
@@ -26,22 +27,18 @@ export const metadata: Metadata = {
 
 const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts)
 
-const themes = ['space', 'blueprint', 'fantasy', 'obsidian', 'gruvbox', 'nord', 'monokai', 'solarized']
-
 export default function RootLayout({children}: React.PropsWithChildren) {
   return (
     <html lang="en" className={htmlClasses} suppressHydrationWarning>
       <Sounds />
-      <body className="min-h-dvh flex flex-col">
+      <body>
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
-          <div className="flex-1 px-4 container mx-auto">
+          <main className="min-h-dvh px-4 container mx-auto pb-12 md:pb-16">
             <Header />
-            <div className="sticky top-4 z-50">
-              <Nav />
-            </div>
+            <Nav />
             {children}
-          </div>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

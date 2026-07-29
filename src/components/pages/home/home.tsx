@@ -18,43 +18,45 @@ export function HomePage() {
   const mounted = useMounted()
 
   return (
-    <main>
+    <section>
       {mounted && theme === 'space' && <SpaceBackground />}
       <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
         <div className="text-muted">
-          Welcome&nbsp;
+          John
           <br className="sm:hidden" />
-          to&nbsp;
+          &nbsp;Yorke&nbsp;
         </div>
-        <div className="text-accent-foreground text-right">
+        <div className="text-accent-foreground text-right text-outline">
           yorke
           <br className="sm:hidden" />
           john.dev
         </div>
       </div>
 
-      <div className="text-muted text-lg md:text-xl lg:text-2xl tracking-tighter text-balance">
+      <div className="text-muted text-lg md:text-xl lg:text-2xl tracking-tighter text-balance mb-16">
         <p className="mb-4">
           Hey there! My name is John. I'm a software & data engineer based in Halifax, Nova Scotia, Canada.
         </p>
         <p>This is my personal corner of the internet where I share my projects and what I'm learning.</p>
       </div>
 
-      <PageSection label="Stats" className="my-8">
-        <StatsMarquee />
-      </PageSection>
+      <div className="flex flex-col gap-8">
+        <PageSection label="Stats">
+          <StatsMarquee />
+        </PageSection>
 
-      <PageSection label="Featured Project" className="my-8">
-        <ProjectCard project={projects[9]} withCta className="pt-4" />
-      </PageSection>
+        <PageSection label="Featured Project">
+          <ProjectCard project={projects[9]} withCta className="pt-4" />
+        </PageSection>
 
-      <PageSection label="Recent Activity" className="my-8">
-        <ActivityFeed />
-      </PageSection>
+        <PageSection label="Recent Activity">
+          <ActivityFeed />
+        </PageSection>
 
-      <PageSection label="Listening To" className="my-8">
-        <TopArtists />
-      </PageSection>
-    </main>
+        <PageSection label="Listening To">
+          <TopArtists />
+        </PageSection>
+      </div>
+    </section>
   )
 }

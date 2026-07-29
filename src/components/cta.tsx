@@ -9,7 +9,7 @@ type CtaProps = React.ComponentProps<'button'> & {
 export function Cta({className, asChild, children, ...rest}: CtaProps) {
   const Component = asChild ? Slot : 'button'
   const classes =
-    'border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1'
+    'border border-accent text-accent-foreground rounded-full inline-flex items-center justify-center text-sm p-1 interact:highlight interact:border-transparent gap-1 font-semibold'
 
   return (
     <Component className={cn(classes, className)} {...rest}>

@@ -23,17 +23,6 @@
   --border: var(--color-mist-700);
 }
 
-[data-theme="fantasy"] {
-  --background: var(--color-olive-100);
-  --foreground: var(--color-olive-950);
-  --muted: var(--color-olive-700);
-  --primary: var(--color-olive-300);
-  --primary-foreground: var(--color-olive-900);
-  --accent: var(--color-red-900);
-  --accent-foreground: var(--color-red-800);
-  --border: var(--color-olive-300);
-}
-
 [data-theme="obsidian"] {
   --background: var(--color-neutral-950);
   --foreground: var(--color-mist-50);
@@ -87,6 +76,17 @@
   --accent: #cb4b16;
   --accent-foreground: #cb4b16;
   --border: #93a1a1;
+}
+
+[data-theme="tokyo-night"] {
+  --background: #1a1b26;
+  --foreground: #c0caf5;
+  --muted: #565f89;
+  --primary: #414868;
+  --primary-foreground: #f7768e;
+  --accent: #9ece6a;
+  --accent-foreground: #9ece6a;
+  --border: #414868;
 }
 
 @theme inline {
@@ -146,6 +146,11 @@
 
 @utility highlight {
   @apply bg-accent-foreground text-background;
+}
+
+@utility text-outline {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Animations */

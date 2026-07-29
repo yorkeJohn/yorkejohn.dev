@@ -25,7 +25,7 @@ export function BlogPage({posts}: BlogPageProps) {
   const rows = filtered.sort(sortPostsByDateDesc).map(post => <PostRow key={post.slug} post={post} />)
 
   return (
-    <main>
+    <section>
       <MegaHeading superText={filtered.length} margin>
         Blog
       </MegaHeading>
@@ -46,7 +46,7 @@ export function BlogPage({posts}: BlogPageProps) {
           <div className="flex flex-col divide-y divide-dashed divide-accent">{rows}</div>
         </PageSection>
       </div>
-    </main>
+    </section>
   )
 }
 

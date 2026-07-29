@@ -19,7 +19,7 @@ export function ProjectsPage() {
     .map((project, index) => <ProjectCard project={project} key={index} className="pb-4" />)
 
   return (
-    <main>
+    <section>
       <MegaHeading superText={filtered.length} margin>
         Projects
       </MegaHeading>
@@ -53,6 +53,6 @@ export function ProjectsPage() {
           <div className="pt-4 flex flex-col gap-4 divide-y divide-dashed divide-accent">{cards}</div>
         </PageSection>
       </div>
-    </main>
+    </section>
   )
 }
