@@ -2,14 +2,14 @@
 @import "tw-animate-css";
 
 [data-theme="blueprint"] {
-  --background: var(--color-mist-50);
-  --foreground: var(--color-mist-950);
-  --muted: var(--color-mist-800);
+  --background: var(--color-mist-100);
+  --foreground: var(--color-indigo-950);
+  --muted: var(--color-indigo-800);
   --primary: var(--color-indigo-100);
   --primary-foreground: var(--color-indigo-900);
   --accent: var(--color-indigo-900);
-  --accent-foreground: var(--color-indigo-800);
-  --border: var(--color-indigo-900);
+  --accent-foreground: var(--color-indigo-700);
+  --border: var(--color-mist-400);
 }
 
 [data-theme="space"] {

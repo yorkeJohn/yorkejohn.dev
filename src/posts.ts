@@ -33,7 +33,7 @@ export async function getPosts(): Promise<PostMetadata[]> {
 
 export async function getPost(slug: string): Promise<PostMetadata | null> {
   try {
-    const mod = await import(`../public/blog/${slug}.md`)
+    const mod = await import(`~/blog/${slug}.md`)
     const metadata = PostMetadataSchema.parse(mod.metadata)
     const readTime = await getReadTime(path.join(process.cwd(), `public/blog/${slug}.md`))
 
