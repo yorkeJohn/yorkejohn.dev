@@ -40,7 +40,7 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
         <div className="mb-8">
           <div className="flex flex-col mb-2">
             <span className="text-primary-foreground">({startYear})</span>
-            <div className="font-heading tracking-tight text-3xl lg:text-4xl font-semibold">{title}</div>
+            <div className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">{title}</div>
           </div>
           <div className="flex gap-2">{linkElements}</div>
         </div>

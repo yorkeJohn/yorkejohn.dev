@@ -9,7 +9,6 @@
     font-size: var(--text-4xl);
     line-height: var(--text-4xl--line-height);
     font-weight: 800;
-    font-family: var(--font-heading);
   }
   .typography h2 {
     scroll-margin: calc(var(--spacing) * 20);
@@ -18,7 +17,6 @@
     line-height: var(--text-3xl--line-height);
     font-weight: 600;
     margin-top: calc(var(--spacing) * 12);
-    font-family: var(--font-heading);
   }
   .typography h2:first-child {
     margin-top: 0;
@@ -29,7 +27,6 @@
     line-height: var(--text-2xl--line-height);
     font-weight: 600;
     margin-top: calc(var(--spacing) * 12);
-    font-family: var(--font-heading);
   }
   .typography h3:first-child {
     margin-top: 0;
@@ -40,7 +37,6 @@
     line-height: var(--text-xl--line-height);
     font-weight: 600;
     margin-top: calc(var(--spacing) * 12);
-    font-family: var(--font-heading);
   }
   .typography h4:first-child {
     margin-top: 0;

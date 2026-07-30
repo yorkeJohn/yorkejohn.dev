@@ -20,24 +20,21 @@ export function HomePage() {
   return (
     <section>
       {mounted && theme === 'space' && <SpaceBackground />}
-      <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] font-semibold leading-[0.8] my-12 md:my-20 tracking-tight font-heading">
+      <div className="text-[60pt] md:text-[72pt] lg:text-[96pt] leading-[0.8] my-12 md:my-20 font-heading tracking-wide">
         <div className="text-muted">
-          John
-          <br className="sm:hidden" />
-          &nbsp;Yorke&nbsp;
+          John&nbsp;
+          <br className="md:hidden" />
+          Yorke
         </div>
-        <div className="text-accent-foreground text-right text-outline">
+        <div className="text-accent-foreground text-right">
           yorke
-          <br className="sm:hidden" />
-          john.dev
+          <br className="md:hidden" />
+          john.<span className="font-pixel">dev</span>
         </div>
       </div>
 
       <div className="text-muted text-lg md:text-xl lg:text-2xl tracking-tighter text-balance mb-16">
-        <p className="mb-4">
-          Hey there! My name is John. I'm a software & data engineer based in Halifax, Nova Scotia, Canada.
-        </p>
-        <p>This is my personal corner of the internet where I share my projects and what I'm learning.</p>
+        <p>Welcome to my personal corner of the internet where I share my projects and what I'm learning.</p>
       </div>
 
       <div className="flex flex-col gap-8">

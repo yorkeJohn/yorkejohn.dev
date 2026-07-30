@@ -1,9 +1,9 @@
 import type {Metadata} from 'next'
 import {ThemeProvider} from 'next-themes'
 import {Cursor, Footer, Header, Nav, Sounds} from '@/components/layout'
+import {fonts} from '@/fonts'
 import {cn} from '@/lib/cn'
 import {SITE_NAME, SITE_URL} from '@/lib/constants'
-import {fonts} from '@/lib/fonts'
 import {themes} from '@/lib/themes'
 
 import './globals.css'
@@ -34,7 +34,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
       <body>
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
-          <main className="min-h-dvh px-4 container mx-auto pb-12 md:pb-16">
+          <main className="min-h-svh px-4 container mx-auto pb-12 md:pb-16">
             <Header />
             <Nav />
             {children}

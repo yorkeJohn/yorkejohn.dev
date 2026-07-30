@@ -31,8 +31,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
   if (props.type === 'snap') {
     return (
       <motion.div
-        drag
-        dragListener={pd}
+        drag={pd ? true : 'x'}
         dragSnapToOrigin
         dragTransition={{bounceStiffness: 1000}}
         onDragStart={() => playSound('transition_up')}
