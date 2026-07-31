@@ -45,7 +45,7 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
           <div className="flex gap-2">{linkElements}</div>
         </div>
         <div>
-          <div className="flex gap-1 mb-2 flex-wrap">
+          <div className="flex gap-0.5 mb-2 flex-wrap">
             <Badge>{type}</Badge>
             {badgeElements}
           </div>

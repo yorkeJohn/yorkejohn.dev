@@ -68,7 +68,7 @@ function PostRow({post}: {post: PostMetadata}) {
       </CollapsibleTrigger>
       <CollapsibleContent className="py-2">
         <div className="text-muted mb-2">{summary}</div>
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex gap-0.5 flex-wrap">
           <div className="text-primary-foreground text-sm pr-1">Topic:</div>
           {topicBadges}
         </div>

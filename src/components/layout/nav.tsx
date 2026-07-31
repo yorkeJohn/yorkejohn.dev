@@ -51,7 +51,7 @@ export function Nav() {
 
   return (
     <nav className="sticky top-4 z-50">
-      <div className="flex gap-1">
+      <div className="flex gap-0.5">
         <HomeLink />
         {navLinks}
       </div>

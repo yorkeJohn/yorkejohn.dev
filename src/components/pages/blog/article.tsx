@@ -47,7 +47,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
 
               <div className="grid grid-cols-2 py-2">
                 <div className="text-sm text-accent">Topics:</div>
-                <div className="flex flex-wrap gap-1">{topicBadges}</div>
+                <div className="flex flex-wrap gap-0.5">{topicBadges}</div>
               </div>
 
               {ai && (
