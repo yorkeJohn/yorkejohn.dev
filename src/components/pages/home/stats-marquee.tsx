@@ -21,7 +21,7 @@ export function StatsMarquee() {
   const items = stats.map((item, index) => {
     const {label, stat} = item
     return (
-      <Badge key={index} variant="outline" className="mx-1">
+      <Badge key={index} variant="outline" className="mx-0.5">
         {label}:<span className="ms-1 text-accent-foreground">{stat}</span>
       </Badge>
     )

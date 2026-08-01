@@ -36,17 +36,17 @@ export function ArticlePage({post, children}: ArticlePageProps) {
           <PageSection label="Metadata">
             <div className="divide-y divide-dashed divide-accent pt-2">
               <div className="grid grid-cols-2 py-2 text-sm">
-                <div className="text-accent">Date:</div>
+                <div className="text-accent-foreground">Date:</div>
                 <div className="text-muted">{formatInTimeZone(date, 'UTC', 'y.M.dd')}</div>
               </div>
 
               <div className="grid grid-cols-2 py-2 text-sm">
-                <div className="text-accent">Read Time:</div>
+                <div className="text-accent-foreground">Read Time:</div>
                 <div className="text-muted">{readTime} min read</div>
               </div>
 
               <div className="grid grid-cols-2 py-2">
-                <div className="text-accent text-sm">Topics:</div>
+                <div className="text-accent-foreground text-sm">Topics:</div>
                 <div className="flex flex-wrap gap-0.5">{topicBadges}</div>
               </div>
 

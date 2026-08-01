@@ -8,7 +8,7 @@ type MarqueeProps = {
   reverse?: boolean
 } & React.ComponentProps<'div'>
 
-export function Marquee({items, speed = 20, pauseOnHover = true, reverse = false, className = ''}: MarqueeProps) {
+export function Marquee({items, speed = 30, pauseOnHover = true, reverse = false, className = ''}: MarqueeProps) {
   const elements = [...items, ...items].map((item, index) => (
     <div key={index} className="shrink-0">
       {item}

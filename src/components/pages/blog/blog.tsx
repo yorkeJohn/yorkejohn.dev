@@ -57,7 +57,7 @@ function PostRow({post}: {post: PostMetadata}) {
   return (
     <Collapsible key={slug}>
       <CollapsibleTrigger className="group interact:highlight grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center py-2">
-        <div className="pe-8 text-accent text-xs group-interact:text-inherit">
+        <div className="pe-8 text-accent-foreground text-xs group-interact:text-inherit">
           {formatInTimeZone(date, 'UTC', 'y.M.dd')}
         </div>
         <div className="text-left text-lg md:truncate md:text-xl lg:text-2xl">{title}</div>
