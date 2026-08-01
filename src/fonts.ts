@@ -1,10 +1,9 @@
 import {Noto_Sans, Syne, Ubuntu_Mono} from 'next/font/google'
-import localFont from 'next/font/local'
 
 const heading = Syne({
   subsets: ['latin'],
   variable: '--font-heading',
-  weight: '600',
+  weight: '700',
   fallback: ['Noto Sans']
 })
 
@@ -19,9 +18,4 @@ const mono = Ubuntu_Mono({
   weight: '400'
 })
 
-const accent = localFont({
-  src: '../public/fonts/DepartureMono-Regular.woff2',
-  variable: '--font-pixel'
-})
-
-export const fonts = [heading.variable, sans.variable, mono.variable, accent.variable] as const
+export const fonts = [heading.variable, sans.variable, mono.variable] as const

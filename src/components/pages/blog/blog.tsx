@@ -66,18 +66,20 @@ function PostRow({post}: {post: PostMetadata}) {
           <MinusIcon className="group-data-[state=closed]:hidden" />
         </div>
       </CollapsibleTrigger>
-      <CollapsibleContent className="py-2">
-        <div className="mb-2 text-muted">{summary}</div>
-        <div className="flex flex-wrap gap-0.5">
-          <div className="pr-1 text-primary-foreground text-sm">Topic:</div>
-          {topicBadges}
+      <CollapsibleContent className="overflow-hidden transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+        <div className="py-2">
+          <div className="mb-2 text-muted">{summary}</div>
+          <div className="flex flex-wrap gap-0.5">
+            <div className="pr-1 text-primary-foreground text-sm">Topic:</div>
+            {topicBadges}
+          </div>
+          <Cta className="mt-4 w-full md:max-w-100" asChild>
+            <Link href={`/blog/${slug}`}>
+              Read on
+              <ArrowRightIcon />
+            </Link>
+          </Cta>
         </div>
-        <Cta className="mt-4 w-full md:max-w-100" asChild>
-          <Link href={`/blog/${slug}`}>
-            Read on
-            <ArrowRightIcon />
-          </Link>
-        </Cta>
       </CollapsibleContent>
     </Collapsible>
   )

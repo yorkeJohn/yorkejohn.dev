@@ -51,7 +51,7 @@ export function Nav() {
 
   return (
     <nav className="sticky top-4 z-50">
-      <div className="flex gap-0.5">
+      <div className="no-scrollbar flex gap-0.5 overflow-x-auto">
         <HomeLink />
         {navLinks}
       </div>

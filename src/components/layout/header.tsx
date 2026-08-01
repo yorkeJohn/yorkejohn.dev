@@ -12,7 +12,7 @@ import {MuteToggle} from './sounds'
 
 export function Header() {
   return (
-    <header className="my-4 flex justify-between gap-4 border-b pb-4">
+    <header className="no-scrollbar my-4 flex justify-between gap-4 overflow-x-auto border-b pb-4">
       <div className="inline-flex">
         <Badge variant="transparent" className="font-mono text-primary-foreground">
           <MapPinIcon data-icon="inline-start" />

@@ -20,7 +20,7 @@ export function HomePage() {
   return (
     <section>
       {mounted && theme === 'space' && <SpaceBackground />}
-      <div className="my-12 font-heading text-[60pt] leading-[0.8] tracking-tight md:my-20 md:text-[72pt] lg:text-[96pt]">
+      <div className="my-12 font-heading text-[55pt] leading-[0.8] tracking-tight md:my-20 md:text-[72pt] lg:text-[96pt]">
         <div className="text-muted">
           John&nbsp;
           <br className="sm:hidden" />
@@ -29,11 +29,11 @@ export function HomePage() {
         <div className="text-right text-accent-foreground sm:text-left">
           yorke
           <br className="sm:hidden" />
-          john.<span className="font-pixel">dev</span>
+          john.dev
         </div>
       </div>
 
-      <div className="mb-16 max-w-3/4 text-balance text-muted text-xl tracking-tight md:text-2xl lg:text-3xl">
+      <div className="mb-16 text-balance text-muted text-xl tracking-tight md:max-w-3/4 md:text-2xl lg:text-3xl">
         <p>Welcome to my personal corner of the internet where I share my projects and what I'm learning.</p>
       </div>
 
