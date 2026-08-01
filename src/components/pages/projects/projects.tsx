@@ -24,9 +24,9 @@ export function ProjectsPage() {
         Projects
       </MegaHeading>
 
-      <div className="flex flex-col lg:flex-row gap-4">
-        <PageSection label="Filters" className="lg:w-50 lg:sticky lg:top-13 lg:self-start flex flex-col">
-          <div className="flex flex-col lg:gap-2 pt-2">
+      <div className="flex flex-col gap-4 lg:flex-row">
+        <PageSection label="Filters" className="flex flex-col lg:sticky lg:top-13 lg:w-50 lg:self-start">
+          <div className="flex flex-col pt-2 lg:gap-2">
             <FilterGroup
               label="Project Type"
               field="type"
@@ -46,11 +46,11 @@ export function ProjectsPage() {
 
         <PageSection label="Projects & Selected Works" className="flex-1">
           {filtered.length === 0 && (
-            <div className="text-center text-primary-foreground pt-16 text-sm">
+            <div className="pt-16 text-center text-primary-foreground text-sm">
               No projects found matching the selected filters
             </div>
           )}
-          <div className="pt-4 flex flex-col gap-4 divide-y divide-dashed divide-accent">{cards}</div>
+          <div className="flex flex-col gap-4 divide-y divide-dashed divide-accent pt-4">{cards}</div>
         </PageSection>
       </div>
     </section>

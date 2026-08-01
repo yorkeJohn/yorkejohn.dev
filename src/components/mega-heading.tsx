@@ -15,7 +15,7 @@ export function MegaHeading({children, superText, className, margin = true, ...p
     return (
       <div className={cn('flex items-start gap-2', margin && marginClasses, className)} {...props}>
         <div className={baseClasses}>{children}</div>
-        <span className="text-primary-foreground text-lg md:text-xl lg:text-2xl">({superText})</span>
+        <span className="text-lg text-primary-foreground md:text-xl lg:text-2xl">({superText})</span>
       </div>
     )
   }

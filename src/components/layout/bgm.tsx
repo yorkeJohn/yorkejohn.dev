@@ -39,7 +39,7 @@ export function Bgm() {
         onPause={() => setPlaying(false)}
       />
       <Badge
-        className="text-primary-foreground hover:text-accent-foreground cursor-pointer"
+        className="cursor-pointer text-primary-foreground hover:text-accent-foreground"
         variant="outline"
         onClick={toggle}
       >

@@ -21,7 +21,7 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
       <button
         type="button"
         key={index}
-        className="text-sm text-muted hover:text-primary-foreground flex gap-1 items-center text-nowrap"
+        className="flex items-center gap-1 text-nowrap text-muted text-sm hover:text-primary-foreground"
         onClick={() => onChange(field, item)}
         data-sfx={active ? 'toggle_on' : 'toggle_off'}
       >
@@ -41,24 +41,24 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
         <CollapsibleTrigger asChild>
           <button
             type="button"
-            className="mb-2 text-primary-foreground group"
+            className="group mb-2 text-primary-foreground"
             data-sfx={open ? 'transition_down' : 'transition_up'}
           >
-            <FolderIcon className="inline me-1 group-data-[state=open]:hidden" />
-            <FolderOpenIcon className="inline me-1 group-data-[state=closed]:hidden" />
+            <FolderIcon className="me-1 inline group-data-[state=open]:hidden" />
+            <FolderOpenIcon className="me-1 inline group-data-[state=closed]:hidden" />
             {label}
           </button>
         </CollapsibleTrigger>
-        <CollapsibleContent className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden transition-all">
-          <div className="flex flex-col gap-1 items-start ps-2 border-l border-dashed">{filterButtons}</div>
+        <CollapsibleContent className="overflow-hidden transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+          <div className="flex flex-col items-start gap-1 border-l border-dashed ps-2">{filterButtons}</div>
         </CollapsibleContent>
       </Collapsible>
-      <div className="lg:hidden flex gap-4 border-b border-dashed py-2">
-        <div className="text-primary-foreground text-nowrap">
-          <FolderOpenIcon className="inline me-1" />
+      <div className="flex gap-4 border-b border-dashed py-2 lg:hidden">
+        <div className="text-nowrap text-primary-foreground">
+          <FolderOpenIcon className="me-1 inline" />
           {label}
         </div>
-        <div className="flex gap-3 overflow-x-scroll no-scrollbar">{filterButtons}</div>
+        <div className="no-scrollbar flex gap-3 overflow-x-scroll">{filterButtons}</div>
       </div>
     </div>
   )

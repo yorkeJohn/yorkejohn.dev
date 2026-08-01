@@ -40,7 +40,7 @@ export function Nav() {
         key={index}
         asChild
         className={cn(
-          'font-mono [a]:interact:highlight',
+          '[a]:interact:highlight font-mono',
           pathname.startsWith(href) && 'bg-accent-foreground text-background'
         )}
       >
@@ -61,7 +61,7 @@ export function Nav() {
 
 function HomeLink() {
   return (
-    <Badge asChild className="[a]:interact:bg-accent-foreground cursor-pointer group">
+    <Badge asChild className="group cursor-pointer [a]:interact:bg-accent-foreground">
       <Link href="/">
         <svg viewBox="0 0 100 100">
           <title>Home</title>

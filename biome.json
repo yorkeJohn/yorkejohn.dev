@@ -34,6 +34,9 @@
       },
       "a11y": {
         "useSemanticElements": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     },
     "domains": {

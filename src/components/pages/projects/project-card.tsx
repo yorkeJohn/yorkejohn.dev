@@ -31,27 +31,27 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
   ))
 
   return (
-    <div className={cn('flex gap-4 flex-col md:flex-row', className)} {...rest}>
+    <div className={cn('flex flex-col gap-4 md:flex-row', className)} {...rest}>
       <DraggableWindow type="snap" title={imageTitle} iconLeft={ImageIcon}>
         <Image src={image} alt={title} width={400} className="pointer-events-none" />
       </DraggableWindow>
 
-      <div className="flex flex-col justify-between flex-1">
+      <div className="flex flex-1 flex-col justify-between">
         <div className="mb-8">
-          <div className="flex flex-col mb-2">
+          <div className="mb-2 flex flex-col">
             <span className="text-primary-foreground">({startYear})</span>
-            <div className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">{title}</div>
+            <div className="font-semibold text-xl tracking-tight md:text-2xl lg:text-3xl">{title}</div>
           </div>
           <div className="flex gap-2">{linkElements}</div>
         </div>
         <div>
-          <div className="flex gap-0.5 mb-2 flex-wrap">
+          <div className="mb-2 flex flex-wrap gap-0.5">
             <Badge>{type}</Badge>
             {badgeElements}
           </div>
-          <div className="text-lg lg:text-xl text-muted max-w-[60ch]">{description}</div>
+          <div className="max-w-[60ch] text-lg text-muted lg:text-xl">{description}</div>
           {withCta && (
-            <Cta className="md:max-w-100 w-full mt-2" asChild>
+            <Cta className="mt-2 w-full md:max-w-100" asChild>
               <Link href="/projects">
                 All projects
                 <ArrowRightIcon />

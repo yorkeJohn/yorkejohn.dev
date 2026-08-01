@@ -29,13 +29,13 @@ export function TopArtists() {
       <Anchor
         href={artistUrl}
         key={index}
-        className="group interact:bg-accent-foreground flex gap-2 py-2 cursor-pointer items-center"
+        className="group flex cursor-pointer items-center gap-2 interact:bg-accent-foreground py-2"
       >
-        <div className="border border-accent p-1 group-interact:border-transparent shrink-0">
+        <div className="shrink-0 border border-accent p-1 group-interact:border-transparent">
           <Image src={image} width={50} height={50} alt={name} className="aspect-square object-cover" />
         </div>
         <div>
-          <Badge variant="outline" className="text-accent-foreground group-interact:text-background transition-none">
+          <Badge variant="outline" className="text-accent-foreground transition-none group-interact:text-background">
             n&deg;{index + 1}
           </Badge>
           <div className="text-2xl tracking-tight group-interact:text-background">
@@ -49,7 +49,7 @@ export function TopArtists() {
 
   return (
     <div className="pt-2">
-      <div className="text-muted text-sm font-mono">Via Spotify &bull; Six-month trend &bull; Updated weekly</div>
+      <div className="font-mono text-muted text-sm">Via Spotify &bull; Six-month trend &bull; Updated weekly</div>
       <div className="grid grid-cols-1 md:grid-cols-2">{items}</div>
     </div>
   )

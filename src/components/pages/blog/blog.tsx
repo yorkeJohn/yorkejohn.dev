@@ -30,8 +30,8 @@ export function BlogPage({posts}: BlogPageProps) {
         Blog
       </MegaHeading>
 
-      <div className="flex flex-col lg:flex-row gap-4">
-        <PageSection label="Filters" className="lg:w-50 lg:sticky lg:top-13 lg:self-start">
+      <div className="flex flex-col gap-4 lg:flex-row">
+        <PageSection label="Filters" className="lg:sticky lg:top-13 lg:w-50 lg:self-start">
           <div className="pt-2">
             <FilterGroup label="Topic" field="topics" value={selected.topics} data={options.topics} onChange={toggle} />
           </div>
@@ -39,7 +39,7 @@ export function BlogPage({posts}: BlogPageProps) {
 
         <PageSection label="Articles" className="flex-1">
           {filtered.length === 0 && (
-            <div className="text-center text-primary-foreground pt-16 text-sm">
+            <div className="pt-16 text-center text-primary-foreground text-sm">
               No posts found matching the selected filters
             </div>
           )}
@@ -56,23 +56,23 @@ function PostRow({post}: {post: PostMetadata}) {
   const topicBadges = topics.map(topic => <Badge key={topic}>{topic}</Badge>)
   return (
     <Collapsible key={slug}>
-      <CollapsibleTrigger className="w-full py-2 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center group interact:highlight">
-        <div className="text-xs text-accent group-interact:text-inherit pe-8">
+      <CollapsibleTrigger className="group interact:highlight grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center py-2">
+        <div className="pe-8 text-accent text-xs group-interact:text-inherit">
           {formatInTimeZone(date, 'UTC', 'y.M.dd')}
         </div>
-        <div className="md:truncate text-lg md:text-xl lg:text-2xl text-left">{title}</div>
+        <div className="text-left text-lg md:truncate md:text-xl lg:text-2xl">{title}</div>
         <div className="px-1">
           <PlusIcon className="group-data-[state=open]:hidden" />
           <MinusIcon className="group-data-[state=closed]:hidden" />
         </div>
       </CollapsibleTrigger>
       <CollapsibleContent className="py-2">
-        <div className="text-muted mb-2">{summary}</div>
-        <div className="flex gap-0.5 flex-wrap">
-          <div className="text-primary-foreground text-sm pr-1">Topic:</div>
+        <div className="mb-2 text-muted">{summary}</div>
+        <div className="flex flex-wrap gap-0.5">
+          <div className="pr-1 text-primary-foreground text-sm">Topic:</div>
           {topicBadges}
         </div>
-        <Cta className="md:max-w-100 w-full mt-4" asChild>
+        <Cta className="mt-4 w-full md:max-w-100" asChild>
           <Link href={`/blog/${slug}`}>
             Read on
             <ArrowRightIcon />

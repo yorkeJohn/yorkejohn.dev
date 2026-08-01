@@ -14,17 +14,17 @@ export function ActivityFeed() {
       <Anchor
         href={compareUrl}
         key={index}
-        className="group interact:bg-accent-foreground flex flex-col md:flex-row gap-2 md:items-center py-2 cursor-pointer"
+        className="group flex cursor-pointer flex-col gap-2 interact:bg-accent-foreground py-2 md:flex-row md:items-center"
       >
-        <div className="text-accent-foreground group-interact:text-background w-[22ch] text-xs">
+        <div className="w-[22ch] text-accent-foreground text-xs group-interact:text-background">
           {formatDistanceToNow(pushedAt, {addSuffix: true})}
         </div>
-        <div className="group-interact:text-background text-nowrap">
+        <div className="text-nowrap group-interact:text-background">
           Pushed to
-          <span className="text-primary-foreground font-mono group-interact:text-inherit">&nbsp;{repo}&nbsp;</span>
+          <span className="font-mono text-primary-foreground group-interact:text-inherit">&nbsp;{repo}&nbsp;</span>
           <br className="sm:hidden" />
           on branch
-          <span className="text-primary-foreground font-mono group-interact:text-inherit">&nbsp;{branch}</span>
+          <span className="font-mono text-primary-foreground group-interact:text-inherit">&nbsp;{branch}</span>
           <ArrowUpRightIcon className="inline" />
         </div>
       </Anchor>
@@ -32,7 +32,7 @@ export function ActivityFeed() {
   })
 
   if (items.length === 0) {
-    return <div className="pt-2 text-sm text-muted font-mono">No recent activity...</div>
+    return <div className="pt-2 font-mono text-muted text-sm">No recent activity...</div>
   }
 
   return <div className="flex flex-col divide-y divide-dashed divide-accent">{items}</div>

@@ -59,7 +59,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
             initial={{scale: 0.5, opacity: 0}}
             animate={{scale: 1, opacity: 1}}
             exit={{scale: 0.5, opacity: 0}}
-            className={cn(baseClasses, 'fixed bottom-4 right-4 z-100')}
+            className={cn(baseClasses, 'fixed right-4 bottom-4 z-100')}
           >
             <TitleBar title={title} Icon={iconLeft}>
               <XIcon className="cursor-pointer" onClick={onClose} />
@@ -82,11 +82,11 @@ type TitleBarProps = {
 
 function TitleBar({title, Icon, children}: TitleBarProps) {
   return (
-    <div className="flex py-1 items-center gap-1 text-muted">
+    <div className="flex items-center gap-1 py-1 text-muted">
       <Icon />
-      <span className="flex-1 h-px bg-transparent group-hover:bg-muted" />
-      <span className="font-mono text-[7pt] tracking-wider uppercase">{title}</span>
-      <span className="flex-1 h-px bg-transparent group-hover:bg-muted" />
+      <span className="h-px flex-1 bg-transparent group-hover:bg-muted" />
+      <span className="font-mono text-[7pt] uppercase tracking-wider">{title}</span>
+      <span className="h-px flex-1 bg-transparent group-hover:bg-muted" />
       {children}
     </div>
   )

@@ -7,7 +7,7 @@ export default function NotFound() {
     <section>
       <MegaHeading margin>404: Page Not Found</MegaHeading>
       <PageSection label="Error">
-        <div className="py-4 text-xl text-primary-foreground">
+        <div className="py-4 text-primary-foreground text-xl">
           The page that you have requested does not exist. Please verify the URL and try again.
         </div>
         <Link href="/" className="interact:highlight">

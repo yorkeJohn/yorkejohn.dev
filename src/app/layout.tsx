@@ -34,7 +34,7 @@ export default function RootLayout({children}: React.PropsWithChildren) {
       <body>
         <ThemeProvider defaultTheme="space" enableSystem={false} themes={themes}>
           <Cursor />
-          <main className="min-h-svh px-4 container mx-auto pb-12 md:pb-16">
+          <main className="container mx-auto min-h-svh px-4 pb-12 md:pb-16">
             <Header />
             <Nav />
             {children}

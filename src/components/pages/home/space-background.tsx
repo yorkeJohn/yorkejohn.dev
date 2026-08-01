@@ -45,7 +45,7 @@ function Scene(props: PointsInstancesProps) {
 
 export default function SpaceBackground() {
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none">
+    <div className="-z-10 pointer-events-none fixed inset-0">
       <Canvas camera={{position: [0, 0, 1]}}>
         <Scene />
       </Canvas>

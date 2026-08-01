@@ -5,10 +5,10 @@ import {REPO_URL} from '@/lib/constants'
 
 export function Footer() {
   return (
-    <footer className="px-4 container mx-auto">
-      <div className="py-12 md:py-16 border-t grid md:grid-cols-2">
-        <div className="w-80 mb-4">
-          <div className="md:text-lg lg:text-xl text-primary-foreground mb-2">
+    <footer className="container mx-auto px-4">
+      <div className="grid border-t py-12 md:grid-cols-2 md:py-16">
+        <div className="mb-4 w-80">
+          <div className="mb-2 text-primary-foreground md:text-lg lg:text-xl">
             Self-hosted on Raspberry Pi 4B with Ubuntu & Docker.
           </div>
           <Cta className="w-full" asChild>
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
         <Badge
           asChild
-          className="font-mono [a]:interact:highlight mb-4 md:not-first:justify-self-end"
+          className="[a]:interact:highlight mb-4 font-mono md:not-first:justify-self-end"
           variant="outline"
         >
           <Link href="/privacy">
@@ -28,7 +28,7 @@ export function Footer() {
             Privacy Policy
           </Link>
         </Badge>
-        <div className="font-mono text-sm text-muted">
+        <div className="font-mono text-muted text-sm">
           &copy; {new Date().getFullYear()} JOHN YORKE / {process.env.VERSION}
         </div>
       </div>

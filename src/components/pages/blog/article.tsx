@@ -26,15 +26,15 @@ export function ArticlePage({post, children}: ArticlePageProps) {
         {title}
       </MegaHeading>
 
-      <div className="flex flex-col lg:flex-row gap-8">
-        <div className="lg:w-80 lg:sticky lg:top-13 lg:self-start">
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <div className="lg:sticky lg:top-13 lg:w-80 lg:self-start">
           {showSidebarTitle && (
-            <div className="text-3xl font-heading text-muted tracking-tight font-semibold mb-8 mt-4 hidden lg:block">
+            <div className="mt-4 mb-8 hidden font-heading font-semibold text-3xl text-muted tracking-tight lg:block">
               {title}
             </div>
           )}
           <PageSection label="Metadata">
-            <div className="pt-2 divide-y divide-dashed divide-accent">
+            <div className="divide-y divide-dashed divide-accent pt-2">
               <div className="grid grid-cols-2 py-2 text-sm">
                 <div className="text-accent">Date:</div>
                 <div className="text-muted">{formatInTimeZone(date, 'UTC', 'y.M.dd')}</div>
@@ -46,7 +46,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
               </div>
 
               <div className="grid grid-cols-2 py-2">
-                <div className="text-sm text-accent">Topics:</div>
+                <div className="text-accent text-sm">Topics:</div>
                 <div className="flex flex-wrap gap-0.5">{topicBadges}</div>
               </div>
 
@@ -58,7 +58,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
                 </div>
               )}
 
-              <Cta asChild className="w-full mt-4">
+              <Cta asChild className="mt-4 w-full">
                 <Link href={`/blog/${post.slug}.md`}>
                   <FileMdIcon />
                   View as markdown
@@ -69,7 +69,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
         </div>
 
         <PageSection label="Article" className="flex-1">
-          <article className="pt-8 typography">{children}</article>
+          <article className="typography pt-8">{children}</article>
         </PageSection>
       </div>
     </section>
