@@ -70,7 +70,7 @@ function PostRow({post}: {post: PostMetadata}) {
         <div className="py-2">
           <div className="mb-2 text-muted">{summary}</div>
           <div className="flex flex-wrap gap-0.5">
-            <div className="pr-1 text-primary-foreground text-sm">Topic:</div>
+            <div className="pr-1 text-primary-foreground text-sm">Topics:</div>
             {topicBadges}
           </div>
           <Cta className="mt-4 w-full md:max-w-100" asChild>

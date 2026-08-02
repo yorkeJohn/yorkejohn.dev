@@ -1,9 +1,9 @@
-import {Noto_Sans, Syne, Ubuntu_Mono} from 'next/font/google'
+import {Fira_Code, Noto_Sans, Syne} from 'next/font/google'
 
 const heading = Syne({
   subsets: ['latin'],
   variable: '--font-heading',
-  weight: '700',
+  weight: '600',
   fallback: ['Noto Sans']
 })
 
@@ -12,7 +12,7 @@ const sans = Noto_Sans({
   variable: '--font-sans'
 })
 
-const mono = Ubuntu_Mono({
+const mono = Fira_Code({
   subsets: ['latin'],
   variable: '--font-mono',
   weight: '400'

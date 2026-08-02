@@ -39,7 +39,8 @@ function LocalTime() {
   return (
     <Badge variant="transparent" className="font-mono text-primary-foreground">
       <ClockIcon data-icon="inline-start" />
-      {time} AST
+      {time}
+      <span className="hidden sm:inline">&nbsp;AST</span>
     </Badge>
   )
 }
