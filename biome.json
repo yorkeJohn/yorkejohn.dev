@@ -36,7 +36,7 @@
         "useSemanticElements": "off"
       },
       "nursery": {
-        "useSortedClasses": "warn"
+        "useSortedClasses": "on"
       }
     },
     "domains": {

@@ -19,8 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    url: SITE_URL,
-    images: [{url: '/og-image.png', alt: 'OG Image'}]
+    url: SITE_URL
   },
   other: {'google-site-verification': 'TwPlurVt4Z3Q15zY5V0ss2_kP6manPGCPycEKNGIhPA'}
 }

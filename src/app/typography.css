@@ -96,7 +96,7 @@
     overflow-y: auto;
   }
   .typography table thead tr {
-    background-color: var(--color-border);
+    background-color: var(--color-card);
     margin: 0;
     padding: 0;
   }
@@ -156,6 +156,7 @@
   }
   .typography pre {
     padding: calc(var(--spacing) * 2);
+    background-color: var(--color-card);
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
     font-size: var(--text-sm);
@@ -166,6 +167,7 @@
   .typography code:not(pre code) {
     position: relative;
     border: 1px solid var(--color-border);
+    background-color: var(--color-card);
     padding: calc(var(--spacing) * 0.5) var(--spacing);
     font-family: var(--font-mono);
     border-radius: 1px;

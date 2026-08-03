@@ -29,9 +29,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
       <div className="flex flex-col gap-8 lg:flex-row">
         <div className="lg:sticky lg:top-13 lg:w-80 lg:self-start">
           {showSidebarTitle && (
-            <div className="mt-4 mb-8 hidden font-heading font-semibold text-3xl text-muted tracking-tight lg:block">
-              {title}
-            </div>
+            <div className="mt-4 mb-8 hidden font-semibold text-3xl text-muted tracking-tight lg:block">{title}</div>
           )}
           <PageSection label="Metadata">
             <div className="divide-y divide-dashed divide-accent pt-2">

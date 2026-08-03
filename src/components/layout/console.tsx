@@ -80,7 +80,7 @@ export function Console() {
         opened={opened}
         onClose={onClose}
       >
-        <Terminal commands={commands} motd={motd} prompt="user@yorkejohn.dev $" className="p-2" />
+        <Terminal commands={commands} motd={motd} prompt="user@yorkejohn.dev $" className="bg-background p-2" />
       </DraggableWindow>
     </span>
   )

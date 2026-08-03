@@ -3,39 +3,32 @@
 
 [data-theme="blueprint"] {
   --background: var(--color-mist-100);
+  --card: var(--color-mist-200);
   --foreground: var(--color-indigo-950);
   --muted: var(--color-indigo-800);
   --primary: var(--color-indigo-100);
   --primary-foreground: var(--color-indigo-900);
   --accent: var(--color-indigo-900);
-  --accent-foreground: var(--color-indigo-700);
+  --accent-foreground: var(--color-indigo-800);
   --border: var(--color-mist-400);
 }
 
 [data-theme="space"] {
-  --background: var(--color-mist-900);
-  --foreground: var(--color-mist-50);
-  --muted: var(--color-mist-400);
+  --background: var(--color-gray-900);
+  --card: color-mix(in srgb, var(--color-gray-900) 95%, white);
+  /* --card: var(--color-gray-800); */
+  --foreground: var(--color-gray-50);
+  --muted: var(--color-gray-400);
   --primary: var(--color-amber-800);
   --primary-foreground: var(--color-amber-200);
   --accent: var(--color-lime-600);
   --accent-foreground: var(--color-lime-300);
-  --border: var(--color-mist-700);
-}
-
-[data-theme="obsidian"] {
-  --background: var(--color-neutral-950);
-  --foreground: var(--color-mist-50);
-  --muted: var(--color-mist-400);
-  --primary: var(--color-neutral-800);
-  --primary-foreground: var(--color-neutral-200);
-  --accent: var(--color-neutral-500);
-  --accent-foreground: var(--color-neutral-300);
-  --border: var(--color-neutral-700);
+  --border: var(--color-gray-700);
 }
 
 [data-theme="gruvbox"] {
   --background: #1d2021;
+  --card: #282828;
   --foreground: #ebdbb2;
   --muted: #a89984;
   --primary: #d65d0e;
@@ -47,6 +40,7 @@
 
 [data-theme="nord"] {
   --background: #2e3440;
+  --card: #3b4252;
   --foreground: #eceff4;
   --muted: #a3be8c;
   --primary: #3b4252;
@@ -58,6 +52,7 @@
 
 [data-theme="monokai"] {
   --background: #272822;
+  --card: #3e3d32;
   --foreground: #f8f8f2;
   --muted: #75715e;
   --primary: #3e3d32;
@@ -69,6 +64,7 @@
 
 [data-theme="solarized"] {
   --background: #fdf6e3;
+  --card: #eee8d5;
   --foreground: #002b36;
   --muted: #586e75;
   --primary: #eee8d5;
@@ -80,7 +76,8 @@
 
 [data-theme="tokyo-night"] {
   --background: #1a1b26;
-  --foreground: #c0caf5;
+  --card: #232433;
+  --foreground: #a9b1d6;
   --muted: #565f89;
   --primary: #414868;
   --primary-foreground: #f7768e;
@@ -94,8 +91,9 @@
   --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
 
-  --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -120,7 +118,7 @@
   /* shiki */
   :root {
     --shiki-foreground: var(--foreground);
-    --shiki-background: var(--background);
+    --shiki-background: var(--card);
     --shiki-token-constant: var(--foreground);
     --shiki-token-string: var(--muted);
     --shiki-token-comment: var(--muted);

@@ -1,7 +1,6 @@
 /* Image imports */
 import type {StaticImageData} from 'next/image'
-import {REPO_URL} from '@/lib/constants'
-import website from '~/og-image.png' // use OG Image
+import {OG_SIZE, REPO_URL} from '@/lib/constants'
 import bonsaiParlour from './images/bonsai-parlour.jpg'
 import espressoChat from './images/espresso-chat.jpg'
 import frenchVillage from './images/french-village.jpg'
@@ -35,7 +34,7 @@ export const projects: Project[] = [
     title: 'yorkejohn.dev',
     description:
       'A design-forward personal website that showcases both technical craft and individual perspective. The goal: to create a space that feels expressive and human.',
-    image: website,
+    image: {src: '/opengraph-image', ...OG_SIZE},
     links: [{label: 'GitHub', url: REPO_URL}],
     badges: ['Design', 'Next.js', 'Three.js'],
     startYear: 2026,
