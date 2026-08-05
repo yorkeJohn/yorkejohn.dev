@@ -39,19 +39,21 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
       <div className="flex flex-1 flex-col justify-between">
         <div className="mb-8">
           <div className="mb-2 flex flex-col">
-            <span className="text-primary-foreground">({startYear})</span>
+            <span className="text-accent-foreground text-xs">{startYear}</span>
             <div className="font-semibold text-xl tracking-tight md:text-2xl lg:text-3xl">{title}</div>
           </div>
           <div className="flex gap-2">{linkElements}</div>
         </div>
-        <div>
-          <div className="mb-2 flex flex-wrap gap-0.5">
+        <div className="flex flex-col gap-2">
+          <div className="max-w-[60ch] text-balance text-muted lg:text-lg">{description}</div>
+          <div className="grid grid-cols-[auto_1fr] gap-1">
+            <div className="text-primary-foreground text-sm">Project Type:</div>
             <Badge>{type}</Badge>
-            {badgeElements}
+            <div className="text-primary-foreground text-sm">Tags:</div>
+            <div className="flex flex-wrap gap-0.5">{badgeElements}</div>
           </div>
-          <div className="max-w-[60ch] text-lg text-muted lg:text-xl">{description}</div>
           {withCta && (
-            <Cta className="mt-2 w-full md:max-w-100" asChild>
+            <Cta className="w-full md:max-w-100" asChild>
               <Link href="/projects">
                 All projects
                 <ArrowRightIcon />

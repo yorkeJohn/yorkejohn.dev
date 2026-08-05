@@ -32,8 +32,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'yorkejohn.dev',
-    description:
-      'A design-forward personal website that showcases both technical craft and individual perspective. The goal: to create a space that feels expressive and human.',
+    description: 'A design-forward personal website that showcases both technical craft and individual perspective.',
     image: {src: '/opengraph-image', ...OG_SIZE},
     links: [{label: 'GitHub', url: REPO_URL}],
     badges: ['Design', 'Next.js', 'Three.js'],
@@ -72,7 +71,7 @@ export const projects: Project[] = [
   },
   {
     title: 'TFC Better Blast Furnace',
-    description: 'TFC Better Blast furnace is a Minecraft mod and addon to TerraFirmaCraft, with over 600k downloads.',
+    description: 'TFC Better Blast furnace is a Minecraft mod and addon to TerraFirmaCraft, with over 700k downloads.',
     image: tfcBetterBlastFurnace,
     links: [
       {label: 'GitHub', url: 'https://github.com/yorkeJohn/tfc-better-blast-furnace'},
