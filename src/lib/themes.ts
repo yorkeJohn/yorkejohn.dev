@@ -1,1 +1,1 @@
-export const themes = ['space', 'blueprint', 'obsidian', 'gruvbox', 'nord', 'monokai', 'solarized', 'tokyo-night']
+export const themes = ['space', 'blueprint', 'gruvbox', 'nord', 'monokai', 'solarized', 'tokyo-night']

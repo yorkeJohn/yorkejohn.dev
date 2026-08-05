@@ -16,8 +16,8 @@ function Scene(props: PointsInstancesProps) {
 
   useFrame((_, delta) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.x -= delta / 10
-      pointsRef.current.rotation.y -= delta / 15
+      pointsRef.current.rotation.x -= delta / 20
+      pointsRef.current.rotation.y -= delta / 30
     }
 
     // fade in

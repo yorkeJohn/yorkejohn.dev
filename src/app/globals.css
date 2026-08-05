@@ -15,8 +15,7 @@
 
 [data-theme="space"] {
   --background: var(--color-gray-900);
-  --card: color-mix(in srgb, var(--color-gray-900) 95%, white);
-  /* --card: var(--color-gray-800); */
+  --card: var(--color-gray-800);
   --foreground: var(--color-gray-50);
   --muted: var(--color-gray-400);
   --primary: var(--color-amber-800);
