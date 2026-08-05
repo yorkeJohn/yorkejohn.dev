@@ -11,9 +11,10 @@ import type {Project} from './registry'
 type ProjectCardProps = {
   project: Project
   withCta?: boolean
+  hideImage?: boolean
 } & React.ComponentProps<'div'>
 
-export function ProjectCard({project, withCta, className, ...rest}: ProjectCardProps) {
+export function ProjectCard({project, withCta, hideImage, className, ...rest}: ProjectCardProps) {
   const {title, description, image, links = [], badges = [], startYear, type} = project
   const imageTitle = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '')}.png`
 
@@ -32,9 +33,11 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
 
   return (
     <div className={cn('flex flex-col gap-4 md:flex-row', className)} {...rest}>
-      <DraggableWindow type="snap" title={imageTitle} iconLeft={ImageIcon}>
-        <Image src={image} alt={title} width={400} className="pointer-events-none" />
-      </DraggableWindow>
+      {!hideImage && (
+        <DraggableWindow type="snap" title={imageTitle} iconLeft={ImageIcon}>
+          <Image src={image} alt={title} width={400} className="pointer-events-none" />
+        </DraggableWindow>
+      )}
 
       <div className="flex flex-1 flex-col justify-between">
         <div className="mb-8">
@@ -46,7 +49,7 @@ export function ProjectCard({project, withCta, className, ...rest}: ProjectCardP
         </div>
         <div className="flex flex-col gap-2">
           <div className="max-w-[60ch] text-balance text-muted lg:text-lg">{description}</div>
-          <div className="grid grid-cols-[auto_1fr] gap-1">
+          <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
             <div className="text-primary-foreground text-sm">Project Type:</div>
             <Badge>{type}</Badge>
             <div className="text-primary-foreground text-sm">Tags:</div>

@@ -24,8 +24,8 @@ export function ProjectsPage() {
         Projects
       </MegaHeading>
 
-      <div className="flex flex-col gap-4 lg:flex-row">
-        <PageSection label="Filters" className="flex flex-col lg:sticky lg:top-13 lg:w-50 lg:self-start">
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <PageSection label="Filters" className="flex flex-col lg:sticky lg:top-13 lg:w-60 lg:self-start">
           <div className="flex flex-col pt-2 lg:gap-2">
             <FilterGroup
               label="Project Type"

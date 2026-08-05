@@ -1,25 +1,14 @@
-'use client'
-
-import {useMounted} from '@mantine/hooks'
-import dynamic from 'next/dynamic'
-import {useTheme} from 'next-themes'
 import {PageSection} from '@/components'
-import {ProjectCard} from '@/components/pages'
-import {projects} from '@/components/pages/projects/registry'
 import {ActivityFeed} from './activity-feed'
+import {Background} from './background'
+import {Featured} from './featured'
 import {StatsMarquee} from './stats-marquee'
 import {TopArtists} from './top-artists'
 
-// background for space theme
-const SpaceBackground = dynamic(() => import('./space-background'), {ssr: false})
-
 export function HomePage() {
-  const {theme} = useTheme()
-  const mounted = useMounted()
-
   return (
     <section>
-      {mounted && theme === 'space' && <SpaceBackground />}
+      <Background />
       <div className="my-12 font-heading text-[55pt] leading-[0.8] tracking-tight md:my-20 md:text-[72pt] lg:text-[96pt]">
         <div className="text-muted">
           John&nbsp;
@@ -37,14 +26,12 @@ export function HomePage() {
         <p>Welcome to my personal corner of the internet where I share my projects and what I'm learning.</p>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-16">
         <PageSection label="Stats">
           <StatsMarquee />
         </PageSection>
 
-        <PageSection label="Featured Project">
-          <ProjectCard project={projects[9]} withCta className="pt-4" />
-        </PageSection>
+        <Featured />
 
         <PageSection label="Recent Activity">
           <ActivityFeed />

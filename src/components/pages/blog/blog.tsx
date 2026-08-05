@@ -30,8 +30,8 @@ export function BlogPage({posts}: BlogPageProps) {
         Blog
       </MegaHeading>
 
-      <div className="flex flex-col gap-4 lg:flex-row">
-        <PageSection label="Filters" className="lg:sticky lg:top-13 lg:w-50 lg:self-start">
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <PageSection label="Filters" className="lg:sticky lg:top-13 lg:w-60 lg:self-start">
           <div className="pt-2">
             <FilterGroup label="Topic" field="topics" value={selected.topics} data={options.topics} onChange={toggle} />
           </div>
