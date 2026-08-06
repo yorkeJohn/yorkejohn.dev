@@ -3,7 +3,7 @@ title: Self-Hosting with Cloudflare Zero Trust
 topics:
   - Engineering
   - Infrastructure
-summary: Cloudflare Tunnels provide a secure way to expose self-hosted applications without managing origin certificates, offering the same architecture benefits from Raspberry Pi home labs to enterprise SaaS platforms.
+summary: Cloudflare Tunnel provides a secure way to expose self-hosted applications without managing origin certificates, offering the same architecture benefits from Raspberry Pi home labs to enterprise SaaS platforms.
 date: 2026-07-28
 ai: true
 ---
@@ -12,7 +12,7 @@ Running your own services at home has always been appealing. These days, a Raspb
 
 Port forwarding, configuring reverse proxies, renewing TLS certificates, and maintaining firewall rules quickly turns a simple home-lab project into an infrastructure circus.
 
-Cloudflare Zero Trust Tunnels solve this problem by flipping the traditional networking model: instead of exposing your server to the internet, your server creates an outbound connection to Cloudflare's network.
+Cloudflare Zero Trust Tunnel solves this problem by flipping the traditional networking model: instead of exposing your server to the internet, your server creates an outbound connection to Cloudflare's network.
 
 This makes self-hosting dramatically simpler.
 
@@ -38,7 +38,7 @@ This works, but introduces several maintenance tasks:
 * Handling certificate renewals
 * Protecting services from unwanted traffic
 
-A Cloudflare Tunnel changes the architecture:
+Cloudflare Tunnel changes the architecture:
 
 `Internet` &rarr; `Cloudflare Edge` &rarr; `Encrypted Tunnel` &rarr; `Cloudflare Daemon` &rarr; `Application`
 
@@ -76,13 +76,13 @@ The application only needs to be reachable from the `cloudflared` container insi
 
 Next, we configure a published route pointing to `http://app:3000` in the Cloudflare Zero Trust UI.
 
-The tunnel container establishes the connection outward to Cloudflare and securely routes traffic back to the application.
+The `cloudflared` container establishes the connection outward to Cloudflare and securely routes traffic back to the application.
 
 ## No More Certificate Management
 
 One of the biggest QoL improvements is eliminating manual TLS management.
 
-Before using Cloudflare Tunnel, a self-hosted service might require:
+A self-hosted service might require:
 
 1. Installing a reverse proxy
 2. Configuring domains
@@ -101,7 +101,7 @@ The application can simply run internally over HTTP. For a personal project, thi
 
 ## Adding Authentication with Cloudflare Access
 
-A tunnel does more than expose an application. It can also integrate with Cloudflare Access to provide an authentication layer before traffic reaches your service.
+Cloudflare Tunnel does more than expose an application. It can also integrate with Cloudflare Access to provide an authentication layer before traffic reaches your service.
 
 For example, you can protect a private dashboard using:
 
@@ -124,7 +124,7 @@ The scale is different, but the philosophy remains the same: keep applications p
 
 ## Why This Pattern Works So Well
 
-Cloudflare Tunnels are powerful because they remove several traditional infrastructure responsibilities:
+Cloudflare Tunnel is powerful because it removes several traditional infrastructure responsibilities:
 
 | Traditional Self Hosting    | Cloudflare Tunnel        |
 | --------------------------- | ------------------------ |
@@ -152,4 +152,4 @@ A Raspberry Pi with Docker and Cloudflare Tunnel can provide a surprisingly robu
 
 The same concepts that power professional SaaS infrastructure can also make a tiny home server easier to manage.
 
-That is what makes Cloudflare Zero Trust Tunnels such a compelling solution: the technology scales from a $100 Raspberry Pi project to production business applications, while keeping the developer experience dead simple.
+That is what makes Cloudflare Zero Trust Tunnel such a compelling solution: the technology scales from a $100 Raspberry Pi project to production business applications, while keeping the developer experience dead simple.

@@ -3,7 +3,7 @@ import {BlogPage} from '@/components/pages'
 import {getPosts} from '@/posts'
 
 export const metadata: Metadata = {
-  title: 'Dev Blog'
+  title: 'Blog'
 }
 
 export default async function Page() {

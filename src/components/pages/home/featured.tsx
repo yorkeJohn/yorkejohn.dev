@@ -48,10 +48,10 @@ function BlogPostCard({featuredPost, className, ...props}: BlogPostCardProps) {
       <div className="flex flex-col gap-2">
         <div className="max-w-[60ch] text-balance text-muted lg:text-lg">{summary}</div>
         <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
-          <div className="text-primary-foreground text-sm">Topics:</div>
-          <div className="flex flex-wrap gap-0.5">{topicBadges}</div>
           <div className="text-primary-foreground text-sm">Read Time:</div>
           <div className="text-muted text-sm">{readTime} min read</div>
+          <div className="text-primary-foreground text-sm">Topics:</div>
+          <div className="flex flex-wrap gap-0.5">{topicBadges}</div>
         </div>
         <Cta className="w-full md:max-w-100" asChild>
           <Link href="/blog">

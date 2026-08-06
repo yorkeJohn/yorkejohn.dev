@@ -25,11 +25,7 @@ export function ProjectCard({project, withCta, hideImage, className, ...rest}: P
     </Anchor>
   ))
 
-  const badgeElements = badges.map(badge => (
-    <Badge key={badge} variant="outline">
-      {badge}
-    </Badge>
-  ))
+  const badgeElements = badges.map(badge => <Badge key={badge}>{badge}</Badge>)
 
   return (
     <div className={cn('flex flex-col gap-4 md:flex-row', className)} {...rest}>
@@ -51,7 +47,7 @@ export function ProjectCard({project, withCta, hideImage, className, ...rest}: P
           <div className="max-w-[60ch] text-balance text-muted lg:text-lg">{description}</div>
           <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
             <div className="text-primary-foreground text-sm">Project Type:</div>
-            <Badge>{type}</Badge>
+            <div className="text-muted text-sm">{type}</div>
             <div className="text-primary-foreground text-sm">Tags:</div>
             <div className="flex flex-wrap gap-0.5">{badgeElements}</div>
           </div>
