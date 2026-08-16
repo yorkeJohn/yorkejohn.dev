@@ -19,7 +19,7 @@ export function Marquee({items, speed = 30, pauseOnHover = true, reverse = false
     <div className={cn('relative overflow-hidden whitespace-nowrap', className)}>
       <div
         className={cn(
-          'flex w-max',
+          'flex w-max divide-x divide-accent divide-dotted',
           reverse ? 'animate-marquee-reverse' : 'animate-marquee',
           pauseOnHover && 'hover:paused'
         )}

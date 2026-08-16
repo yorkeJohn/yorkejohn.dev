@@ -32,7 +32,11 @@ function BlogPostCard({featuredPost, className, ...props}: BlogPostCardProps) {
   if (!post) return null
 
   const {title, summary, date, readTime, topics, slug} = post
-  const topicBadges = topics.map(topic => <Badge key={topic}>{topic}</Badge>)
+  const topicBadges = topics.map(topic => (
+    <Badge key={topic} variant="accent">
+      {topic}
+    </Badge>
+  ))
 
   return (
     <div className={cn('flex flex-col justify-between', className)} {...props}>

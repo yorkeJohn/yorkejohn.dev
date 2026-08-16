@@ -3,6 +3,7 @@
 import {useIntersection} from '@mantine/hooks'
 import {FileMdIcon, SparkleIcon} from '@phosphor-icons/react'
 import {formatInTimeZone} from 'date-fns-tz'
+import {AnimatePresence, motion} from 'motion/react'
 import Link from 'next/link'
 import {Badge, Cta, MegaHeading} from '@/components'
 import {PageSection} from '@/components/page-section'
@@ -28,9 +29,18 @@ export function ArticlePage({post, children}: ArticlePageProps) {
 
       <div className="flex flex-col gap-8 lg:flex-row">
         <div className="lg:sticky lg:top-13 lg:w-80 lg:self-start">
-          {showSidebarTitle && (
-            <div className="mt-4 mb-8 hidden font-semibold text-3xl text-muted tracking-tight lg:block">{title}</div>
-          )}
+          <AnimatePresence>
+            {showSidebarTitle && (
+              <motion.div
+                initial={{scale: 0.5, opacity: 0}}
+                animate={{scale: 1, opacity: 1}}
+                exit={{scale: 0.5, opacity: 0}}
+                className="mt-4 mb-8 hidden font-semibold text-3xl text-muted tracking-tight lg:block"
+              >
+                {title}
+              </motion.div>
+            )}
+          </AnimatePresence>
           <PageSection label="Metadata">
             <div className="divide-y divide-dashed divide-accent pt-2">
               <div className="grid grid-cols-2 py-2 text-sm">
