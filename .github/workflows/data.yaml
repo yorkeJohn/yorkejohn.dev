@@ -29,10 +29,11 @@ jobs:
 
           curl -s "https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term" \
             -H "Authorization: Bearer $ACCESS_TOKEN" \
+            | jq .items \
             > top-artists.json
 
       - name: Upload Spotify data
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: spotify-data
           path: top-artists.json
@@ -50,7 +51,7 @@ jobs:
             > modpack-index.json
 
       - name: Upload Modpack Index data
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: modpack-index-data
           path: modpack-index.json
@@ -65,18 +66,18 @@ jobs:
 
     steps:
       - name: Checkout site-data branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: site-data
 
       - name: Download Spotify data
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: spotify-data
           path: data
 
       - name: Download Modpack Index data
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: modpack-index-data
           path: data
