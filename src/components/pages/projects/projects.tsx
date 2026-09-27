@@ -50,7 +50,7 @@ export function ProjectsPage() {
               No projects found matching the selected filters
             </div>
           )}
-          <div className="flex flex-col gap-4 divide-y divide-dashed divide-accent pt-4">{cards}</div>
+          <div className="flex flex-col gap-4 divide-y divide-dotted divide-accent pt-4">{cards}</div>
         </PageSection>
       </div>
     </section>

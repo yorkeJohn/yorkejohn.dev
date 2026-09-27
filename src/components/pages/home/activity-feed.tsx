@@ -35,5 +35,5 @@ export function ActivityFeed() {
     return <div className="pt-2 font-mono text-muted text-sm">No recent activity...</div>
   }
 
-  return <div className="flex flex-col divide-y divide-dashed divide-accent">{items}</div>
+  return <div className="flex flex-col divide-y divide-dotted divide-accent">{items}</div>
 }

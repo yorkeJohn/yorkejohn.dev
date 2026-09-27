@@ -25,7 +25,11 @@ export function ProjectCard({project, withCta, hideImage, className, ...rest}: P
     </Anchor>
   ))
 
-  const badgeElements = badges.map(badge => <Badge key={badge}>{badge}</Badge>)
+  const badgeElements = badges.map(badge => (
+    <Badge key={badge} variant="accent">
+      {badge}
+    </Badge>
+  ))
 
   return (
     <div className={cn('flex flex-col gap-4 md:flex-row', className)} {...rest}>

@@ -1,6 +1,6 @@
 'use client'
 
-import {Badge, Marquee} from '@/components'
+import {Badge} from '@/components'
 import {ModDownloads} from './mod-downloads'
 
 type Stat = {
@@ -18,14 +18,25 @@ const stats: Stat[] = [
   {label: 'Current role', stat: 'Senior Engineer @ RBCCM'}
 ]
 
+const DURATION = 30
+
 export function StatsMarquee() {
-  const items = stats.map((item, index) => {
+  const items = [...stats, ...stats].map((item, index) => {
     const {label, stat} = item
     return (
-      <Badge key={index} variant="outline" className="mx-0.5">
-        {label}:<span className="ms-1 text-accent-foreground">{stat}</span>
-      </Badge>
+      <div key={index} className="shrink-0">
+        <Badge variant="outline">
+          {label}:<span className="ms-1 text-accent-foreground">{stat}</span>
+        </Badge>
+      </div>
     )
   })
-  return <Marquee items={items} className="pt-2" />
+
+  return (
+    <div className="relative overflow-hidden whitespace-nowrap pt-2">
+      <div className="hover:paused flex w-max animate-marquee gap-2" style={{animationDuration: `${DURATION}s`}}>
+        {items}
+      </div>
+    </div>
+  )
 }

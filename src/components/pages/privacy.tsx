@@ -18,7 +18,7 @@ export function PrivacyPage() {
 
       <div className="flex flex-col gap-8 lg:flex-row">
         <PageSection label="Metadata" className="lg:sticky lg:top-13 lg:w-80 lg:self-start">
-          <div className="divide-y divide-dashed divide-accent pt-2">
+          <div className="divide-y divide-dotted divide-accent pt-2">
             <div className="grid grid-cols-2 py-2 text-sm">
               <div className="text-accent-foreground">Last Updated:</div>
               <div className="text-muted">{formatInTimeZone(lastUpdated, 'UTC', 'y.M.dd')}</div>

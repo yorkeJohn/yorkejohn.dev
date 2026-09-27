@@ -50,10 +50,10 @@ export function FilterGroup({label, field, value, data: options, onChange}: Filt
           </button>
         </CollapsibleTrigger>
         <CollapsibleContent className="overflow-hidden transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          <div className="flex flex-col items-start gap-1 border-l border-dashed ps-2">{filterButtons}</div>
+          <div className="flex flex-col items-start gap-1 border-l border-dotted ps-2">{filterButtons}</div>
         </CollapsibleContent>
       </Collapsible>
-      <div className="flex gap-4 border-b border-dashed py-2 lg:hidden">
+      <div className="flex gap-4 border-b border-dotted py-2 lg:hidden">
         <div className="text-nowrap text-primary-foreground">
           <FolderOpenIcon className="me-1 inline" />
           {label}

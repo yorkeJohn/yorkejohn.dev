@@ -8,6 +8,7 @@ const variants = cva(
     variants: {
       variant: {
         default: 'bg-primary text-foreground/90',
+        accent: 'border-dotted border-accent text-accent-foreground',
         outline: 'border-border text-foreground',
         transparent: 'text-foreground'
       }

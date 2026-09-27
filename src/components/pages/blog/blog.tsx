@@ -43,7 +43,7 @@ export function BlogPage({posts}: BlogPageProps) {
               No posts found matching the selected filters
             </div>
           )}
-          <div className="flex flex-col divide-y divide-dashed divide-accent">{rows}</div>
+          <div className="flex flex-col divide-y divide-dotted divide-accent">{rows}</div>
         </PageSection>
       </div>
     </section>
@@ -53,7 +53,12 @@ export function BlogPage({posts}: BlogPageProps) {
 function PostRow({post}: {post: PostMetadata}) {
   const {title, date, topics, slug, summary} = post
 
-  const topicBadges = topics.map(topic => <Badge key={topic}>{topic}</Badge>)
+  const topicBadges = topics.map(topic => (
+    <Badge key={topic} variant="accent">
+      {topic}
+    </Badge>
+  ))
+
   return (
     <Collapsible key={slug}>
       <CollapsibleTrigger className="group interact:highlight grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center py-2">

@@ -15,7 +15,11 @@ type ArticlePageProps = {
 
 export function ArticlePage({post, children}: ArticlePageProps) {
   const {title, date, readTime, topics, ai} = post
-  const topicBadges = topics.map(topic => <Badge key={topic}>{topic}</Badge>)
+  const topicBadges = topics.map(topic => (
+    <Badge key={topic} variant="accent">
+      {topic}
+    </Badge>
+  ))
   const {ref, entry} = useIntersection()
 
   const showSidebarTitle = entry !== null && !entry.isIntersecting
@@ -32,7 +36,7 @@ export function ArticlePage({post, children}: ArticlePageProps) {
             <div className="mt-4 mb-8 hidden font-semibold text-3xl text-muted tracking-tight lg:block">{title}</div>
           )}
           <PageSection label="Metadata">
-            <div className="divide-y divide-dashed divide-accent pt-2">
+            <div className="divide-y divide-dotted divide-accent pt-2">
               <div className="grid grid-cols-2 py-2 text-sm">
                 <div className="text-primary-foreground">Date:</div>
                 <div className="text-muted">{formatInTimeZone(date, 'UTC', 'y.M.dd')}</div>

@@ -11,7 +11,7 @@ const dataUrl = 'https://raw.githubusercontent.com/yorkeJohn/yorkejohn.dev/refs/
 export function ModDownloads() {
   const {data, loading} = useFetch<ModData>(dataUrl)
 
-  if (loading || !data) return '--'
+  if (loading || !data) return '0.0M+'
 
   const formatted = Intl.NumberFormat('en', {notation: 'compact'}).format(data.total_downloads)
   return `${formatted}+`
