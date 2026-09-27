@@ -1,6 +1,7 @@
 'use client'
 
 import {Badge, Marquee} from '@/components'
+import {ModDownloads} from './mod-downloads'
 
 type Stat = {
   label: React.ReactNode
@@ -11,7 +12,7 @@ const stats: Stat[] = [
   {label: 'Building things since', stat: '2015'},
   {label: '3 languages', stat: 'English - Français (French) - 日本語 (Japanese)'},
   {label: 'Years of professional experience', stat: `${new Date().getFullYear() - 2021}+`},
-  {label: 'Minecraft mod downloads', stat: '2.7M+'},
+  {label: 'Minecraft mod downloads', stat: <ModDownloads />},
   {label: 'Hobbies', stat: 'Gaming - Bodybuilding - Hiking - Food'},
   {label: 'Unfinished side projects', stat: 'Infinite'},
   {label: 'Current role', stat: 'Senior Engineer @ RBCCM'}

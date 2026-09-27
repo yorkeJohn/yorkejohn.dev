@@ -5,23 +5,20 @@ import {ArrowUpRightIcon} from '@phosphor-icons/react'
 import Image from 'next/image'
 import {Anchor, Badge} from '@/components'
 
-type SpotifyData = {
-  items: Array<{
-    name: string
-    external_urls: {spotify: string}
-    images: Array<{url: string}>
-  }>
-}
+type SpotifyData = Array<{
+  name: string
+  external_urls: {spotify: string}
+  images: Array<{url: string}>
+}>
 
-const dataUrl =
-  'https://raw.githubusercontent.com/yorkeJohn/yorkejohn.dev/refs/heads/spotify-data/data/top-artists.json'
+const dataUrl = 'https://raw.githubusercontent.com/yorkeJohn/yorkejohn.dev/refs/heads/site-data/data/top-artists.json'
 
 export function TopArtists() {
   const {data, loading} = useFetch<SpotifyData>(dataUrl)
 
   if (loading || !data) return null
 
-  const items = data.items.map((item, index) => {
+  const items = data.map((item, index) => {
     const name = item.name
     const artistUrl = item.external_urls.spotify
     const image = item.images[0].url

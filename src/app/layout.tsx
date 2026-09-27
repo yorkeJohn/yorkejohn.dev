@@ -21,7 +21,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     url: SITE_URL
   },
-  other: {'google-site-verification': 'TwPlurVt4Z3Q15zY5V0ss2_kP6manPGCPycEKNGIhPA'}
+  verification: {
+    google: 'TwPlurVt4Z3Q15zY5V0ss2_kP6manPGCPycEKNGIhPA'
+  }
 }
 
 const htmlClasses = cn('h-full', 'antialiased', 'font-sans', ...fonts)
