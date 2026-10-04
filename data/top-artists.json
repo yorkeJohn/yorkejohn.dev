@@ -1,33 +1,6 @@
 [
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/7oPftvlwr6VrsViSDV7fJY"
-    },
-    "href": "https://api.spotify.com/v1/artists/7oPftvlwr6VrsViSDV7fJY",
-    "id": "7oPftvlwr6VrsViSDV7fJY",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb6ff0cd5ef2ecf733804984bb",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051746ff0cd5ef2ecf733804984bb",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1786ff0cd5ef2ecf733804984bb",
-        "width": 160
-      }
-    ],
-    "name": "Green Day",
-    "type": "artist",
-    "uri": "spotify:artist:7oPftvlwr6VrsViSDV7fJY"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
     },
     "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
@@ -52,6 +25,33 @@
     "name": "Muse",
     "type": "artist",
     "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/7oPftvlwr6VrsViSDV7fJY"
+    },
+    "href": "https://api.spotify.com/v1/artists/7oPftvlwr6VrsViSDV7fJY",
+    "id": "7oPftvlwr6VrsViSDV7fJY",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb6ff0cd5ef2ecf733804984bb",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051746ff0cd5ef2ecf733804984bb",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1786ff0cd5ef2ecf733804984bb",
+        "width": 160
+      }
+    ],
+    "name": "Green Day",
+    "type": "artist",
+    "uri": "spotify:artist:7oPftvlwr6VrsViSDV7fJY"
   },
   {
     "external_urls": {
@@ -136,33 +136,6 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb"
-    },
-    "href": "https://api.spotify.com/v1/artists/7FBcuc1gsnv6Y1nwFtNRCb",
-    "id": "7FBcuc1gsnv6Y1nwFtNRCb",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051740c55e74e435910793888f7cf",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1780c55e74e435910793888f7cf",
-        "width": 160
-      }
-    ],
-    "name": "My Chemical Romance",
-    "type": "artist",
-    "uri": "spotify:artist:7FBcuc1gsnv6Y1nwFtNRCb"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb"
     },
     "href": "https://api.spotify.com/v1/artists/5INjqkS1o8h1imAzPqGZBb",
@@ -187,6 +160,33 @@
     "name": "Tame Impala",
     "type": "artist",
     "uri": "spotify:artist:5INjqkS1o8h1imAzPqGZBb"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb"
+    },
+    "href": "https://api.spotify.com/v1/artists/7FBcuc1gsnv6Y1nwFtNRCb",
+    "id": "7FBcuc1gsnv6Y1nwFtNRCb",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051740c55e74e435910793888f7cf",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1780c55e74e435910793888f7cf",
+        "width": 160
+      }
+    ],
+    "name": "My Chemical Romance",
+    "type": "artist",
+    "uri": "spotify:artist:7FBcuc1gsnv6Y1nwFtNRCb"
   },
   {
     "external_urls": {
@@ -217,6 +217,33 @@
   },
   {
     "external_urls": {
+      "spotify": "https://open.spotify.com/artist/0SwO7SWeDHJijQ3XNS7xEE"
+    },
+    "href": "https://api.spotify.com/v1/artists/0SwO7SWeDHJijQ3XNS7xEE",
+    "id": "0SwO7SWeDHJijQ3XNS7xEE",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb9dccdc8f4087cbe2bdedc9d3",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051749dccdc8f4087cbe2bdedc9d3",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1789dccdc8f4087cbe2bdedc9d3",
+        "width": 160
+      }
+    ],
+    "name": "MGMT",
+    "type": "artist",
+    "uri": "spotify:artist:0SwO7SWeDHJijQ3XNS7xEE"
+  },
+  {
+    "external_urls": {
       "spotify": "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"
     },
     "href": "https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH",
@@ -241,32 +268,5 @@
     "name": "Arctic Monkeys",
     "type": "artist",
     "uri": "spotify:artist:7Ln80lUS6He07XvHI8qqHH"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/46gyXjRIvN1NL1eCB8GBxo"
-    },
-    "href": "https://api.spotify.com/v1/artists/46gyXjRIvN1NL1eCB8GBxo",
-    "id": "46gyXjRIvN1NL1eCB8GBxo",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb8625dac822c90c5f8c605170",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051748625dac822c90c5f8c605170",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1788625dac822c90c5f8c605170",
-        "width": 160
-      }
-    ],
-    "name": "All Time Low",
-    "type": "artist",
-    "uri": "spotify:artist:46gyXjRIvN1NL1eCB8GBxo"
   }
 ]
