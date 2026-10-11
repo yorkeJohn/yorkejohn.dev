@@ -55,33 +55,6 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ"
-    },
-    "href": "https://api.spotify.com/v1/artists/3AA28KZvwAUcZuOKwyblJQ",
-    "id": "3AA28KZvwAUcZuOKwyblJQ",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5ebdd5b57b40cf2aaeccd07835e",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174dd5b57b40cf2aaeccd07835e",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178dd5b57b40cf2aaeccd07835e",
-        "width": 160
-      }
-    ],
-    "name": "Gorillaz",
-    "type": "artist",
-    "uri": "spotify:artist:3AA28KZvwAUcZuOKwyblJQ"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/5p9HO3XC5P3BLxJs5Mtrhm"
     },
     "href": "https://api.spotify.com/v1/artists/5p9HO3XC5P3BLxJs5Mtrhm",
@@ -106,6 +79,33 @@
     "name": "Djo",
     "type": "artist",
     "uri": "spotify:artist:5p9HO3XC5P3BLxJs5Mtrhm"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ"
+    },
+    "href": "https://api.spotify.com/v1/artists/3AA28KZvwAUcZuOKwyblJQ",
+    "id": "3AA28KZvwAUcZuOKwyblJQ",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5ebdd5b57b40cf2aaeccd07835e",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab67616100005174dd5b57b40cf2aaeccd07835e",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f178dd5b57b40cf2aaeccd07835e",
+        "width": 160
+      }
+    ],
+    "name": "Gorillaz",
+    "type": "artist",
+    "uri": "spotify:artist:3AA28KZvwAUcZuOKwyblJQ"
   },
   {
     "external_urls": {
@@ -163,33 +163,6 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb"
-    },
-    "href": "https://api.spotify.com/v1/artists/7FBcuc1gsnv6Y1nwFtNRCb",
-    "id": "7FBcuc1gsnv6Y1nwFtNRCb",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051740c55e74e435910793888f7cf",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1780c55e74e435910793888f7cf",
-        "width": 160
-      }
-    ],
-    "name": "My Chemical Romance",
-    "type": "artist",
-    "uri": "spotify:artist:7FBcuc1gsnv6Y1nwFtNRCb"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
     },
     "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
@@ -214,6 +187,33 @@
     "name": "Lady Gaga",
     "type": "artist",
     "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb"
+    },
+    "href": "https://api.spotify.com/v1/artists/7FBcuc1gsnv6Y1nwFtNRCb",
+    "id": "7FBcuc1gsnv6Y1nwFtNRCb",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051740c55e74e435910793888f7cf",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1780c55e74e435910793888f7cf",
+        "width": 160
+      }
+    ],
+    "name": "My Chemical Romance",
+    "type": "artist",
+    "uri": "spotify:artist:7FBcuc1gsnv6Y1nwFtNRCb"
   },
   {
     "external_urls": {
