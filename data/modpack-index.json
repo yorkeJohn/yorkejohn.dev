@@ -1,3 +1,7 @@
 {
-  "total_downloads": 2879129
+  "total_downloads": 2891788,
+  "mod_downloads": {
+    "tainted_magic": 1620678,
+    "tfc_better_blast_furnace": 892157
+  }
 }
