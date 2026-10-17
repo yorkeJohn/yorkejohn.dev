@@ -32,7 +32,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'yorkejohn.dev',
-    description: 'A design-forward personal website that showcases both technical craft and individual perspective.',
+    description:
+      'yorkejohn.dev is a design-forward personal website that showcases both technical craft and individual perspective.',
     image: {src: '/opengraph-image', ...OG_SIZE},
     links: [{label: 'GitHub', url: REPO_URL}],
     badges: ['Design', 'Next.js', 'Three.js'],
@@ -41,7 +42,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Navigator Cloud',
-    description: "Cloud platform for the energy industry's most advanced forecasting model.",
+    description:
+      "Navigator Cloud is a first-in-class SaaS platform for the energy industry's most advanced forecasting model.",
     image: navigator,
     links: [{label: 'Homepage', url: 'https://posteritygroup.ca/navigator'}],
     badges: ['Full-stack', 'Product Engineering', 'React', 'Node.js', 'Rust'],
@@ -50,7 +52,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Pixel SkyQuest',
-    description: 'Top-down pixel-art puzzle-solving dungeon-crawler RPG!',
+    description: 'Pixel Skyquest is a top-down pixel-art puzzle-solving dungeon-crawler RPG, made with Unity.',
     image: pixelSkyQuest,
     links: [{label: 'GitHub', url: 'https://github.com/larixsw/pixel-skyquest'}],
     badges: ['Game Development', 'Unity', 'C#'],
@@ -59,7 +61,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Mantine',
-    description: 'Open-source React component library.',
+    description: 'Mantine is a fully-featured React components library.',
     image: mantine,
     links: [
       {label: 'GitHub', url: 'https://github.com/mantinedev/mantine'},
@@ -71,7 +73,8 @@ export const projects: Project[] = [
   },
   {
     title: 'TFC Better Blast Furnace',
-    description: 'TFC Better Blast furnace is a Minecraft mod and addon to TerraFirmaCraft, with over 700k downloads.',
+    description:
+      'TFC Better Blast furnace is a tiny TerraFirmaCraft QoL mod that simplifies blast furnace construction.',
     image: tfcBetterBlastFurnace,
     links: [
       {label: 'GitHub', url: 'https://github.com/yorkeJohn/tfc-better-blast-furnace'},
@@ -84,7 +87,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Metro Thrift Website',
-    description: "Website + CMS for Halifax's mobile thrift store.",
+    description: "Web design project for Metro Thrift: Halifax's local mobile thrift store.",
     image: metroThrift,
     links: [{label: 'Visit Site', url: 'https://metrothrift.com'}],
     badges: ['Next.js', 'KeystoneJS'],
@@ -93,7 +96,8 @@ export const projects: Project[] = [
   },
   {
     title: 'French Village Conservation Website',
-    description: "Website + CMS for a woodland conservation in St. Margaret's Bay, Nova Scotia.",
+    description:
+      "Volunteer web design project for the French Village Woodland Conservation in St. Margaret's Bay, Nova Scotia.",
     image: frenchVillage,
     links: [
       {label: 'GitHub', url: 'https://github.com/larixsw/conservation-site'},
@@ -105,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Espresso Chat',
-    description: 'Low-level end-to-end encrypted chat protocol written in Java.',
+    description: 'Espresso Chat is an experimental low-level end-to-end encrypted chat protocol written in Java.',
     image: espressoChat,
     links: [{label: 'GitHub', url: 'https://github.com/larixsw/espresso-chat'}],
     badges: ['Java', 'Network Engineering'],
@@ -114,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: 'The Bonsai Parlour',
-    description: 'Website and e-store for a fictional bonsai cafe.',
+    description: 'Web design project for The Bonsai Parlour: a fictional bonsai cafe.',
     image: bonsaiParlour,
     links: [{label: 'GitHub', url: 'https://github.com/yorkeJohn/bonsai-parlour'}],
     badges: ['Vanilla', 'PHP', 'Web Design'],
@@ -123,7 +127,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Tainted Magic',
-    description: 'Tainted Magic is a Minecraft mod and addon to Thaumcraft 4.',
+    description:
+      'Tainted Magic is a popular Thaumcraft 4 expansion, adding content that sets new goals for even the most experienced Thaumaturges.',
     image: taintedMagic,
     links: [
       {label: 'GitHub', url: 'https://github.com/yorkeJohn/tainted-magic'},

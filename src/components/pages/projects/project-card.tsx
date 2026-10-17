@@ -35,7 +35,7 @@ export function ProjectCard({project, withCta, hideImage, className, ...rest}: P
     <div className={cn('flex flex-col gap-4 md:flex-row', className)} {...rest}>
       {!hideImage && (
         <DraggableWindow type="snap" title={imageTitle} iconLeft={ImageIcon}>
-          <Image src={image} alt={title} width={400} className="pointer-events-none" />
+          <Image src={image} alt={title} width={420} className="pointer-events-none w-full md:w-100" />
         </DraggableWindow>
       )}
 

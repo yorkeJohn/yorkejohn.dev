@@ -26,7 +26,7 @@ type DraggableWindowProps = FreeWindowProps | SnapWindowProps
 
 export function DraggableWindow({title, iconLeft, children, ...props}: DraggableWindowProps) {
   const pd = useIsPointerDevice()
-  const baseClasses = 'border bg-card w-fit px-1 pb-1 h-fit cursor-grab group'
+  const baseClasses = 'w-fit h-fit cursor-grab group border rounded-[1px]'
 
   if (props.type === 'snap') {
     return (
@@ -42,7 +42,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
         <TitleBar title={title} Icon={iconLeft}>
           <DotsSixIcon />
         </TitleBar>
-        <div className="border">{children}</div>
+        <div>{children}</div>
       </motion.div>
     )
   }
@@ -64,7 +64,7 @@ export function DraggableWindow({title, iconLeft, children, ...props}: Draggable
             <TitleBar title={title} Icon={iconLeft}>
               <XIcon className="cursor-pointer" onClick={onClose} />
             </TitleBar>
-            <div className="border">{children}</div>
+            <div>{children}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -82,7 +82,7 @@ type TitleBarProps = {
 
 function TitleBar({title, Icon, children}: TitleBarProps) {
   return (
-    <div className="flex items-center gap-1 py-1 text-muted">
+    <div className="flex items-center gap-1 border-b bg-card px-1 py-1 text-muted">
       <Icon />
       <span className="h-px flex-1 bg-transparent group-hover:bg-muted" />
       <span className="font-mono text-[7pt] uppercase tracking-wider">{title}</span>

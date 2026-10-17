@@ -6,9 +6,9 @@ import Image from 'next/image'
 import {Anchor, Badge} from '@/components'
 
 type SpotifyData = Array<{
-  name: string
-  external_urls: {spotify: string}
-  images: Array<{url: string}>
+  artist_name: string
+  spotify_url: string
+  image_url: string
 }>
 
 const dataUrl = 'https://raw.githubusercontent.com/yorkeJohn/yorkejohn.dev/refs/heads/site-data/data/top-artists.json'
@@ -19,24 +19,23 @@ export function TopArtists() {
   if (loading || !data) return null
 
   const items = data.map((item, index) => {
-    const name = item.name
-    const artistUrl = item.external_urls.spotify
-    const image = item.images[0].url
+    const {artist_name, spotify_url, image_url} = item
+
     return (
       <Anchor
-        href={artistUrl}
+        href={spotify_url}
         key={index}
         className="group flex cursor-pointer items-center gap-2 interact:bg-accent-foreground py-2"
       >
         <div className="shrink-0 border border-accent p-1 group-interact:border-transparent">
-          <Image src={image} width={50} height={50} alt={name} className="aspect-square object-cover" />
+          <Image src={image_url} width={50} height={50} alt={artist_name} className="aspect-square object-cover" />
         </div>
         <div>
           <Badge variant="outline" className="text-accent-foreground transition-none group-interact:text-background">
             n&deg;{index + 1}
           </Badge>
           <div className="text-2xl tracking-tight group-interact:text-background">
-            {name}
+            {artist_name}
             <ArrowUpRightIcon className="inline" />
           </div>
         </div>
