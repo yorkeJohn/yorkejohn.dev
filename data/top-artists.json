@@ -30,14 +30,14 @@
     "image_url": "https://i.scdn.co/image/ab6761610000e5eb362011ebe6064c38e97e9aac"
   },
   {
-    "artist_name": "Lady Gaga",
-    "spotify_url": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms",
-    "image_url": "https://i.scdn.co/image/ab6761610000e5ebaadc18cac8d48124357c38e6"
-  },
-  {
     "artist_name": "MGMT",
     "spotify_url": "https://open.spotify.com/artist/0SwO7SWeDHJijQ3XNS7xEE",
     "image_url": "https://i.scdn.co/image/ab6761610000e5eb9dccdc8f4087cbe2bdedc9d3"
+  },
+  {
+    "artist_name": "Lady Gaga",
+    "spotify_url": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms",
+    "image_url": "https://i.scdn.co/image/ab6761610000e5ebaadc18cac8d48124357c38e6"
   },
   {
     "artist_name": "My Chemical Romance",
