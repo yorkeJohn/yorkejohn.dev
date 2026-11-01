@@ -10,14 +10,14 @@
     "image_url": "https://i.scdn.co/image/ab6761610000e5eb4113d395582d3667b7978430"
   },
   {
-    "artist_name": "Green Day",
-    "spotify_url": "https://open.spotify.com/artist/7oPftvlwr6VrsViSDV7fJY",
-    "image_url": "https://i.scdn.co/image/ab6761610000e5eb6ff0cd5ef2ecf733804984bb"
-  },
-  {
     "artist_name": "Gorillaz",
     "spotify_url": "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ",
     "image_url": "https://i.scdn.co/image/ab6761610000e5ebdd5b57b40cf2aaeccd07835e"
+  },
+  {
+    "artist_name": "Green Day",
+    "spotify_url": "https://open.spotify.com/artist/7oPftvlwr6VrsViSDV7fJY",
+    "image_url": "https://i.scdn.co/image/ab6761610000e5eb6ff0cd5ef2ecf733804984bb"
   },
   {
     "artist_name": "Tame Impala",
@@ -30,23 +30,23 @@
     "image_url": "https://i.scdn.co/image/ab6761610000e5eb362011ebe6064c38e97e9aac"
   },
   {
-    "artist_name": "MGMT",
-    "spotify_url": "https://open.spotify.com/artist/0SwO7SWeDHJijQ3XNS7xEE",
-    "image_url": "https://i.scdn.co/image/ab6761610000e5eb9dccdc8f4087cbe2bdedc9d3"
-  },
-  {
     "artist_name": "Lady Gaga",
     "spotify_url": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms",
     "image_url": "https://i.scdn.co/image/ab6761610000e5ebaadc18cac8d48124357c38e6"
   },
   {
-    "artist_name": "My Chemical Romance",
-    "spotify_url": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb",
-    "image_url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf"
+    "artist_name": "MGMT",
+    "spotify_url": "https://open.spotify.com/artist/0SwO7SWeDHJijQ3XNS7xEE",
+    "image_url": "https://i.scdn.co/image/ab6761610000e5eb9dccdc8f4087cbe2bdedc9d3"
   },
   {
     "artist_name": "Arctic Monkeys",
     "spotify_url": "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH",
     "image_url": "https://i.scdn.co/image/ab6761610000e5eb7da39dea0a72f581535fb11f"
+  },
+  {
+    "artist_name": "My Chemical Romance",
+    "spotify_url": "https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb",
+    "image_url": "https://i.scdn.co/image/ab6761610000e5eb0c55e74e435910793888f7cf"
   }
 ]
